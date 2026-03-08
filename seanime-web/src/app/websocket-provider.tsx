@@ -45,14 +45,19 @@ export function useIsMainTabRef() {
 export function WebsocketProvider({ children }: { children: React.ReactNode }) {
     const [socket] = useAtom(websocketAtom)
     const [isConnected] = useAtom(websocketConnectedAtom)
+    
+    // Check if we're in a static deployment (no backend)
+    const isStaticDeployment = typeof window !== 'undefined' && 
+        (window.location.hostname.includes('vercel.app') || 
+         window.location.hostname === 'localhost' && !window.location.port)
 
     return (
         <>
-            <WebsocketManagement />
+            {!isStaticDeployment && <WebsocketManagement />}
             <ManageOpenDrawers />
             {__isElectronDesktop__ && <ElectronRestartServerPrompt />}
             <WebSocketContext.Provider value={socket}>
-                {!isConnected && <div
+                {!isConnected && !isStaticDeployment && <div
                     className="fixed right-4 bottom-4 bg-gray-950 border text-sm py-3 px-5 font-semibold rounded-xl z-[100] flex gap-2 items-center"
                 >
                     <ImSpinner2 className="animate-spin text-lg" />
