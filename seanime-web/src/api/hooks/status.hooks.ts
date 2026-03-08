@@ -10,6 +10,12 @@ import { useQueryClient } from "@tanstack/react-query"
 import { useAtomValue } from "jotai"
 import { toast } from "sonner"
 
+// Check if we're in a static deployment (Vercel or similar, or localhost without backend)
+const isStaticDeployment = typeof window !== 'undefined' && 
+    (window.location.hostname.includes('vercel.app') || 
+     window.location.hostname === 'localhost' || 
+     window.location.hostname === '127.0.0.1')
+
 export function useGetStatus() {
     return useServerQuery<Status>({
         endpoint: API_ENDPOINTS.STATUS.GetStatus.endpoint,
@@ -19,8 +25,8 @@ export function useGetStatus() {
         retryDelay: 1000,
         // Fixes macOS desktop app startup issue
         retry: 6,
-        // Mute error if the platform is desktop
-        muteError: __isDesktop__,
+        // Mute error if the platform is desktop or static deployment (no backend)
+        muteError: __isDesktop__ || isStaticDeployment,
     })
 }
 

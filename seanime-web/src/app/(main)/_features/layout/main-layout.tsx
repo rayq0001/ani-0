@@ -102,6 +102,12 @@ export const MainLayout = ({ children }: { children: React.ReactNode }) => {
     )
 }
 
+// Check if we're in a static deployment (Vercel or similar, or localhost without backend)
+const isStaticDeployment = typeof window !== 'undefined' && 
+    (window.location.hostname.includes('vercel.app') || 
+     window.location.hostname === 'localhost' || 
+     window.location.hostname === '127.0.0.1')
+
 function Loader() {
     /**
      * Data loaders
@@ -131,7 +137,6 @@ function Loader() {
     const pathname = usePathname()
 
     const [hasNavigated, setHasNavigated] = React.useState(false)
-    const [connectionTimeout, setConnectionTimeout] = React.useState(false)
 
     // dumb fix for duplicated player
     const prevPathname = React.useRef(pathname)
@@ -148,54 +153,52 @@ function Loader() {
         }
     }, [serverStatus?.isOffline, pathname])
 
-    // Detect if server status is undefined for too long (no backend connection)
-    // and provide a mock status for static deployment
+    // For static deployment, immediately provide mock server status
     React.useEffect(() => {
-        if (serverStatus === undefined) {
-            const timer = setTimeout(() => {
-                setConnectionTimeout(true)
-                // Provide mock server status for static deployment
-                setServerStatus({
-                    isOffline: false,
-                    user: {
-                        isSimulated: true,
-                        viewer: {
-                            name: "Guest",
-                            avatar: {
-                                medium: "/seanime-logo.png"
-                            }
+        if (isStaticDeployment && !serverStatus) {
+            setServerStatus({
+                isOffline: false,
+                user: {
+                    isSimulated: true,
+                    viewer: {
+                        name: "Guest",
+                        avatar: {
+                            medium: "/seanime-logo.png"
                         }
+                    }
+                },
+                settings: {
+                    library: {
+                        enableManga: true,
+                        enableOnlinestream: true,
+                        torrentProvider: "none",
+                        libraryPath: null
                     },
-                    settings: {
-                        library: {
-                            enableManga: true,
-                            enableOnlinestream: true,
-                            torrentProvider: "none",
-                            libraryPath: null
-                        },
-                        torrent: {
-                            defaultTorrentClient: "none",
-                            showActiveTorrentCount: false
-                        },
-                        nakama: {
-                            enabled: false
-                        }
+                    torrent: {
+                        defaultTorrentClient: "none",
+                        showActiveTorrentCount: false
                     },
-                    debridSettings: {
-                        enabled: false,
-                        provider: null
-                    },
-                    torrentstreamSettings: {
+                    nakama: {
                         enabled: false
-                    },
-                    serverHasPassword: false,
-                    disabledFeatures: []
-                } as any)
-            }, 3000) // Wait 3 seconds before showing mock data
-
-            return () => clearTimeout(timer)
+                    }
+                },
+                debridSettings: {
+                    enabled: false,
+                    provider: null
+                },
+                torrentstreamSettings: {
+                    enabled: false
+                },
+                serverHasPassword: false,
+                disabledFeatures: []
+            } as any)
         }
     }, [serverStatus, setServerStatus])
+
+    // Skip loading overlay for static deployments
+    if (isStaticDeployment) {
+        return null
+    }
 
     if (serverStatus?.isOffline) {
         return <LoadingOverlayWithLogo />

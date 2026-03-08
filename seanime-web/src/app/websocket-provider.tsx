@@ -49,7 +49,8 @@ export function WebsocketProvider({ children }: { children: React.ReactNode }) {
     // Check if we're in a static deployment (no backend)
     const isStaticDeployment = typeof window !== 'undefined' && 
         (window.location.hostname.includes('vercel.app') || 
-         window.location.hostname === 'localhost' && !window.location.port)
+         window.location.hostname === 'localhost' || 
+         window.location.hostname === '127.0.0.1')
 
     return (
         <>

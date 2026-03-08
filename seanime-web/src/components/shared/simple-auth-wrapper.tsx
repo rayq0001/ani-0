@@ -9,6 +9,12 @@ type SimpleAuthWrapperProps = {
     children?: React.ReactNode
 }
 
+// Check if we're in a static deployment (Vercel or similar, or localhost without backend)
+const isStaticDeployment = typeof window !== 'undefined' && 
+    (window.location.hostname.includes('vercel.app') || 
+     window.location.hostname === 'localhost' || 
+     window.location.hostname === '127.0.0.1')
+
 // standalone auth wrapper for routes outside of main
 export function SimpleAuthWrapper({ children }: SimpleAuthWrapperProps) {
     const { data: serverStatus, isLoading: isStatusLoading } = useGetStatus()
@@ -35,8 +41,12 @@ export function SimpleAuthWrapper({ children }: SimpleAuthWrapperProps) {
         }
     }, [serverStatus, password])
 
-    if (isStatusLoading || !serverStatus) return <LoadingOverlayWithLogo />
+    // Skip ALL loading screens for static deployments (no backend)
+    if (isStaticDeployment) {
+        return <>{children}</>
+    }
 
+    if (isStatusLoading || !serverStatus) return <LoadingOverlayWithLogo />
     if (redirecting) return <LoadingOverlayWithLogo />
 
     // if verification is needed

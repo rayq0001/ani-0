@@ -85,11 +85,18 @@ export function ServerDataWrapper(props: ServerDataWrapperProps) {
         }
     }, [serverStatus?.serverReady])
 
+    // Check if we're in a static deployment (Vercel or similar, or localhost without backend)
+    const isStaticDeployment = typeof window !== 'undefined' && 
+        (window.location.hostname.includes('vercel.app') || 
+         window.location.hostname === 'localhost' || 
+         window.location.hostname === '127.0.0.1')
+
     /**
      * If the server status is loading or doesn't exist, show the loading overlay
+     * Skip this for static deployments (no backend)
      */
-    if (isLoading || !serverStatus || !authenticated) return <LoadingOverlayWithLogo />
-    if (!serverStatus?.serverReady) return <LoadingOverlayWithLogo title="L o a d i n g" />
+    if (!isStaticDeployment && (isLoading || !serverStatus || !authenticated)) return <LoadingOverlayWithLogo />
+    if (!isStaticDeployment && !serverStatus?.serverReady) return <LoadingOverlayWithLogo title="L o a d i n g" />
 
     /**
      * If the pathname is /auth/callback, show the callback page
@@ -100,6 +107,10 @@ export function ServerDataWrapper(props: ServerDataWrapperProps) {
      * If the server status doesn't have settings, show the getting started page
      */
     if (!serverStatus?.settings) {
+        // For static deployment or when serverStatus is undefined, skip getting started page
+        if (isStaticDeployment || !serverStatus) {
+            return <>{children}</>
+        }
         return <GettingStartedPage status={serverStatus} />
     }
 
