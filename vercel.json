@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "buildCommand": "cd seanime-web && npm install && npm run build && mkdir -p ../web && cp -r out/* ../web/",
-  "outputDirectory": "web",
+  "buildCommand": "cd seanime-web && npm install && npm run build",
+  "outputDirectory": "seanime-web/out",
   "framework": null,
   "rewrites": [
     {
