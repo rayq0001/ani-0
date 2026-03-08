@@ -37,7 +37,7 @@ import { AppLayout, AppLayoutContent, AppLayoutSidebar, AppSidebarProvider } fro
 import { usePathname, useRouter } from "@/lib/navigation"
 import { __isElectronDesktop__ } from "@/types/constants"
 import React from "react"
-import { useServerStatus } from "../../_hooks/use-server-status"
+import { useServerStatus, useSetServerStatus } from "../../_hooks/use-server-status"
 import { useInvalidateQueriesListener } from "../../_listeners/invalidate-queries.listeners"
 import { Announcements } from "../announcements"
 import { NakamaManager } from "../nakama/nakama-manager"
@@ -126,10 +126,12 @@ function Loader() {
     useAuthEventListeners()
 
     const serverStatus = useServerStatus()
+    const setServerStatus = useSetServerStatus()
     const router = useRouter()
     const pathname = usePathname()
 
     const [hasNavigated, setHasNavigated] = React.useState(false)
+    const [connectionTimeout, setConnectionTimeout] = React.useState(false)
 
     // dumb fix for duplicated player
     const prevPathname = React.useRef(pathname)
@@ -145,6 +147,55 @@ function Loader() {
             router.push("/")
         }
     }, [serverStatus?.isOffline, pathname])
+
+    // Detect if server status is undefined for too long (no backend connection)
+    // and provide a mock status for static deployment
+    React.useEffect(() => {
+        if (serverStatus === undefined) {
+            const timer = setTimeout(() => {
+                setConnectionTimeout(true)
+                // Provide mock server status for static deployment
+                setServerStatus({
+                    isOffline: false,
+                    user: {
+                        isSimulated: true,
+                        viewer: {
+                            name: "Guest",
+                            avatar: {
+                                medium: "/seanime-logo.png"
+                            }
+                        }
+                    },
+                    settings: {
+                        library: {
+                            enableManga: true,
+                            enableOnlinestream: true,
+                            torrentProvider: "none",
+                            libraryPath: null
+                        },
+                        torrent: {
+                            defaultTorrentClient: "none",
+                            showActiveTorrentCount: false
+                        },
+                        nakama: {
+                            enabled: false
+                        }
+                    },
+                    debridSettings: {
+                        enabled: false,
+                        provider: null
+                    },
+                    torrentstreamSettings: {
+                        enabled: false
+                    },
+                    serverHasPassword: false,
+                    disabledFeatures: []
+                } as any)
+            }, 3000) // Wait 3 seconds before showing mock data
+
+            return () => clearTimeout(timer)
+        }
+    }, [serverStatus, setServerStatus])
 
     if (serverStatus?.isOffline) {
         return <LoadingOverlayWithLogo />
