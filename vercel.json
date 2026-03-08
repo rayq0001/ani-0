@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "buildCommand": "cd seanime-web && npm install && npm run build && mkdir -p ../web && cp -r out/* ../web/",
+  "outputDirectory": "web",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
