@@ -5,8 +5,8 @@ build-all:
 	cp -r out ../web
 	npm run build:denshi
 	cp -r out-denshi ../web-denshi
-	rm -rf ../seanime-denshi/web-denshi
-	cp -r ../web-denshi ../seanime-denshi/web-denshi
+	rm -rf ../aniverse-denshi/web-denshi
+	cp -r ../web-denshi ../aniverse-denshi/web-denshi
 
 build-web:
 	rm -rf ../web
@@ -17,7 +17,7 @@ build-denshi:
 	rm -rf ../web-denshi
 	npm run build:denshi
 	cp -r out-denshi ../web-denshi
-	rm -rf ../seanime-denshi/web-denshi
-	cp -r ../web-denshi ../seanime-denshi/web-denshi
+	rm -rf ../aniverse-denshi/web-denshi
+	cp -r ../web-denshi ../aniverse-denshi/web-denshi
 
 .PHONY: build-all build-web build-denshi

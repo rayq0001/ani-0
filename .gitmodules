@@ -1,3 +1,23 @@
 [submodule "electron"]
 	path = electron
 	url = https://github.com/5rahim/seanime-electron.git
+
+[submodule "internal/vendor/elevenlabs"]
+	path = internal/vendor/elevenlabs
+	url = https://github.com/haguro/elevenlabs-go.git
+
+[submodule "internal/vendor/generative-ai"]
+	path = internal/vendor/generative-ai
+	url = https://github.com/google/generative-ai-go.git
+
+[submodule "internal/vendor/openai"]
+	path = internal/vendor/openai
+	url = https://github.com/sashabaranov/go-openai.git
+
+[submodule "internal/vendor/pinecone"]
+	path = internal/vendor/pinecone
+	url = https://github.com/pinecone-io/go-pinecone.git
+
+[submodule "internal/vendor/replicate-go"]
+	path = internal/vendor/replicate-go
+	url = https://github.com/replicate/replicate-go.git
