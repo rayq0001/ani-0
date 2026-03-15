@@ -51,6 +51,13 @@ export interface StarNode {
   coverImage: string;
   coordinates: { x: number; y: number; z: number };
   similarityScore: number;
+  aiOpinion?: string;
+  publicRating?: number;
+  dimensions?: {
+    type: string;
+    title: string;
+    relation: string;
+  }[];
   year: number;
   genres: string[];
   dna: DNAFilters;

@@ -6,7 +6,15 @@ import { useAtom } from 'jotai';
 import { searchResultsAtom, selectedStarAtom, isSearchingAtom } from '@/app/(main)/_atoms/space.atoms';
 import { GlassCard } from '@/components/anyverse/GlassCard';
 import { NeonBadge } from '@/components/anyverse/NeonBadge';
-import { LuStar, LuExternalLink, LuDna, LuSparkles } from 'react-icons/lu';
+import { 
+    LuStar, 
+    LuExternalLink, 
+    LuDna, 
+    LuSparkles, 
+    LuOrbit, 
+    LuX, 
+    LuGlobe 
+} from 'react-icons/lu';
 
 // Mock data for demonstration
 const MOCK_STARS = [
@@ -18,6 +26,8 @@ const MOCK_STARS = [
     coverImage: 'https://example.com/solo-leveling.jpg',
     coordinates: { x: 20, y: 30, z: 10 },
     similarityScore: 0.95,
+    publicRating: 8.9,
+    aiOpinion: "A masterpiece of the 'system' genre. Jin-woo's progression is masterfully paced, making every power-up feel earned. The art and concept defined a whole new generation of manhwa.",
     year: 2018,
     genres: ['action', 'fantasy', 'supernatural'],
     dna: {
@@ -31,6 +41,10 @@ const MOCK_STARS = [
       mysteryLevel: 50,
       selectedGenes: ['system', 'leveling', 'shadow-monarch'],
     },
+    dimensions: [
+      { type: 'novel', title: 'Solo Leveling (Novel)', relation: 'Original' },
+      { type: 'anime', title: 'Solo Leveling (TV)', relation: 'Adaptation' }
+    ]
   },
   {
     id: '2',
@@ -40,6 +54,8 @@ const MOCK_STARS = [
     coverImage: 'https://example.com/tower-of-god.jpg',
     coordinates: { x: -40, y: 20, z: 15 },
     similarityScore: 0.87,
+    publicRating: 8.4,
+    aiOpinion: "The world-building here is unparalleled. Every floor brings a new ecosystem and set of rules. It starts as a simple quest and evolves into a complex political and philosophical epic.",
     year: 2010,
     genres: ['action', 'fantasy', 'mystery'],
     dna: {
@@ -53,73 +69,10 @@ const MOCK_STARS = [
       mysteryLevel: 80,
       selectedGenes: ['tower', 'climbing', 'betrayal'],
     },
-  },
-  {
-    id: '3',
-    mediaId: 3,
-    title: 'Omniscient Reader',
-    type: 'manhwa',
-    coverImage: 'https://example.com/orv.jpg',
-    coordinates: { x: 50, y: -20, z: 25 },
-    similarityScore: 0.92,
-    year: 2020,
-    genres: ['action', 'fantasy', 'supernatural'],
-    dna: {
-      heroArchetype: 60,
-      worldSetting: 80,
-      powerSystem: 70,
-      conflictType: 80,
-      romanceLevel: 30,
-      comedyLevel: 50,
-      darknessLevel: 70,
-      mysteryLevel: 60,
-      selectedGenes: ['regression', 'reader', 'apocalypse'],
-    },
-  },
-  {
-    id: '4',
-    mediaId: 4,
-    title: 'The Beginning After The End',
-    type: 'manhwa',
-    coverImage: 'https://example.com/tbate.jpg',
-    coordinates: { x: -30, y: -40, z: 5 },
-    similarityScore: 0.78,
-    year: 2016,
-    genres: ['action', 'fantasy', 'adventure'],
-    dna: {
-      heroArchetype: 70,
-      worldSetting: 85,
-      powerSystem: 80,
-      conflictType: 50,
-      romanceLevel: 50,
-      comedyLevel: 60,
-      darknessLevel: 40,
-      mysteryLevel: 40,
-      selectedGenes: ['reincarnation', 'magic', 'king'],
-    },
-  },
-  {
-    id: '5',
-    mediaId: 5,
-    title: 'Return of the Legendary Spear Knight',
-    type: 'manhwa',
-    coverImage: 'https://example.com/spear-knight.jpg',
-    coordinates: { x: 60, y: 40, z: 20 },
-    similarityScore: 0.73,
-    year: 2022,
-    genres: ['action', 'fantasy'],
-    dna: {
-      heroArchetype: 75,
-      worldSetting: 75,
-      powerSystem: 65,
-      conflictType: 65,
-      romanceLevel: 25,
-      comedyLevel: 35,
-      darknessLevel: 55,
-      mysteryLevel: 45,
-      selectedGenes: ['regression', 'spear', 'knight'],
-    },
-  },
+    dimensions: [
+      { type: 'anime', title: 'Tower of God (TV)', relation: 'Adaptation' }
+    ]
+  }
 ];
 
 export const StarField = () => {
@@ -129,10 +82,7 @@ export const StarField = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  // Use mock data for now
-  useEffect(() => {
-    setResults(MOCK_STARS);
-  }, [setResults]);
+  // No mock data override - use results from atom
 
   // Parallax effect
   useEffect(() => {
@@ -155,6 +105,20 @@ export const StarField = () => {
       ref={containerRef}
       className="flex-1 relative overflow-hidden rounded-2xl bg-black/20"
     >
+      {/* Searching Overlay */}
+      <AnimatePresence>
+        {isSearching && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#0a0a0f]/40 backdrop-blur-md"
+          >
+            <LuOrbit className="w-12 h-12 text-purple-400 animate-spin mb-4" />
+            <span className="text-white/60 text-sm tracking-widest uppercase animate-pulse">Scanning the Multiverse...</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* 3D Space Container */}
       <div 
         className="absolute inset-0"
@@ -274,47 +238,87 @@ export const StarField = () => {
       <AnimatePresence>
         {selectedStar && (
           <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 100 }}
-            className="absolute right-4 top-4 bottom-4 w-80"
+            initial={{ opacity: 0, x: 100, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: 100, scale: 0.9 }}
+            className="absolute right-4 top-4 bottom-4 w-[400px]"
           >
-            <GlassCard className="h-full flex flex-col">
-              {/* Header */}
-              <div className="p-4 border-b border-white/10 flex items-center justify-between">
-                <h3 className="font-bold text-white">{selectedStar.title}</h3>
-                <button 
-                  onClick={() => setSelectedStar(null)}
-                  className="text-white/50 hover:text-white"
-                >
-                  ×
-                </button>
-              </div>
+            <div className="h-full bg-white/5 backdrop-blur-3xl border border-white/10 rounded-2xl flex flex-col shadow-2xl overflow-hidden">
+               {/* Visual Header */}
+               <div className="relative h-48 w-full overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] to-transparent z-10" />
+                    <div className="absolute inset-0 bg-purple-600/20 blur-3xl" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                         <LuStar className="w-24 h-24 text-white/5 animate-pulse" />
+                    </div>
+                    
+                    {/* Floating Title */}
+                    <div className="absolute bottom-4 left-6 z-20">
+                        <NeonBadge color="purple" size="sm" className="mb-2">{selectedStar.type.toUpperCase()}</NeonBadge>
+                        <h3 className="text-2xl font-bold text-white tracking-wide">{selectedStar.title}</h3>
+                    </div>
 
-              {/* Content */}
-              <div className="flex-1 overflow-y-auto p-4 space-y-4">
-                {/* Cover Placeholder */}
-                <div className="aspect-[3/4] rounded-lg bg-gradient-to-br from-purple-600/20 to-blue-600/20 flex items-center justify-center">
-                  <LuStar className="w-16 h-16 text-white/20" />
+                    <button 
+                        onClick={() => setSelectedStar(null)}
+                        className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-white/20 transition-all hover:rotate-90"
+                    >
+                        <LuX className="w-5 h-5" />
+                    </button>
+               </div>
+
+              {/* Scrollable Content */}
+              <div className="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
+                
+                {/* AI Opinion - Liquid Glass Section */}
+                <div className="bg-white/5 rounded-xl p-4 border border-white/5">
+                    <h4 className="text-xs font-bold text-purple-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                        <LuSparkles className="w-3 h-3" />
+                        AI Analysis
+                    </h4>
+                    <p className="text-sm text-white/80 italic leading-relaxed">
+                        "{selectedStar.aiOpinion || "Analyzing story signature..."}"
+                    </p>
                 </div>
 
-                {/* Info */}
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-white/60 text-sm">Type</span>
-                    <NeonBadge color="purple" size="sm">{selectedStar.type}</NeonBadge>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-white/60 text-sm">Year</span>
-                    <span className="text-white">{selectedStar.year}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-white/60 text-sm">Match</span>
-                    <span className="text-purple-400 font-bold">
-                      {(selectedStar.similarityScore * 100).toFixed(1)}%
-                    </span>
-                  </div>
+                {/* Ratings & Metadata */}
+                <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-white/5 rounded-xl p-3 border border-white/5 flex flex-col items-center">
+                        <span className="text-[10px] text-white/40 uppercase tracking-tighter">Public Rating</span>
+                        <div className="flex items-center gap-1 mt-1">
+                            <span className="text-xl font-bold text-yellow-500">{selectedStar.publicRating || '—'}</span>
+                            <span className="text-xs text-white/20">/ 10</span>
+                        </div>
+                    </div>
+                    <div className="bg-white/5 rounded-xl p-3 border border-white/5 flex flex-col items-center">
+                        <span className="text-[10px] text-white/40 uppercase tracking-tighter">Similarity</span>
+                        <div className="flex items-center gap-1 mt-1">
+                            <span className="text-xl font-bold text-purple-400">{(selectedStar.similarityScore * 100).toFixed(0)}</span>
+                            <span className="text-xs text-white/20">%</span>
+                        </div>
+                    </div>
                 </div>
+
+                {/* Cross-Media Dimensions */}
+                {selectedStar.dimensions && selectedStar.dimensions.length > 0 && (
+                    <div className="space-y-3">
+                        <h4 className="text-xs font-bold text-white/40 uppercase tracking-widest flex items-center gap-2">
+                            <LuGlobe className="w-3 h-3" />
+                            Omniverse Relations
+                        </h4>
+                        <div className="space-y-2">
+                            {selectedStar.dimensions.map((dim: any, i: number) => (
+                                <div key={i} className="flex items-center justify-between bg-white/5 px-4 py-2 rounded-lg border border-white/5 group hover:bg-white/10 transition-all cursor-pointer">
+                                    <div className="flex flex-col">
+                                        <span className="text-xs text-white/80 font-medium">{dim.title}</span>
+                                        <span className="text-[10px] text-white/30">{dim.relation}</span>
+                                    </div>
+                                    <NeonBadge color={dim.type === 'anime' ? 'blue' : 'gold'} size="sm">{dim.type}</NeonBadge>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
 
                 {/* DNA Visualization */}
                 <div className="space-y-2">
@@ -364,7 +368,7 @@ export const StarField = () => {
                   </button>
                 </div>
               </div>
-            </GlassCard>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

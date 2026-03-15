@@ -44,6 +44,8 @@ type StarNode struct {
 	Connections     []string               `json:"connections"` // IDs of connected works
 	Dimensions      []DimensionLink        `json:"dimensions"`  // Cross-dimension links
 	SimilarityScore float64                `json:"similarityScore"`
+	AIOpinion       string                 `json:"aiOpinion"`
+	PublicRating    float64                `json:"publicRating"`
 	Year            int                    `json:"year"`
 	Genres          []string               `json:"genres"`
 	Metadata        map[string]interface{} `json:"metadata"`
@@ -344,13 +346,14 @@ func (cse *CosmicSearchEngine) InitializeMockData() {
 			},
 			Genes: []string{"system", "leveling", "shadow-monarch", "dungeons"},
 		},
+		AIOpinion:    "A masterpiece of the 'system' genre. Jin-woo's progression is masterfully paced, making every power-up feel earned. The art and concept defined a whole new generation of manhwa.",
+		PublicRating: 8.9,
 		Dimensions: []DimensionLink{
 			{Type: "novel", MediaID: 101, Title: "Solo Leveling Novel", Chapter: 1, Relation: "adaptation", Year: 2016},
 			{Type: "anime", MediaID: 102, Title: "Solo Leveling Anime", Chapter: 1, Relation: "adaptation", Year: 2024},
 		},
 	}
 
-	// Add more mock data...
 	cse.vectorStore["tower-of-god-manhwa"] = &StarNode{
 		ID:      "tower-of-god-manhwa",
 		MediaID: 2,
@@ -373,6 +376,8 @@ func (cse *CosmicSearchEngine) InitializeMockData() {
 			},
 			Genes: []string{"tower", "climbing", "betrayal", "regulars"},
 		},
+		AIOpinion:    "The world-building here is unparalleled. Every floor brings a new ecosystem and set of rules. It starts as a simple quest and evolves into a complex political and philosophical epic.",
+		PublicRating: 8.4,
 		Dimensions: []DimensionLink{
 			{Type: "anime", MediaID: 201, Title: "Tower of God Anime", Chapter: 1, Relation: "adaptation", Year: 2020},
 		},

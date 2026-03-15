@@ -9,6 +9,7 @@ import { HolographicButton } from '@/components/anyverse/HolographicButton';
 import { NeonBadge } from '@/components/anyverse/NeonBadge';
 import { DNAFilterPanel } from './DNAFilterPanel';
 import { StarField } from './StarField';
+import { SpaceScene } from './SpaceScene';
 import { GalaxyClusters } from './GalaxyClusters';
 import { TimelineNavigator } from './TimelineNavigator';
 import { 
@@ -21,22 +22,64 @@ import {
     LuSparkles,
     LuGlobe
 } from 'react-icons/lu';
+import { useCosmicSearch } from '@/api/hooks/space.hooks';
+import { useDebounce } from '@/hooks/use-debounce';
+import { isSearchingAtom, searchResultsAtom, timelineYearRangeAtom, StarNode } from '@/app/(main)/_atoms/space.atoms';
 
 export const UnlimitedSpace = () => {
     const [isOpen, setIsOpen] = useAtom(spaceModeAtom);
     const [activeView, setActiveView] = useState<'galaxy' | 'dna' | 'timeline' | 'visual'>('galaxy');
     const [searchQuery, setSearchQuery] = useState('');
-    const [isSearching, setIsSearching] = useState(false);
-    const canvasRef = useRef<HTMLCanvasElement>(null);
+    const [dnaFilters] = useAtom(dnaFiltersAtom);
+    const [emotionalState] = useAtom(emotionalStateAtom);
+    const [yearRange] = useAtom(timelineYearRangeAtom);
+    const [, setResults] = useAtom(searchResultsAtom);
+    const [isSearching, setIsSearching] = useAtom(isSearchingAtom);
 
-    // Close on escape key
+    const { mutate: search, isPending } = useCosmicSearch();
+    const debouncedSearchQuery = useDebounce(searchQuery, 800);
+
+    // Search effect
     useEffect(() => {
+        if (debouncedSearchQuery.trim()) {
+            setIsSearching(true);
+            search({
+                query: debouncedSearchQuery,
+                dnaFilters: dnaFilters,
+                emotionalState: emotionalState,
+                yearRange: yearRange,
+                includeDimensions: ['anime', 'manga', 'novel'],
+                excludeGenres: [],
+                minSimilarity: 0.1,
+                maxResults: 20
+            }, {
+                onSuccess: (data) => {
+                    setResults((data.results as any) as StarNode[]);
+                    setIsSearching(false);
+                },
+                onError: () => {
+                    setIsSearching(false);
+                }
+            });
+        }
+    }, [debouncedSearchQuery, dnaFilters, emotionalState, yearRange]);
+
+    // Body scroll lock & Escape listener
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
         const handleEscape = (e: KeyboardEvent) => {
             if (e.key === 'Escape') setIsOpen(false);
         };
         window.addEventListener('keydown', handleEscape);
-        return () => window.removeEventListener('keydown', handleEscape);
-    }, [setIsOpen]);
+        return () => {
+            window.removeEventListener('keydown', handleEscape);
+            document.body.style.overflow = 'unset';
+        };
+    }, [isOpen, setIsOpen]);
 
     if (!isOpen) return null;
 
@@ -48,19 +91,8 @@ export const UnlimitedSpace = () => {
                 exit={{ opacity: 0 }}
                 className="fixed inset-0 z-[100] bg-[#0a0a0f] overflow-hidden"
             >
-                {/* Animated Starfield Background */}
-                <canvas 
-                    ref={canvasRef}
-                    className="absolute inset-0 w-full h-full"
-                    style={{ background: 'radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a0f 50%, #000000 100%)' }}
-                />
-
-                {/* Nebula Effects */}
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[100px] animate-pulse" />
-                    <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] animate-pulse delay-1000" />
-                    <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-600/10 rounded-full blur-[80px] animate-pulse delay-500" />
-                </div>
+                {/* 4K 3D Space Background */}
+                <SpaceScene />
 
                 {/* Header */}
                 <motion.header 
@@ -68,28 +100,32 @@ export const UnlimitedSpace = () => {
                     animate={{ y: 0 }}
                     className="absolute top-0 left-0 right-0 z-50 p-6 flex items-center justify-between"
                 >
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-12 w-full justify-center">
                         <motion.div 
-                            className="flex items-center gap-3 bg-black/40 backdrop-blur-xl px-4 py-2 rounded-full border border-purple-500/30"
-                            whileHover={{ scale: 1.02 }}
+                            className="flex flex-col items-center gap-1"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
                         >
-                            <LuOrbit className="w-6 h-6 text-purple-400 animate-spin-slow" />
-                            <h1 className="text-xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+                            <h1 className="text-4xl font-extralight tracking-[0.2em] text-white/90 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] uppercase">
                                 Unlimited Space
                             </h1>
-                            <NeonBadge color="purple" size="sm">Pro</NeonBadge>
+                            <div className="h-[1px] w-24 bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
                         </motion.div>
-
-                        {/* Search Bar */}
-                        <div className="relative">
+ 
+                        {/* Search Bar - Smaller & Liquid Glass */}
+                        <div className="relative group">
                             <input
                                 type="text"
-                                placeholder="Search the universe..."
+                                placeholder="Search the infinite..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="w-80 bg-black/40 backdrop-blur-xl border border-purple-500/30 rounded-full px-4 py-2 pr-10 text-white placeholder-white/30 focus:outline-none focus:border-purple-500/60 transition-all"
+                                className="w-64 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-xl px-4 py-2 pl-10 text-sm text-white placeholder-white/20 focus:outline-none focus:w-80 focus:bg-white/10 focus:border-purple-500/40 transition-all duration-500 ease-out shadow-2xl"
                             />
-                            <LuSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-purple-400" />
+                            {isSearching || isPending ? (
+                                <LuOrbit className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-purple-400 animate-spin" />
+                            ) : (
+                                <LuSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30 group-focus-within:text-purple-400 transition-colors" />
+                            )}
                         </div>
                     </div>
 
@@ -120,12 +156,12 @@ export const UnlimitedSpace = () => {
                         })}
                     </div>
 
-                    {/* Close Button */}
+                    {/* Close Button - Liquid Glass */}
                     <motion.button
                         onClick={() => setIsOpen(false)}
-                        className="w-10 h-10 rounded-full bg-red-500/20 border border-red-500/50 flex items-center justify-center text-red-400 hover:bg-red-500/30 transition-colors"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
+                        className="absolute right-8 top-8 w-10 h-10 rounded-xl bg-white/5 backdrop-blur-3xl border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all shadow-xl"
+                        whileHover={{ scale: 1.05, rotate: 90 }}
+                        whileTap={{ scale: 0.95 }}
                     >
                         <LuX className="w-5 h-5" />
                     </motion.button>
@@ -249,18 +285,18 @@ export const SpaceModeToggle = () => {
     return (
         <motion.button
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 left-6 z-40 w-14 h-14 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 
-                      shadow-[0_0_30px_rgba(139,92,246,0.5)] flex items-center justify-center text-white group"
+            className="fixed bottom-8 left-8 z-[60] w-14 h-14 rounded-2xl bg-white/5 backdrop-blur-3xl border border-white/10 
+                      shadow-2xl flex items-center justify-center text-white/40 group hover:text-purple-400 hover:border-purple-500/40 transition-all"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             animate={{ 
                 boxShadow: [
-                    '0 0 20px rgba(139,92,246,0.4)',
-                    '0 0 40px rgba(139,92,246,0.6)',
-                    '0 0 20px rgba(139,92,246,0.4)'
+                    '0 0 20px rgba(139,92,246,0.1)',
+                    '0 0 40px rgba(139,92,246,0.2)',
+                    '0 0 20px rgba(139,92,246,0.1)'
                 ]
             }}
-            transition={{ duration: 2, repeat: Infinity }}
+            transition={{ duration: 3, repeat: Infinity }}
         >
             <LuOrbit className="w-6 h-6 group-hover:animate-spin" />
             

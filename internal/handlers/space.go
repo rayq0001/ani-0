@@ -21,6 +21,8 @@ type StarNode struct {
 	Color         string                 `json:"color"`
 	Size          float64                `json:"size"`
 	Connections   []string               `json:"connections"`
+	AIOpinion     string                 `json:"aiOpinion"`
+	PublicRating  float64                `json:"publicRating"`
 	Metadata      map[string]interface{} `json:"metadata"`
 	EmotionalTags []string               `json:"emotionalTags"`
 	DNA           StoryDNA               `json:"dna"`
