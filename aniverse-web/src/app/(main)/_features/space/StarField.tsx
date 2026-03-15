@@ -137,62 +137,79 @@ export const StarField = () => {
           return (
             <motion.div
               key={star.id}
-              className="absolute cursor-pointer"
-              initial={{ opacity: 0, scale: 0 }}
+              className="absolute cursor-pointer group"
+              initial={{ opacity: 0, scale: 0, z: -100 }}
               animate={{ 
                 opacity: 1, 
                 scale: scale,
                 x: `calc(50% + ${x}px)`,
                 y: `calc(50% + ${y}px)`,
+                z: 0
               }}
               transition={{ 
-                delay: index * 0.1,
+                delay: index * 0.05,
                 type: "spring",
-                stiffness: 100,
-                damping: 20
+                stiffness: 80,
+                damping: 25
               }}
               style={{
                 zIndex: Math.round(z),
-                transform: `translateZ(${z}px)`,
+                perspective: '1000px'
               }}
               onClick={() => setSelectedStar(star)}
-              whileHover={{ scale: scale * 1.2 }}
+              whileHover={{ scale: scale * 1.15, z: 20 }}
             >
-              {/* Star Glow */}
               <div className="relative">
+                {/* Advanced Multi-Layer Glow */}
                 <div 
-                  className="absolute inset-0 rounded-full blur-xl animate-pulse"
+                  className="absolute inset-0 rounded-full blur-2xl opacity-40 group-hover:opacity-80 transition-opacity duration-700"
                   style={{
                     background: `radial-gradient(circle, ${getStarColor(star.similarityScore)} 0%, transparent 70%)`,
-                    width: '60px',
-                    height: '60px',
-                    left: '-20px',
-                    top: '-20px',
+                    width: '100px',
+                    height: '100px',
+                    left: '-40px',
+                    top: '-40px',
                   }}
                 />
                 
-                {/* Star Core */}
+                {/* Orbital Rings (Luxury Detail) */}
+                <motion.div 
+                  className="absolute -inset-4 border border-white/5 rounded-full pointer-events-none"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                />
+
+                {/* Star Core (Premium Gradient) */}
                 <div 
-                  className="w-5 h-5 rounded-full relative"
+                  className="w-6 h-6 rounded-full relative overflow-hidden group-hover:scale-110 transition-transform duration-500 shadow-[0_0_30px_rgba(255,255,255,0.3)]"
                   style={{
-                    background: getStarColor(star.similarityScore),
-                    boxShadow: `0 0 20px ${getStarColor(star.similarityScore)}`,
+                    background: `radial-gradient(circle at 30% 30%, white 0%, ${getStarColor(star.similarityScore)} 50%, #000 100%)`,
                   }}
                 >
-                  {/* Similarity Score Badge */}
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                    <span className="text-[10px] font-bold text-white bg-black/50 px-1.5 py-0.5 rounded">
-                      {(star.similarityScore * 100).toFixed(0)}%
-                    </span>
-                  </div>
+                    {/* Interior Sparkle */}
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.8),transparent_50%)] opacity-30 animate-pulse" />
                 </div>
 
-                {/* Label */}
-                <div className="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                  <span className="text-xs text-white/80 font-medium bg-black/30 px-2 py-1 rounded backdrop-blur-sm">
-                    {star.title}
-                  </span>
-                </div>
+                {/* Dynamic Label Container */}
+                <motion.div 
+                    className="absolute top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0"
+                    style={{ perspective: '500px' }}
+                >
+                    <div className="bg-white/5 backdrop-blur-2xl border border-white/10 px-3 py-1.5 rounded-xl shadow-2xl whitespace-nowrap">
+                        <div className="flex items-center gap-2">
+                             <div className="w-1.5 h-1.5 rounded-full" style={{ background: getStarColor(star.similarityScore) }} />
+                             <span className="text-[11px] font-bold text-white tracking-widest uppercase italic">{star.title}</span>
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* Hover Connection Line (Visual Guide) */}
+                <motion.div 
+                    className="absolute top-1/2 left-1/2 w-[1px] h-0 bg-gradient-to-t from-purple-500/50 to-transparent -translate-x-1/2 origin-top"
+                    initial={{ scaleY: 0 }}
+                    whileHover={{ scaleY: 1 }}
+                    transition={{ duration: 0.3 }}
+                />
               </div>
             </motion.div>
           );
@@ -238,137 +255,148 @@ export const StarField = () => {
       <AnimatePresence>
         {selectedStar && (
           <motion.div
-            initial={{ opacity: 0, x: 100, scale: 0.9 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: 100, scale: 0.9 }}
-            className="absolute right-4 top-4 bottom-4 w-[400px]"
+            initial={{ opacity: 0, x: 100, scale: 0.9, rotateY: 20 }}
+            animate={{ opacity: 1, x: 0, scale: 1, rotateY: 0 }}
+            exit={{ opacity: 0, x: 100, scale: 0.9, rotateY: 20 }}
+            className="absolute right-6 top-6 bottom-6 w-[440px] z-[80]"
           >
-            <div className="h-full bg-white/5 backdrop-blur-3xl border border-white/10 rounded-2xl flex flex-col shadow-2xl overflow-hidden">
+            <GlassCard variant="heavy" className="h-full flex flex-col shadow-2xl overflow-hidden" glow glowColor="purple">
                {/* Visual Header */}
-               <div className="relative h-48 w-full overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] to-transparent z-10" />
-                    <div className="absolute inset-0 bg-purple-600/20 blur-3xl" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                         <LuStar className="w-24 h-24 text-white/5 animate-pulse" />
+               <div className="relative h-56 w-full overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent z-10" />
+                    
+                    {/* Dynamic Image/Pattern Placeholder */}
+                    <div className="absolute inset-0 bg-[#0a0a0f]">
+                         <motion.div 
+                            className="absolute inset-0 opacity-20"
+                            animate={{ 
+                                background: [
+                                    'radial-gradient(circle at 50% 50%, #4c1d95 0%, transparent 70%)',
+                                    'radial-gradient(circle at 30% 70%, #4c1d95 0%, transparent 70%)',
+                                    'radial-gradient(circle at 50% 50%, #4c1d95 0%, transparent 70%)'
+                                ]
+                            }}
+                            transition={{ duration: 10, repeat: Infinity }}
+                         />
+                         <div className="absolute inset-0 flex items-center justify-center">
+                              <LuOrbit className="w-32 h-32 text-white/5 animate-spin-slow" />
+                         </div>
                     </div>
                     
-                    {/* Floating Title */}
-                    <div className="absolute bottom-4 left-6 z-20">
-                        <NeonBadge color="purple" size="sm" className="mb-2">{selectedStar.type.toUpperCase()}</NeonBadge>
-                        <h3 className="text-2xl font-bold text-white tracking-wide">{selectedStar.title}</h3>
+                    {/* Floating Title & Metadata */}
+                    <div className="absolute bottom-6 left-8 z-20">
+                        <div className="flex items-center gap-3 mb-2">
+                            <NeonBadge color="purple" size="sm">{selectedStar.type.toUpperCase()}</NeonBadge>
+                            <span className="text-[10px] text-white/40 tracking-[.4em] uppercase font-light">Year {selectedStar.year}</span>
+                        </div>
+                        <h3 className="text-3xl font-serif italic text-white tracking-widest leading-tight">{selectedStar.title}</h3>
                     </div>
 
-                    <button 
+                    <motion.button 
                         onClick={() => setSelectedStar(null)}
-                        className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-white/20 transition-all hover:rotate-90"
+                        className="absolute top-6 right-6 z-20 w-10 h-10 rounded-2xl bg-white/5 backdrop-blur-3xl border border-white/10 flex items-center justify-center text-white/40 hover:text-white transition-all hover:rotate-90"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
                     >
-                        <LuX className="w-5 h-5" />
-                    </button>
+                        <LuX className="w-6 h-6" />
+                    </motion.button>
                </div>
 
               {/* Scrollable Content */}
-              <div className="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
+              <div className="flex-1 overflow-y-auto p-8 space-y-8 custom-scrollbar relative z-20">
                 
-                {/* AI Opinion - Liquid Glass Section */}
-                <div className="bg-white/5 rounded-xl p-4 border border-white/5">
-                    <h4 className="text-xs font-bold text-purple-400 uppercase tracking-widest mb-3 flex items-center gap-2">
-                        <LuSparkles className="w-3 h-3" />
-                        AI Analysis
-                    </h4>
-                    <p className="text-sm text-white/80 italic leading-relaxed">
-                        "{selectedStar.aiOpinion || "Analyzing story signature..."}"
-                    </p>
-                </div>
-
-                {/* Ratings & Metadata */}
-                <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-white/5 rounded-xl p-3 border border-white/5 flex flex-col items-center">
-                        <span className="text-[10px] text-white/40 uppercase tracking-tighter">Public Rating</span>
-                        <div className="flex items-center gap-1 mt-1">
-                            <span className="text-xl font-bold text-yellow-500">{selectedStar.publicRating || '—'}</span>
-                            <span className="text-xs text-white/20">/ 10</span>
-                        </div>
-                    </div>
-                    <div className="bg-white/5 rounded-xl p-3 border border-white/5 flex flex-col items-center">
-                        <span className="text-[10px] text-white/40 uppercase tracking-tighter">Similarity</span>
-                        <div className="flex items-center gap-1 mt-1">
-                            <span className="text-xl font-bold text-purple-400">{(selectedStar.similarityScore * 100).toFixed(0)}</span>
-                            <span className="text-xs text-white/20">%</span>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Cross-Media Dimensions */}
-                {selectedStar.dimensions && selectedStar.dimensions.length > 0 && (
-                    <div className="space-y-3">
-                        <h4 className="text-xs font-bold text-white/40 uppercase tracking-widest flex items-center gap-2">
-                            <LuGlobe className="w-3 h-3" />
-                            Omniverse Relations
+                {/* AI Analysis - Premium Box */}
+                <div className="relative group">
+                    <div className="absolute -inset-[1px] bg-gradient-to-r from-purple-500/20 to-transparent rounded-2xl blur-sm" />
+                    <div className="relative bg-black/40 rounded-2xl p-6 border border-white/5 backdrop-blur-3xl">
+                        <h4 className="text-[10px] font-bold text-purple-400 uppercase tracking-[.3em] mb-4 flex items-center gap-3">
+                            <LuSparkles className="w-3.5 h-3.5" />
+                            Core Resonance Analysis
                         </h4>
-                        <div className="space-y-2">
+                        <p className="text-[13px] text-white/70 italic leading-loose font-light">
+                            {selectedStar.aiOpinion || "Reconstructing story shards from the multiverse..."}
+                        </p>
+                    </div>
+                </div>
+
+                {/* Dimensions (Related Media) */}
+                {selectedStar.dimensions && selectedStar.dimensions.length > 0 && (
+                    <div className="space-y-4">
+                        <h4 className="text-[10px] font-bold text-white/30 uppercase tracking-[.3em] flex items-center gap-3">
+                            <LuGlobe className="w-3.5 h-3.5" />
+                            Cross-Media Dimensions
+                        </h4>
+                        <div className="grid grid-cols-1 gap-2.5">
                             {selectedStar.dimensions.map((dim: any, i: number) => (
-                                <div key={i} className="flex items-center justify-between bg-white/5 px-4 py-2 rounded-lg border border-white/5 group hover:bg-white/10 transition-all cursor-pointer">
-                                    <div className="flex flex-col">
-                                        <span className="text-xs text-white/80 font-medium">{dim.title}</span>
-                                        <span className="text-[10px] text-white/30">{dim.relation}</span>
+                                <motion.div 
+                                    key={i} 
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: i * 0.1 }}
+                                    className="flex items-center justify-between bg-white/5 px-5 py-3 rounded-xl border border-white/5 group hover:bg-white/10 hover:border-white/20 transition-all cursor-pointer"
+                                >
+                                    <div className="flex flex-col gap-0.5">
+                                        <span className="text-xs text-white/90 font-medium tracking-wide">{dim.title}</span>
+                                        <span className="text-[10px] text-white/30 uppercase tracking-widest">{dim.relation}</span>
                                     </div>
-                                    <NeonBadge color={dim.type === 'anime' ? 'blue' : 'gold'} size="sm">{dim.type}</NeonBadge>
-                                </div>
+                                    <NeonBadge color={dim.type === 'anime' ? 'blue' : 'gold'} size="xs">{dim.type}</NeonBadge>
+                                </motion.div>
                             ))}
                         </div>
                     </div>
                 )}
 
-
-                {/* DNA Visualization */}
-                <div className="space-y-2">
-                  <h4 className="text-sm font-medium text-white/80 flex items-center gap-2">
-                    <LuDna className="w-4 h-4" />
-                    Story DNA
+                {/* DNA Sequence Vis - Luxury Progress Sliders */}
+                <div className="space-y-5">
+                  <h4 className="text-[10px] font-bold text-white/30 uppercase tracking-[.3em] flex items-center gap-3">
+                    <LuDna className="w-3.5 h-3.5" />
+                    Story DNA Sequence
                   </h4>
-                  <div className="space-y-1">
+                  <div className="space-y-4">
                     {Object.entries(selectedStar.dna)
                       .filter(([key]) => key !== 'selectedGenes')
-                      .map(([key, value]) => (
-                        <div key={key} className="flex items-center gap-2">
-                          <span className="text-xs text-white/40 w-20">{translateDNAKey(key)}</span>
-                          <div className="flex-1 h-1.5 bg-white/10 rounded-full overflow-hidden">
-                            <div 
-                              className="h-full bg-gradient-to-r from-purple-500 to-pink-500"
-                              style={{ width: `${value as number}%` }}
-                            />
+                      .map(([key, value], idx) => (
+                        <div key={key} className="space-y-2">
+                          <div className="flex justify-between items-center text-[10px] uppercase tracking-widest text-white/40">
+                             <span>{translateDNAKey(key)}</span>
+                             <span className="text-purple-400/80">{(value as any) as number}%</span>
                           </div>
-                          <span className="text-xs text-white/60 w-8">{value as number}%</span>
+                          <div className="h-1 bg-white/5 rounded-full overflow-hidden relative">
+                             <motion.div 
+                                className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full"
+                                initial={{ width: 0 }}
+                                animate={{ width: `${(value as any) as number}%` }}
+                                transition={{ duration: 1.5, delay: 0.2 + (idx * 0.05), ease: "circOut" }}
+                             >
+                                <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent)] animate-shimmer" style={{ backgroundSize: '200% 100%' }} />
+                             </motion.div>
+                          </div>
                         </div>
                       ))}
                   </div>
                 </div>
 
-                {/* Genes */}
-                <div className="flex flex-wrap gap-1">
-                  {selectedStar.dna.selectedGenes.map((gene) => (
-                    <span 
-                      key={gene}
-                      className="px-2 py-1 bg-purple-500/20 rounded text-xs text-purple-300"
-                    >
-                      {translateGene(gene)}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Actions */}
-                <div className="pt-4 space-y-2">
-                  <button className="w-full py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-medium flex items-center justify-center gap-2 transition-colors">
+                {/* Actions - Premium Buttons */}
+                <div className="pt-6 grid grid-cols-2 gap-4">
+                  <motion.button 
+                    whileHover={{ scale: 1.02, backgroundColor: 'rgba(139, 92, 246, 0.9)' }}
+                    whileTap={{ scale: 0.98 }}
+                    className="py-3 rounded-2xl bg-purple-600 text-white text-xs font-bold tracking-[.2em] uppercase flex items-center justify-center gap-2 transition-all shadow-[0_10px_30px_rgba(139,92,246,0.3)]"
+                  >
                     <LuExternalLink className="w-4 h-4" />
-                    Read Now
-                  </button>
-                  <button className="w-full py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium flex items-center justify-center gap-2 transition-colors">
-                    <LuSparkles className="w-4 h-4" />
-                    Add to Favorites
-                  </button>
+                    Dive In
+                  </motion.button>
+                  <motion.button 
+                    whileHover={{ scale: 1.02, backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
+                    whileTap={{ scale: 0.98 }}
+                    className="py-3 rounded-2xl bg-white/5 border border-white/10 text-white/80 text-xs font-bold tracking-[.2em] uppercase flex items-center justify-center gap-2 transition-all"
+                  >
+                    <LuStar className="w-4 h-4" />
+                    Collect
+                  </motion.button>
                 </div>
               </div>
-            </div>
+            </GlassCard>
           </motion.div>
         )}
       </AnimatePresence>

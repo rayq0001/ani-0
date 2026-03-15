@@ -7,6 +7,7 @@ import { Bloom, EffectComposer, Noise, ChromaticAberration } from '@react-three/
 import * as THREE from 'three'
 import { NebulaSystem } from './NebulaSystem'
 import { HighResStarField } from './HighResStarField'
+import { SpaceDust } from './SpaceDust'
 
 export const SpaceScene = () => {
     return (
@@ -22,18 +23,23 @@ export const SpaceScene = () => {
                     <group>
                         <NebulaSystem />
                         <HighResStarField count={20000} />
+                        <SpaceDust count={150} />
+                        
+                        {/* Ambient Deep Glow */}
+                        <pointLight position={[0, 0, 0]} intensity={2} color="#4c1d95" />
                     </group>
 
-                    <EffectComposer>
+                    <EffectComposer disableNormalPass>
                         <Bloom 
-                            intensity={1.5}
-                            luminanceThreshold={0.2}
-                            luminanceSmoothing={0.9}
-                            height={480}
+                            intensity={1.8}
+                            luminanceThreshold={0.15}
+                            luminanceSmoothing={0.95}
+                            mipmapBlur
                         />
-                        <Noise opacity={0.02} />
+                        <Noise opacity={0.015} premultiply />
                         <ChromaticAberration 
-                            offset={new THREE.Vector2(0.0005, 0.0005)} 
+                            offset={new THREE.Vector2(0.0008, 0.0008)} 
+                            radialModulation={true}
                         />
                     </EffectComposer>
                 </Suspense>

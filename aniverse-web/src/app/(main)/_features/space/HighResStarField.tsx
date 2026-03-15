@@ -47,27 +47,52 @@ export const HighResStarField = ({ count = 15000 }) => {
         // Subtle rotation for parallax
         pointsRef.current.rotation.y = t * 0.005
         pointsRef.current.rotation.x = t * 0.002
+
+        // Update time uniform
+        if (pointsRef.current.material instanceof THREE.ShaderMaterial) {
+            pointsRef.current.material.uniforms.uTime.value = t
+        }
     })
 
     const vertexShader = `
+        uniform float uTime;
         attribute float size;
         attribute vec3 color;
         varying vec3 vColor;
+        varying float vTwinkle;
+
         void main() {
             vColor = color;
+            
+            // Twinkle effect based on position and time
+            float twinkle = sin(uTime * (1.0 + fract(position.x * 123.456)) + position.y * 0.01) * 0.5 + 0.5;
+            vTwinkle = twinkle;
+
             vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-            gl_PointSize = size * (300.0 / -mvPosition.z);
+            
+            // Size attenuation with twinkling
+            float finalSize = size * (0.8 + 0.4 * twinkle);
+            gl_PointSize = finalSize * (300.0 / -mvPosition.z);
             gl_Position = projectionMatrix * mvPosition;
         }
     `
 
     const fragmentShader = `
         varying vec3 vColor;
+        varying float vTwinkle;
+
         void main() {
             float dist = distance(gl_PointCoord, vec2(0.5, 0.5));
             if (dist > 0.5) discard;
+            
+            // Soft circular star with core intensity
             float strength = 1.0 - (dist * 2.0);
-            gl_FragColor = vec4(vColor, strength);
+            strength = pow(strength, 1.5); // Sharper core
+            
+            // Apply twinkle to alpha
+            float alpha = strength * (0.6 + 0.4 * vTwinkle);
+            
+            gl_FragColor = vec4(vColor, alpha);
         }
     `
 
@@ -98,7 +123,7 @@ export const HighResStarField = ({ count = 15000 }) => {
             </bufferGeometry>
             <shaderMaterial
                 uniforms={{
-                    time: { value: 0 }
+                    uTime: { value: 0 }
                 }}
                 vertexShader={vertexShader}
                 fragmentShader={fragmentShader}
