@@ -2,8 +2,8 @@ package summary
 
 import (
 	"fmt"
-	"seanime/internal/api/anilist"
-	"seanime/internal/library/anime"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/library/anime"
 	"time"
 
 	"github.com/google/uuid"

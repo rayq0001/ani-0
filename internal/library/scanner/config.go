@@ -1,6 +1,6 @@
 package scanner
 
-import "seanime/internal/library/anime"
+import "aniverse/internal/library/anime"
 
 type Config struct {
 	Matching  MatchingConfig  `json:"matching"`

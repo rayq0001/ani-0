@@ -3,7 +3,7 @@ package nakama
 import (
 	"encoding/json"
 	"errors"
-	"seanime/internal/events"
+	"aniverse/internal/events"
 	"time"
 )
 

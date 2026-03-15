@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"seanime/internal/database/models"
-	"seanime/internal/util"
+	"aniverse/internal/database/models"
+	"aniverse/internal/util"
 	"testing"
 	"time"
 

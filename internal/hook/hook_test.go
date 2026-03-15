@@ -2,7 +2,7 @@ package hook
 
 import (
 	"errors"
-	"seanime/internal/hook_resolver"
+	"aniverse/internal/hook_resolver"
 	"testing"
 )
 

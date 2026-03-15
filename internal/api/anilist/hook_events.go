@@ -1,6 +1,6 @@
 package anilist
 
-import "seanime/internal/hook_resolver"
+import "aniverse/internal/hook_resolver"
 
 // ListMissedSequelsRequestedEvent is triggered when the list missed sequels request is requested.
 // Prevent default to skip the default behavior and return your own data.

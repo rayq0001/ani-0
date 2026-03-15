@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
-	"seanime/internal/api/anilist"
-	"seanime/internal/updater"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/updater"
+	"aniverse/internal/util"
 
 	"github.com/labstack/echo/v4"
 )
@@ -167,7 +167,7 @@ func (h *Handler) HandleDownloadMacDenshiUpdate(c echo.Context) error {
 	}
 
 	// Create temp file for download
-	zipPath := filepath.Join(downloadsDir, fmt.Sprintf("seanime-denshi-%s_MacOS_arm64.zip", b.Version))
+	zipPath := filepath.Join(downloadsDir, fmt.Sprintf("aniverse-denshi-%s_MacOS_arm64.zip", b.Version))
 	zipFile, err := os.Create(zipPath)
 	if err != nil {
 		return h.RespondWithError(c, fmt.Errorf("failed to create zip file: %w", err))
@@ -184,7 +184,7 @@ func (h *Handler) HandleDownloadMacDenshiUpdate(c echo.Context) error {
 	h.App.Logger.Info().Str("path", zipPath).Msg("Downloaded update")
 
 	// Extract the zip file
-	extractDir := filepath.Join(downloadsDir, fmt.Sprintf("seanime-denshi-%s", b.Version))
+	extractDir := filepath.Join(downloadsDir, fmt.Sprintf("aniverse-denshi-%s", b.Version))
 	err = os.MkdirAll(extractDir, 0755)
 	if err != nil {
 		return h.RespondWithError(c, fmt.Errorf("failed to create extract directory: %w", err))
@@ -197,9 +197,9 @@ func (h *Handler) HandleDownloadMacDenshiUpdate(c echo.Context) error {
 	}
 
 	// Find the .app bundle
-	appPath := filepath.Join(extractDir, "Seanime Denshi.app")
+	appPath := filepath.Join(extractDir, "Aniverse Denshi.app")
 	if _, err := os.Stat(appPath); os.IsNotExist(err) {
-		return h.RespondWithError(c, fmt.Errorf("Seanime Denshi.app not found in extracted files"))
+		return h.RespondWithError(c, fmt.Errorf("Aniverse Denshi.app not found in extracted files"))
 	}
 
 	// Run xattr -c to remove quarantine attributes
@@ -210,7 +210,7 @@ func (h *Handler) HandleDownloadMacDenshiUpdate(c echo.Context) error {
 	}
 
 	// Move to Applications folder
-	applicationsPath := "/Applications/Seanime Denshi.app"
+	applicationsPath := "/Applications/Aniverse Denshi.app"
 	h.App.Logger.Info().Str("destination", applicationsPath).Msg("Moving to Applications")
 
 	// Remove existing app if it exists

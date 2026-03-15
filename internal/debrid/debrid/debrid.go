@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"path/filepath"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 )
 
 var (

@@ -5,8 +5,8 @@ import (
 	"os"
 	"path"
 	"path/filepath"
-	"seanime/internal/mediastream/videofile"
-	"seanime/internal/util/result"
+	"aniverse/internal/mediastream/videofile"
+	"aniverse/internal/util/result"
 	"time"
 
 	"github.com/rs/zerolog"

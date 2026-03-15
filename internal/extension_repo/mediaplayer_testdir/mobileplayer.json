@@ -6,7 +6,7 @@
   "type": "mediaplayer",
   "manifestURI": "",
   "language": "go",
-  "author": "Seanime",
+  "author": "Aniverse",
   "config": {
     "requiresConfig": true,
     "fields": [

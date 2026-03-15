@@ -3,7 +3,7 @@ package doh
 import (
 	"context"
 	"net"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 
 	"github.com/ncruces/go-dns"
 	"github.com/rs/zerolog"

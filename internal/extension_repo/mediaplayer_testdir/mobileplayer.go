@@ -4,7 +4,7 @@ package mediaplayer_testdir
 //	"fmt"
 //	"strings"
 //
-//	hibikemediaplayer "seanime/internal/extension/hibike/mediaplayer"
+//	hibikemediaplayer "aniverse/internal/extension/hibike/mediaplayer"
 //)
 //
 //type (

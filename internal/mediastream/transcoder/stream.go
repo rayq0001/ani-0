@@ -10,7 +10,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"slices"
 	"strings"
 	"sync"

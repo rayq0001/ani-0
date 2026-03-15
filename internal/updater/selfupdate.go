@@ -7,8 +7,8 @@ import (
 	"os/exec"
 	"path/filepath"
 	"runtime"
-	"seanime/internal/constants"
-	"seanime/internal/util"
+	"aniverse/internal/constants"
+	"aniverse/internal/util"
 	"slices"
 	"strings"
 	"syscall"
@@ -20,7 +20,7 @@ import (
 )
 
 const (
-	tempReleaseDir = "seanime_new_release"
+	tempReleaseDir = "aniverse_new_release"
 	backupDirName  = "backup_restore_if_failed"
 )
 
@@ -45,12 +45,12 @@ func NewSelfUpdater() *SelfUpdater {
 		updater:         New(constants.Version, logger, nil),
 	}
 
-	ret.tmpExecutableName = "seanime.exe.old"
+	ret.tmpExecutableName = "aniverse.exe.old"
 	switch runtime.GOOS {
 	case "windows":
-		ret.tmpExecutableName = "seanime.exe.old"
+		ret.tmpExecutableName = "aniverse.exe.old"
 	default:
-		ret.tmpExecutableName = "seanime.old"
+		ret.tmpExecutableName = "aniverse.old"
 	}
 
 	go func() {
@@ -93,15 +93,15 @@ func (su *SelfUpdater) recover(assetUrl string) {
 		_, _ = su.updater.DownloadLatestRelease(assetUrl, su.fallbackDest)
 	}
 
-	su.logger.Error().Msg("selfupdate: Failed to install update. Update downloaded to 'seanime_new_release'")
+	su.logger.Error().Msg("selfupdate: Failed to install update. Update downloaded to 'aniverse_new_release'")
 }
 
 func getExePath() string {
-	exe, err := os.Executable() // /path/to/seanime.exe
+	exe, err := os.Executable() // /path/to/aniverse.exe
 	if err != nil {
 		return ""
 	}
-	exePath, err := filepath.EvalSymlinks(exe) // /path/to/seanime.exe
+	exePath, err := filepath.EvalSymlinks(exe) // /path/to/aniverse.exe
 	if err != nil {
 		return ""
 	}
@@ -122,12 +122,12 @@ func (su *SelfUpdater) Run() error {
 	switch runtime.GOOS {
 	case "windows":
 		files = []string{
-			"seanime.exe",
+			"aniverse.exe",
 			"LICENSE",
 		}
 	default:
 		files = []string{
-			"seanime",
+			"aniverse",
 			"LICENSE",
 		}
 	}
@@ -154,7 +154,7 @@ func (su *SelfUpdater) Run() error {
 
 	su.logger.Info().Msg("selfupdate: Downloading latest release")
 
-	// Download the asset to exeDir/seanime_tmp
+	// Download the asset to exeDir/aniverse_tmp
 	newReleaseDir, err := su.updater.DownloadLatestReleaseN(asset.BrowserDownloadUrl, exeDir, tempReleaseDir)
 	if err != nil {
 		su.logger.Error().Err(err).Msg("selfupdate: Failed to download latest release")
@@ -174,7 +174,7 @@ func (su *SelfUpdater) Run() error {
 
 	// Backup the current assets
 	// Copy the files to the backup directory
-	// seanime.exe + /backup_restore_if_failed/seanime.exe
+	// aniverse.exe + /backup_restore_if_failed/aniverse.exe
 	// LICENSE + /backup_restore_if_failed/LICENSE
 	for _, file := range files {
 		// We don't check for errors here because we don't want to stop the update process if LICENSE is not found for example
@@ -188,12 +188,12 @@ func (su *SelfUpdater) Run() error {
 	failedEntryNames := make([]string, 0)
 
 	// Rename the current assets
-	// seanime.exe -> seanime.exe.old
+	// aniverse.exe -> aniverse.exe.old
 	// LICENSE -> LICENSE.old
 	for _, file := range files {
 		err = os.Rename(filepath.Join(exeDir, file), filepath.Join(exeDir, file+".old"))
 		// We care about the error ONLY if the file is the executable
-		if err != nil && (file == "seanime" || file == "seanime.exe") {
+		if err != nil && (file == "aniverse" || file == "aniverse.exe") {
 			renamingFailed = true
 			failedEntryNames = append(failedEntryNames, file)
 			//su.recover()
@@ -250,7 +250,7 @@ func (su *SelfUpdater) Run() error {
 	}
 
 	// Remove .old files (will fail on Windows for executable)
-	// Remove seanime.exe.old and LICENSE.old
+	// Remove aniverse.exe.old and LICENSE.old
 	for _, file := range files {
 		_ = os.RemoveAll(filepath.Join(exeDir, file+".old"))
 	}

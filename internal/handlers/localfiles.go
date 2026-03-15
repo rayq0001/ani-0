@@ -4,10 +4,10 @@ import (
 	"errors"
 	"fmt"
 	"os"
-	"seanime/internal/database/db_bridge"
-	"seanime/internal/library/anime"
-	"seanime/internal/library/filesystem"
-	"seanime/internal/library_explorer"
+	"aniverse/internal/database/db_bridge"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/library/filesystem"
+	"aniverse/internal/library_explorer"
 	"time"
 
 	"github.com/goccy/go-json"
@@ -39,7 +39,7 @@ func (h *Handler) HandleDumpLocalFilesToFile(c echo.Context) error {
 		return h.RespondWithError(c, err)
 	}
 
-	filename := fmt.Sprintf("seanime-localfiles-%s.json", time.Now().Format("2006-01-02_15-04-05"))
+	filename := fmt.Sprintf("aniverse-localfiles-%s.json", time.Now().Format("2006-01-02_15-04-05"))
 
 	c.Response().Header().Set("Content-Disposition", fmt.Sprintf("attachment; filename=%s", filename))
 	c.Response().Header().Set("Content-Type", "application/json")

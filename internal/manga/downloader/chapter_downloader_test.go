@@ -1,11 +1,11 @@
 package chapter_downloader
 
 import (
-	"seanime/internal/database/db"
-	"seanime/internal/events"
-	hibikemanga "seanime/internal/extension/hibike/manga"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
+	"aniverse/internal/database/db"
+	"aniverse/internal/events"
+	hibikemanga "aniverse/internal/extension/hibike/manga"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
 	"testing"
 	"time"
 

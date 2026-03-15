@@ -3,9 +3,9 @@ package transcoder
 import (
 	"bufio"
 	"path/filepath"
-	"seanime/internal/mediastream/videofile"
-	"seanime/internal/util"
-	"seanime/internal/util/result"
+	"aniverse/internal/mediastream/videofile"
+	"aniverse/internal/util"
+	"aniverse/internal/util/result"
 	"strconv"
 	"strings"
 	"sync"

@@ -1,12 +1,12 @@
 package fillermanager
 
 import (
-	"seanime/internal/api/filler"
-	"seanime/internal/database/db"
-	"seanime/internal/hook"
-	"seanime/internal/library/anime"
-	"seanime/internal/onlinestream"
-	"seanime/internal/util"
+	"aniverse/internal/api/filler"
+	"aniverse/internal/database/db"
+	"aniverse/internal/hook"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/onlinestream"
+	"aniverse/internal/util"
 	"strconv"
 	"sync"
 	"time"

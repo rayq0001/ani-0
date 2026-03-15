@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"runtime"
-	"seanime/internal/util/result"
+	"aniverse/internal/util/result"
 	"sync"
 	"sync/atomic"
 

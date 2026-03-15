@@ -2,10 +2,10 @@ package manga
 
 import (
 	"fmt"
-	"seanime/internal/extension"
-	hibikemanga "seanime/internal/extension/hibike/manga"
-	manga_providers "seanime/internal/manga/providers"
-	"seanime/internal/util"
+	"aniverse/internal/extension"
+	hibikemanga "aniverse/internal/extension/hibike/manga"
+	manga_providers "aniverse/internal/manga/providers"
+	"aniverse/internal/util"
 	"sync"
 )
 

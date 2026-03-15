@@ -1,8 +1,8 @@
 package discordrpc_presence
 
 import (
-	"seanime/internal/database/models"
-	"seanime/internal/util"
+	"aniverse/internal/database/models"
+	"aniverse/internal/util"
 	"testing"
 	"time"
 )

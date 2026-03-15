@@ -378,7 +378,7 @@ function logEnvironmentInfo() {
 
 const updateConfig = {
     provider: "generic",
-    url: "https://github.com/5rahim/seanime/releases/latest/download",
+    url: "https://github.com/5rahim/aniverse/releases/latest/download",
     channel: "latest",
     allowPrerelease: false,
     verifyUpdateCodeSignature: false,
@@ -524,13 +524,13 @@ function createTray() {
         }
     }
     ] : []), {
-        id: "quit", label: "Quit Seanime", click: () => {
+        id: "quit", label: "Quit Aniverse", click: () => {
             cleanupAndExit()
         }
     }
     ])
 
-    tray.setToolTip("Seanime")
+    tray.setToolTip("Aniverse")
 
     if (process.platform !== "darwin") {
         tray.setContextMenu(contextMenu)
@@ -561,10 +561,10 @@ function createTray() {
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Seanime server
+// Aniverse server
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-async function launchSeanimeServer(isRestart) {
+async function launchAniverseServer(isRestart) {
     return new Promise((resolve, reject) => {
         // TEST ONLY: Check for -no-binary flag
         if (process.argv.includes("-no-binary")) {
@@ -586,13 +586,13 @@ async function launchSeanimeServer(isRestart) {
         // Determine the correct binary to use based on platform and architecture
         let binaryName = ""
         if (process.platform === "win32") {
-            binaryName = "seanime-server-windows.exe"
+            binaryName = "aniverse-server-windows.exe"
         } else if (process.platform === "darwin") {
             const arch = process.arch === "arm64" ? "arm64" : "amd64"
-            binaryName = `seanime-server-darwin-${arch}`
+            binaryName = `aniverse-server-darwin-${arch}`
         } else if (process.platform === "linux") {
             const arch = process.arch === "arm64" ? "arm64" : "amd64"
-            binaryName = `seanime-server-linux-${arch}`
+            binaryName = `aniverse-server-linux-${arch}`
         }
 
         let binaryPath
@@ -634,7 +634,7 @@ async function launchSeanimeServer(isRestart) {
                 console.log("[Main] TEST_DATADIR", process.env.TEST_DATADIR)
                 args.push("-datadir", process.env.TEST_DATADIR)
             } else {
-                const devDataDir = path.join(app.getPath("appData"), "Seanime-dev")
+                const devDataDir = path.join(app.getPath("appData"), "Aniverse-dev")
                 args.push("-datadir", devDataDir)
             }
         }
@@ -714,7 +714,7 @@ async function launchSeanimeServer(isRestart) {
                 // show crash screen
                 if (crashScreen && !crashScreen.isDestroyed()) {
                     crashScreen.show()
-                    crashScreen.webContents.send("crash", `Seanime server process terminated with status: ${code}. Closing in 10 seconds.`)
+                    crashScreen.webContents.send("crash", `Aniverse server process terminated with status: ${code}. Closing in 10 seconds.`)
 
                     setTimeout(() => {
                         app.exit(1)
@@ -1023,7 +1023,7 @@ app.whenReady().then(async () => {
     // Launch server
     try {
         logStartupEvent("Attempting to launch server")
-        await launchSeanimeServer(false)
+        await launchAniverseServer(false)
         logStartupEvent("Server launched successfully")
         // Check for updates only after server launch and main window setup is successful
         autoUpdater.checkForUpdatesAndNotify()
@@ -1145,7 +1145,7 @@ app.whenReady().then(async () => {
         }
         // devnote: don't set this to false or it will trigger the crashscreen
         // serverStarted = false;
-        launchSeanimeServer(true).catch(console.error)
+        launchAniverseServer(true).catch(console.error)
     })
 
     ipcMain.on("kill-server", () => {

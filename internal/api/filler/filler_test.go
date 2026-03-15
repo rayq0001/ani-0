@@ -1,7 +1,7 @@
 package filler
 
 import (
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"testing"
 
 	"github.com/davecgh/go-spew/spew"

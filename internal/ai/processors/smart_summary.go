@@ -3,7 +3,7 @@ package processors
 import (
 	"context"
 	"fmt"
-	"seanime/internal/ai/gemini"
+	"aniverse/internal/ai/gemini"
 	"strings"
 	"time"
 )

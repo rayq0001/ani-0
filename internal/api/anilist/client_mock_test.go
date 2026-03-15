@@ -3,7 +3,7 @@ package anilist
 import (
 	"context"
 	"os"
-	"seanime/internal/test_utils"
+	"aniverse/internal/test_utils"
 	"testing"
 
 	"github.com/goccy/go-json"

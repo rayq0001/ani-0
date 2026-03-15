@@ -1,7 +1,7 @@
 package plugin_ui
 
 import (
-	"seanime/internal/notifier"
+	"aniverse/internal/notifier"
 
 	"github.com/dop251/goja"
 )

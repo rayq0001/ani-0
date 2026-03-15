@@ -4,9 +4,9 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"seanime/internal/ai/gemini"
-	"seanime/internal/api/anilist"
-	"seanime/internal/database/db"
+	"aniverse/internal/ai/gemini"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/database/db"
 	"strings"
 	"sync"
 	"time"
@@ -264,12 +264,12 @@ func (s *Service) Chat(ctx context.Context, req *ChatRequest) (*ChatResponse, er
 // buildChatSystemContext builds the system context for chat
 func buildChatSystemContext(ctx *ChatContext) string {
 	if ctx == nil {
-		return `You are an AI assistant for a manga/manhwa reader called Seanime.
+		return `You are an AI assistant for a manga/manhwa reader called Aniverse.
 You help users understand the story, characters, and events in the manga they are reading.
 Be helpful, concise, and avoid spoilers for chapters the user hasn't read yet.`
 	}
 
-	return fmt.Sprintf(`You are an AI assistant for a manga/manhwa reader called Seanime.
+	return fmt.Sprintf(`You are an AI assistant for a manga/manhwa reader called Aniverse.
 The user is currently reading "%s" (Chapter %d of %d).
 You are connected to the provider: %s
 

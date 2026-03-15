@@ -1,6 +1,6 @@
 package anizip
 
-import "seanime/internal/hook_resolver"
+import "aniverse/internal/hook_resolver"
 
 // AnizipMediaRequestedEvent is triggered when the AniZip media is requested.
 // Prevent default to skip the default behavior and return your own data.

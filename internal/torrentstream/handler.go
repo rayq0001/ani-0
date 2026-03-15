@@ -2,7 +2,7 @@ package torrentstream
 
 import (
 	"net/http"
-	"seanime/internal/util/torrentutil"
+	"aniverse/internal/util/torrentutil"
 	"strconv"
 	"time"
 

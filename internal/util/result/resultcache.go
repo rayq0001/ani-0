@@ -1,8 +1,8 @@
 package result
 
 import (
-	"seanime/internal/constants"
-	"seanime/internal/util"
+	"aniverse/internal/constants"
+	"aniverse/internal/util"
 	"time"
 )
 

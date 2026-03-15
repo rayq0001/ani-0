@@ -3,10 +3,10 @@ package offline_platform
 import (
 	"context"
 	"errors"
-	"seanime/internal/api/anilist"
-	"seanime/internal/local"
-	"seanime/internal/platforms/platform"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/local"
+	"aniverse/internal/platforms/platform"
+	"aniverse/internal/util"
 
 	"github.com/rs/zerolog"
 )

@@ -4,8 +4,8 @@ import (
 	"errors"
 	"io"
 	"net/http"
-	"seanime/internal/hook"
-	"seanime/internal/util/result"
+	"aniverse/internal/hook"
+	"aniverse/internal/util/result"
 	"strconv"
 
 	"github.com/goccy/go-json"

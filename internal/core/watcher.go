@@ -1,8 +1,8 @@
 package core
 
 import (
-	"seanime/internal/library/scanner"
-	"seanime/internal/util"
+	"aniverse/internal/library/scanner"
+	"aniverse/internal/util"
 	"sync"
 )
 

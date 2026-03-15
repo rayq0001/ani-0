@@ -1,17 +1,17 @@
 package autodownloader
 
 import (
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata_provider"
-	"seanime/internal/database/db"
-	"seanime/internal/database/models"
-	"seanime/internal/events"
-	"seanime/internal/extension"
-	hibiketorrent "seanime/internal/extension/hibike/torrent"
-	"seanime/internal/test_utils"
-	"seanime/internal/torrents/torrent"
-	"seanime/internal/util"
-	"seanime/internal/util/filecache"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata_provider"
+	"aniverse/internal/database/db"
+	"aniverse/internal/database/models"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
+	hibiketorrent "aniverse/internal/extension/hibike/torrent"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/torrents/torrent"
+	"aniverse/internal/util"
+	"aniverse/internal/util/filecache"
 	"testing"
 
 	"github.com/stretchr/testify/require"

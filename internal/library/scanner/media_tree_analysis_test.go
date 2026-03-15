@@ -2,12 +2,12 @@ package scanner
 
 import (
 	"context"
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata_provider"
-	"seanime/internal/database/db"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
-	"seanime/internal/util/limiter"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata_provider"
+	"aniverse/internal/database/db"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
+	"aniverse/internal/util/limiter"
 	"testing"
 	"time"
 

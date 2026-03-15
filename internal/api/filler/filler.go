@@ -2,7 +2,7 @@ package filler
 
 import (
 	"fmt"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"strings"
 	"time"
 

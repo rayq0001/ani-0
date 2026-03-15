@@ -1,6 +1,6 @@
 package hook
 
-import "seanime/internal/hook_resolver"
+import "aniverse/internal/hook_resolver"
 
 type HookTriggerOptions[T hook_resolver.Resolver] struct {
 	Event              T

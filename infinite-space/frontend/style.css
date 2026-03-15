@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #030308;
+    font-family: 'Cairo', sans-serif;
+    color: white;
+}
+
+#canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* خلفية */
+}
+
+#ui-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.icon-container svg {
+    filter: drop-shadow(0 0 15px rgba(162, 85, 255, 0.6));
+    margin-bottom: 10px;
+}
+
+.main-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin: 0;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.4), 0 0 60px rgba(162, 85, 255, 0.6);
+    letter-spacing: -2px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #b3b3cc;
+    margin-bottom: 40px;
+}
+
+/* تصميم شريط البحث الزجاجي */
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(30, 30, 45, 0.5); /* زجاجي */
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 5px 5px 5px 20px;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.02);
+    transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+    border-color: rgba(162, 85, 255, 0.5);
+    box-shadow: 0 0 40px rgba(162, 85, 255, 0.3);
+    transform: scale(1.02);
+}
+
+.search-icon {
+    width: 24px;
+    height: 24px;
+    color: #888;
+    margin-left: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Cairo', sans-serif;
+    outline: none;
+}
+
+.search-box input::placeholder {
+    color: #888;
+}
+
+.explore-btn {
+    background: linear-gradient(90deg, #7b2cbf, #9d4edd);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Cairo', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(123, 44, 191, 0.6);
+}
+
+.explore-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(157, 78, 221, 0.8);
+}
+
+/* الأزرار السفلية */
+.tags-container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tag-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ccc;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: 'Cairo', sans-serif;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.tag-btn:hover, .tag-btn.active {
+    background: rgba(162, 85, 255, 0.2);
+    border-color: #a255ff;
+    color: white;
+    box-shadow: 0 0 15px rgba(162, 85, 255, 0.4);
+}
+
+/* رسالة السفر */
+#travel-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    text-shadow: 0 0 20px #fff;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#travel-message.show {
+    opacity: 1;
+}
+
+.hidden {
+    pointer-events: none;
+}

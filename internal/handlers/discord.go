@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	discordrpc_presence "seanime/internal/discordrpc/presence"
+	discordrpc_presence "aniverse/internal/discordrpc/presence"
 
 	"github.com/labstack/echo/v4"
 )

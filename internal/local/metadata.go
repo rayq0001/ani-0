@@ -1,10 +1,10 @@
 package local
 
 import (
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata"
-	"seanime/internal/api/metadata_provider"
-	"seanime/internal/util/result"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata"
+	"aniverse/internal/api/metadata_provider"
+	"aniverse/internal/util/result"
 
 	"github.com/pkg/errors"
 )

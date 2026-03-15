@@ -28,7 +28,7 @@
 ## Phase 2: Frontend Implementation ✅ COMPLETE
 
 ### 2.1 AI Settings Panel ✅
-- [x] Create `seanime-web/src/app/(main)/settings/_containers/ai-settings.tsx`
+- [x] Create `aniverse-web/src/app/(main)/settings/_containers/ai-settings.tsx`
 - [x] Add API key configuration UI
 - [x] Add feature toggles
 

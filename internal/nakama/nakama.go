@@ -6,17 +6,17 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"seanime/internal/database/models"
-	debrid_client "seanime/internal/debrid/client"
-	"seanime/internal/directstream"
-	"seanime/internal/events"
-	"seanime/internal/library/playbackmanager"
-	"seanime/internal/nativeplayer"
-	"seanime/internal/platforms/platform"
-	"seanime/internal/torrentstream"
-	"seanime/internal/util"
-	"seanime/internal/util/result"
-	"seanime/internal/videocore"
+	"aniverse/internal/database/models"
+	debrid_client "aniverse/internal/debrid/client"
+	"aniverse/internal/directstream"
+	"aniverse/internal/events"
+	"aniverse/internal/library/playbackmanager"
+	"aniverse/internal/nativeplayer"
+	"aniverse/internal/platforms/platform"
+	"aniverse/internal/torrentstream"
+	"aniverse/internal/util"
+	"aniverse/internal/util/result"
+	"aniverse/internal/videocore"
 	"strings"
 	"sync"
 	"time"
@@ -30,7 +30,7 @@ type ConnectionMode string
 
 const (
 	ConnectionModeDirect ConnectionMode = "direct" // H2P using Websockets
-	ConnectionModeRooms  ConnectionMode = "rooms"  // Using the Seanime Rooms relay API
+	ConnectionModeRooms  ConnectionMode = "rooms"  // Using the Aniverse Rooms relay API
 )
 
 type Manager struct {

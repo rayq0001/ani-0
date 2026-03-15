@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"seanime/internal/constants"
-	"seanime/internal/util"
+	"aniverse/internal/constants"
+	"aniverse/internal/util"
 	"strconv"
 
 	"github.com/rs/zerolog"
@@ -66,7 +66,7 @@ type Config struct {
 }
 
 type ConfigOptions struct {
-	Flags           SeanimeFlags
+	Flags           AniverseFlags
 	OnVersionChange []func(oldVersion string, newVersion string)
 	EmbeddedLogo    []byte // The embedded logo
 }
@@ -120,7 +120,7 @@ func NewConfig(options *ConfigOptions, logger *zerolog.Logger) (*Config, error) 
 	// Create assets directory if it doesn't exist
 	_ = os.MkdirAll(filepath.Join(dataDir, "assets"), 0700)
 
-	// Set Seanime's default custom environment variables
+	// Set Aniverse's default custom environment variables
 	if err = setDataDirEnv(dataDir); err != nil {
 		return nil, err
 	}
@@ -138,7 +138,7 @@ func NewConfig(options *ConfigOptions, logger *zerolog.Logger) (*Config, error) 
 	// Use the binary's directory as the working directory environment variable on macOS
 	viper.SetDefault("server.useBinaryPath", true)
 	// viper.SetDefault("server.systray", true)
-	viper.SetDefault("database.name", "seanime")
+	viper.SetDefault("database.name", "aniverse")
 	viper.SetDefault("web.assetDir", "$SEANIME_DATA_DIR/assets")
 	viper.SetDefault("cache.dir", "$SEANIME_DATA_DIR/cache")
 	viper.SetDefault("cache.transcodeDir", "$SEANIME_DATA_DIR/cache/transcode")
@@ -519,7 +519,7 @@ func loadLogo(embeddedLogo []byte, dataDir string) (err error) {
 		return nil
 	}
 
-	logoPath := filepath.Join(dataDir, "seanime-logo.png")
+	logoPath := filepath.Join(dataDir, "aniverse-logo.png")
 	if _, err = os.Stat(logoPath); os.IsNotExist(err) {
 		if err = os.WriteFile(logoPath, embeddedLogo, 0644); err != nil {
 			return err

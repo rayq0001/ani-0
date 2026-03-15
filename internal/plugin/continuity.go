@@ -1,10 +1,10 @@
 package plugin
 
 import (
-	"seanime/internal/continuity"
-	"seanime/internal/extension"
-	"seanime/internal/goja/goja_bindings"
-	gojautil "seanime/internal/util/goja"
+	"aniverse/internal/continuity"
+	"aniverse/internal/extension"
+	"aniverse/internal/goja/goja_bindings"
+	gojautil "aniverse/internal/util/goja"
 
 	"github.com/dop251/goja"
 	"github.com/rs/zerolog"

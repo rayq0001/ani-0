@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
-	"seanime/internal/extension"
-	gojautil "seanime/internal/util/goja"
+	"aniverse/internal/extension"
+	gojautil "aniverse/internal/util/goja"
 	"sync"
 	"time"
 

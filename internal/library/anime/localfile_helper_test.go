@@ -3,8 +3,8 @@ package anime_test
 import (
 	"path/filepath"
 	"runtime"
-	"seanime/internal/library/anime"
-	"seanime/internal/util"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/util"
 	"strings"
 	"testing"
 

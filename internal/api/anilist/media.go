@@ -1,7 +1,7 @@
 package anilist
 
 import (
-	"seanime/internal/util/result"
+	"aniverse/internal/util/result"
 )
 
 type BaseAnimeCache struct {

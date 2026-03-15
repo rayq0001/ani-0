@@ -3,7 +3,7 @@ package vlc
 import (
 	"fmt"
 	"runtime"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"time"
 )
 

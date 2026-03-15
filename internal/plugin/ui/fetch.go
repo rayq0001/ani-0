@@ -1,7 +1,7 @@
 package plugin_ui
 
 import (
-	"seanime/internal/goja/goja_bindings"
+	"aniverse/internal/goja/goja_bindings"
 
 	"github.com/dop251/goja"
 )

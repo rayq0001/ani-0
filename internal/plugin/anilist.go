@@ -2,10 +2,10 @@ package plugin
 
 import (
 	"context"
-	"seanime/internal/api/anilist"
-	"seanime/internal/events"
-	"seanime/internal/extension"
-	"seanime/internal/library/anime"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
+	"aniverse/internal/library/anime"
 
 	"github.com/dop251/goja"
 	"github.com/rs/zerolog"

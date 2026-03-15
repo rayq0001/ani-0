@@ -3,9 +3,9 @@ package handlers
 import (
 	"fmt"
 	"net/http"
-	"seanime/internal/database/db_bridge"
-	"seanime/internal/directstream"
-	"seanime/internal/mkvparser"
+	"aniverse/internal/database/db_bridge"
+	"aniverse/internal/directstream"
+	"aniverse/internal/mkvparser"
 
 	"github.com/labstack/echo/v4"
 )

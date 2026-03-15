@@ -3,11 +3,11 @@ package manga
 import (
 	"context"
 	"errors"
-	"seanime/internal/api/anilist"
-	"seanime/internal/hook"
-	"seanime/internal/platforms/platform"
-	"seanime/internal/util"
-	"seanime/internal/util/filecache"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/hook"
+	"aniverse/internal/platforms/platform"
+	"aniverse/internal/util"
+	"aniverse/internal/util/filecache"
 
 	"github.com/rs/zerolog"
 )

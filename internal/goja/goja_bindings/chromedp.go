@@ -3,7 +3,7 @@ package goja_bindings
 import (
 	"context"
 	"fmt"
-	gojautil "seanime/internal/util/goja"
+	gojautil "aniverse/internal/util/goja"
 	"strings"
 	"sync"
 	"time"

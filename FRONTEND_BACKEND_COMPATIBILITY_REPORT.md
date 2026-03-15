@@ -30,7 +30,7 @@ v1AI.POST("/upscale", h.HandleUpscaleImage)     // ✅ يعمل
 
 ### Frontend Hooks (React)
 ```typescript
-// seanime-web/src/api/hooks/ai.hooks.ts
+// aniverse-web/src/api/hooks/ai.hooks.ts
 export const useGetAISettings = () => useServerQuery<AISettings>({
     endpoint: "/api/v1/ai/settings",  // ✅ يطابق Backend
     method: "GET",
@@ -73,7 +73,7 @@ func (h *Handler) HandleGetComicsCollection(c echo.Context) error {
 
 ### Frontend Implementation (React)
 ```typescript
-// seanime-web/src/app/(main)/comics/_lib/useComics.ts
+// aniverse-web/src/app/(main)/comics/_lib/useComics.ts
 export function useComics() {
     // ❌ يستخدم manga API وليس comics API
     const { data: collection, isLoading } = useGetMangaCollection()
@@ -106,7 +106,7 @@ $ curl -s -X POST http://localhost:43211/api/v1/comics/collection
 
 ### Axios Configuration
 ```typescript
-// seanime-web/src/api/client/requests.ts
+// aniverse-web/src/api/client/requests.ts
 export async function buildSeaQuery<T, D>({
     endpoint,
     method,
@@ -116,7 +116,7 @@ export async function buildSeaQuery<T, D>({
 }: SeaQuery<D>): Promise<T | undefined> {
     axios.interceptors.request.use((request) => {
         if (password) {
-            request.headers.set("X-Seanime-Token", password)
+            request.headers.set("X-Aniverse-Token", password)
         }
         return request
     })
@@ -151,15 +151,15 @@ web/static/js/index.8c6434d1.js    ✅ موجود
 web/index.html                      ✅ موجود
 
 # Server يخدم الملفات | Server serving files
-# من: ~/Library/Application Support/Seanime/assets/
+# من: ~/Library/Application Support/Aniverse/assets/
 # إلى: http://localhost:43211/
 ```
 
 ### Build Process
 ```bash
-cd seanime-web && npm run build    # Rsbuild → out/
-cp -r seanime-web/out/* web/       # نسخ إلى web/
-./seanime &                        # تشغيل السيرفر
+cd aniverse-web && npm run build    # Rsbuild → out/
+cp -r aniverse-web/out/* web/       # نسخ إلى web/
+./aniverse &                        # تشغيل السيرفر
 ```
 
 ---
@@ -211,7 +211,7 @@ export const useGetComicsCollection = () => useServerQuery<ComicsCollection>({
 ✅ Comics Collection: 200 OK (returns valid JSON)
 ✅ Web Assets: 200 OK (serves static files)
 ✅ CORS: Enabled for all origins
-✅ Authentication: X-Seanime-Token header working
+✅ Authentication: X-Aniverse-Token header working
 ```
 
 ---
@@ -234,5 +234,5 @@ export const useGetComicsCollection = () => useServerQuery<ComicsCollection>({
 ---
 
 **تاريخ التقرير:** 2026-03-07  
-**الإصدار:** Seanime v3.5.2-Hakumei  
+**الإصدار:** Aniverse v3.5.2-Hakumei  
 **المُختبر:** BLACKBOXAI

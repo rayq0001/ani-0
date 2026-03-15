@@ -1,6 +1,6 @@
 {
-  "buildCommand": "cd seanime-web && npm install && npm run build",
-  "outputDirectory": "seanime-web/out",
+  "buildCommand": "cd aniverse-web && npm install && npm run build",
+  "outputDirectory": "aniverse-web/out",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]

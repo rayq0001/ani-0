@@ -61,7 +61,7 @@ internal/ai/processors/cosmic_search.go
 
 ### Frontend (React/TypeScript)
 ```
-seanime-web/src/app/(main)/_features/space/
+aniverse-web/src/app/(main)/_features/space/
 ├── UnlimitedSpace.tsx - Main container
 ├── DNAFilterPanel.tsx - DNA controls
 ├── StarField.tsx - 3D visualization
@@ -69,7 +69,7 @@ seanime-web/src/app/(main)/_features/space/
 ├── TimelineNavigator.tsx - Timeline view
 └── index.ts - Exports
 
-seanime-web/src/app/(main)/_atoms/space.atoms.ts
+aniverse-web/src/app/(main)/_atoms/space.atoms.ts
 ├── spaceModeAtom
 ├── dnaFiltersAtom
 ├── emotionalStateAtom
@@ -80,7 +80,7 @@ seanime-web/src/app/(main)/_atoms/space.atoms.ts
 
 ### API Hooks
 ```
-seanime-web/src/api/hooks/space.hooks.ts
+aniverse-web/src/api/hooks/space.hooks.ts
 ├── useCosmicSearch()
 ├── useGalaxyClusters()
 ├── useSimilarGalaxies()
@@ -192,14 +192,14 @@ similarity = 1.0 - (weightedDifferences / maxDiff)
 - `internal/ai/processors/cosmic_search.go` (500+ lines)
 
 ### Frontend
-- `seanime-web/src/app/(main)/_features/space/UnlimitedSpace.tsx`
-- `seanime-web/src/app/(main)/_features/space/DNAFilterPanel.tsx`
-- `seanime-web/src/app/(main)/_features/space/StarField.tsx`
-- `seanime-web/src/app/(main)/_features/space/GalaxyClusters.tsx`
-- `seanime-web/src/app/(main)/_features/space/TimelineNavigator.tsx`
-- `seanime-web/src/app/(main)/_features/space/index.ts`
-- `seanime-web/src/app/(main)/_atoms/space.atoms.ts`
-- `seanime-web/src/api/hooks/space.hooks.ts`
+- `aniverse-web/src/app/(main)/_features/space/UnlimitedSpace.tsx`
+- `aniverse-web/src/app/(main)/_features/space/DNAFilterPanel.tsx`
+- `aniverse-web/src/app/(main)/_features/space/StarField.tsx`
+- `aniverse-web/src/app/(main)/_features/space/GalaxyClusters.tsx`
+- `aniverse-web/src/app/(main)/_features/space/TimelineNavigator.tsx`
+- `aniverse-web/src/app/(main)/_features/space/index.ts`
+- `aniverse-web/src/app/(main)/_atoms/space.atoms.ts`
+- `aniverse-web/src/api/hooks/space.hooks.ts`
 
 **Total: 9 new files, ~2000 lines of code**
 

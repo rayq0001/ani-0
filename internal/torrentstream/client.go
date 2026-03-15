@@ -9,8 +9,8 @@ import (
 	"net/url"
 	"os"
 	"path"
-	"seanime/internal/mediaplayers/mediaplayer"
-	"seanime/internal/util"
+	"aniverse/internal/mediaplayers/mediaplayer"
+	"aniverse/internal/util"
 	"strings"
 	"sync"
 	"time"
@@ -114,7 +114,7 @@ func (c *Client) initializeClient() error {
 	}
 	cfg.ListenPort = settings.TorrentClientPort
 	// Set the download directory
-	// e.g. /path/to/temp/seanime/torrentstream/{infohash}
+	// e.g. /path/to/temp/aniverse/torrentstream/{infohash}
 	cfg.DefaultStorage = storage.NewFileByInfoHash(settings.DownloadDir)
 
 	c.mu.Lock()

@@ -2,10 +2,10 @@ package manga
 
 import (
 	"errors"
-	"seanime/internal/extension"
-	hibikemanga "seanime/internal/extension/hibike/manga"
-	"seanime/internal/util"
-	"seanime/internal/util/result"
+	"aniverse/internal/extension"
+	hibikemanga "aniverse/internal/extension/hibike/manga"
+	"aniverse/internal/util"
+	"aniverse/internal/util/result"
 	"strings"
 )
 

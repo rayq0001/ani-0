@@ -1,7 +1,7 @@
 package db
 
 import (
-	"seanime/internal/database/models"
+	"aniverse/internal/database/models"
 
 	"github.com/goccy/go-json"
 	"gorm.io/gorm/clause"

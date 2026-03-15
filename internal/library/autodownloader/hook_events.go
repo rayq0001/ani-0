@@ -1,10 +1,10 @@
 package autodownloader
 
 import (
-	"seanime/internal/api/anilist"
-	"seanime/internal/database/models"
-	"seanime/internal/hook_resolver"
-	"seanime/internal/library/anime"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/database/models"
+	"aniverse/internal/hook_resolver"
+	"aniverse/internal/library/anime"
 )
 
 // AutoDownloaderRunStartedEvent is triggered when the autodownloader starts checking for new episodes.

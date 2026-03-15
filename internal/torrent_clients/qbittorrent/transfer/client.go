@@ -4,8 +4,8 @@ import (
 	"github.com/rs/zerolog"
 	"net/http"
 	"net/url"
-	"seanime/internal/torrent_clients/qbittorrent/model"
-	"seanime/internal/torrent_clients/qbittorrent/util"
+	"aniverse/internal/torrent_clients/qbittorrent/model"
+	"aniverse/internal/torrent_clients/qbittorrent/util"
 	"strconv"
 )
 

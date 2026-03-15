@@ -3,7 +3,7 @@ package core
 import (
 	"fmt"
 	"os"
-	"seanime/internal/constants"
+	"aniverse/internal/constants"
 	"strings"
 
 	"github.com/charmbracelet/lipgloss"

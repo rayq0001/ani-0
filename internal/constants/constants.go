@@ -1,7 +1,7 @@
 package constants
 
 import (
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"time"
 )
 
@@ -20,9 +20,6 @@ const (
 	AniverseRoomsApiUrl   = "https://aniverse.app/api/rooms"
 	AniverseRoomsApiWsUrl = "wss://aniverse.app/api/rooms"
 	AniverseRoomsVersion  = "1.0.0"
-	SeanimeRoomsApiUrl    = "https://rooms.seanime.io"
-	SeanimeRoomsApiWsUrl  = "wss://rooms.seanime.io"
-	SeanimeRoomsVersion   = "1.0.0"
 )
 
 var DefaultExtensionMarketplaceURL = util.Decode("aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tLzVyYWhpbS9zZWFuaW1lLWV4dGVuc2lvbnMvcmVmcy9oZWFkcy9tYWluL21hcmtldHBsYWNlLmpzb24=")

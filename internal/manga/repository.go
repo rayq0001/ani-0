@@ -7,12 +7,12 @@ import (
 	_ "image/jpeg" // Register JPEG format
 	_ "image/png"  // Register PNG format
 	"net/http"
-	"seanime/internal/database/db"
-	"seanime/internal/database/models"
-	"seanime/internal/events"
-	"seanime/internal/extension"
-	"seanime/internal/util"
-	"seanime/internal/util/filecache"
+	"aniverse/internal/database/db"
+	"aniverse/internal/database/models"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
+	"aniverse/internal/util"
+	"aniverse/internal/util/filecache"
 	"strconv"
 	"strings"
 	"sync"

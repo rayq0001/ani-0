@@ -2,8 +2,8 @@ package ai
 
 import (
 	"context"
-	"seanime/internal/ai/gemini"
-	"seanime/internal/ai/processors"
+	"aniverse/internal/ai/gemini"
+	"aniverse/internal/ai/processors"
 	"sync"
 	"time"
 )
@@ -45,6 +45,116 @@ func (s *Service) GetCultureEngine() *processors.CultureEngine {
 		cultureEngine = processors.NewCultureEngine(provider)
 	})
 	return cultureEngine
+}
+
+// loreKeeper is the singleton lore keeper instance
+var loreKeeper *processors.LoreKeeper
+var loreKeeperOnce sync.Once
+
+// GetLoreKeeper returns the lore keeper instance
+func (s *Service) GetLoreKeeper() *processors.LoreKeeper {
+	loreKeeperOnce.Do(func() {
+		// Create a simple Gemini provider wrapper
+		provider := &processors.GeminiProvider{}
+		loreKeeper = processors.NewLoreKeeper(provider)
+	})
+	return loreKeeper
+}
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------
+// Anime Features Singletons
+// ----------------------------------------------------------------------------------------------------------------------------------------------------
+
+var smartEpisodeAnalyzer *processors.SmartEpisodeAnalyzer
+var smartEpisodeAnalyzerOnce sync.Once
+
+func (s *Service) GetSmartEpisodeAnalyzer() *processors.SmartEpisodeAnalyzer {
+	smartEpisodeAnalyzerOnce.Do(func() {
+		provider := &processors.GeminiProvider{}
+		smartEpisodeAnalyzer = processors.NewSmartEpisodeAnalyzer(provider)
+	})
+	return smartEpisodeAnalyzer
+}
+
+var interactiveLoreSubtitles *processors.InteractiveLoreSubtitles
+var interactiveLoreSubtitlesOnce sync.Once
+
+func (s *Service) GetInteractiveLoreSubtitles() *processors.InteractiveLoreSubtitles {
+	interactiveLoreSubtitlesOnce.Do(func() {
+		provider := &processors.GeminiProvider{}
+		interactiveLoreSubtitles = processors.NewInteractiveLoreSubtitles(provider)
+	})
+	return interactiveLoreSubtitles
+}
+
+var animeToMangaMapper *processors.AnimeToMangaMapper
+var animeToMangaMapperOnce sync.Once
+
+func (s *Service) GetAnimeToMangaMapper() *processors.AnimeToMangaMapper {
+	animeToMangaMapperOnce.Do(func() {
+		provider := &processors.GeminiProvider{}
+		animeToMangaMapper = processors.NewAnimeToMangaMapper(provider)
+	})
+	return animeToMangaMapper
+}
+
+var aiWatchPartyCompanion *processors.AIWatchPartyCompanion
+var aiWatchPartyCompanionOnce sync.Once
+
+func (s *Service) GetAIWatchPartyCompanion() *processors.AIWatchPartyCompanion {
+	aiWatchPartyCompanionOnce.Do(func() {
+		provider := &processors.GeminiProvider{}
+		aiWatchPartyCompanion = processors.NewAIWatchPartyCompanion(provider)
+	})
+	return aiWatchPartyCompanion
+}
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------
+// Novel/Vibe Features Singletons
+// ----------------------------------------------------------------------------------------------------------------------------------------------------
+
+var aiSceneVisualization *processors.AISceneVisualization
+var aiSceneVisualizationOnce sync.Once
+
+func (s *Service) GetAISceneVisualization() *processors.AISceneVisualization {
+	aiSceneVisualizationOnce.Do(func() {
+		provider := &processors.GeminiProvider{}
+		aiSceneVisualization = processors.NewAISceneVisualization(provider)
+	})
+	return aiSceneVisualization
+}
+
+var ambientAIAudio *processors.AmbientAIAudio
+var ambientAIAudioOnce sync.Once
+
+func (s *Service) GetAmbientAIAudio() *processors.AmbientAIAudio {
+	ambientAIAudioOnce.Do(func() {
+		provider := &processors.GeminiProvider{}
+		ambientAIAudio = processors.NewAmbientAIAudio(provider)
+	})
+	return ambientAIAudio
+}
+
+var aiFanTheoryPredictor *processors.AIFanTheoryPredictor
+var aiFanTheoryPredictorOnce sync.Once
+
+func (s *Service) GetAIFanTheoryPredictor() *processors.AIFanTheoryPredictor {
+	aiFanTheoryPredictorOnce.Do(func() {
+		provider := &processors.GeminiProvider{}
+		aiFanTheoryPredictor = processors.NewAIFanTheoryPredictor(provider)
+	})
+	return aiFanTheoryPredictor
+}
+
+var semanticVibeSearch *processors.SemanticVibeSearch
+var semanticVibeSearchOnce sync.Once
+
+func (s *Service) GetSemanticVibeSearch() *processors.SemanticVibeSearch {
+	semanticVibeSearchOnce.Do(func() {
+		provider := &processors.GeminiProvider{}
+		semanticVibeSearch = processors.NewSemanticVibeSearch(provider)
+	})
+	return semanticVibeSearch
 }
 
 // subscriptions stores user subscriptions (in production, use database)

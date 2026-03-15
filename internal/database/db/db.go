@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"seanime/internal/database/models"
+	"aniverse/internal/database/models"
 	"time"
 
 	"github.com/glebarez/sqlite"

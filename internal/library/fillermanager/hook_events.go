@@ -1,9 +1,9 @@
 package fillermanager
 
 import (
-	"seanime/internal/hook_resolver"
-	"seanime/internal/library/anime"
-	"seanime/internal/onlinestream"
+	"aniverse/internal/hook_resolver"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/onlinestream"
 )
 
 // HydrateFillerDataRequestedEvent is triggered when the filler manager requests to hydrate the filler data for an entry.

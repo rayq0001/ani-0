@@ -1268,7 +1268,7 @@
         }
       ],
       "comments": [
-        " DebridLocalDownloadRequestedEvent is triggered when Seanime is about to download a debrid torrent locally.",
+        " DebridLocalDownloadRequestedEvent is triggered when Aniverse is about to download a debrid torrent locally.",
         " Prevent default to skip the default download and override the download."
       ],
       "embeddedStructNames": [
@@ -4389,7 +4389,7 @@
         }
       ],
       "comments": [
-        " ScanMediaFetcherStartedEvent is triggered right before Seanime starts fetching media to be matched against the local files."
+        " ScanMediaFetcherStartedEvent is triggered right before Aniverse starts fetching media to be matched against the local files."
       ],
       "embeddedStructNames": [
         "hook_resolver.Event"

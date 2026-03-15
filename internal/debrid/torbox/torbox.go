@@ -9,9 +9,9 @@ import (
 	"io"
 	"mime/multipart"
 	"net/http"
-	"seanime/internal/constants"
-	"seanime/internal/debrid/debrid"
-	"seanime/internal/util"
+	"aniverse/internal/constants"
+	"aniverse/internal/debrid/debrid"
+	"aniverse/internal/util"
 	"slices"
 	"strconv"
 	"strings"
@@ -135,7 +135,7 @@ func (t *TorBox) doQueryCtx(ctx context.Context, method, uri string, body io.Rea
 	}
 	req.Header.Add("Content-Type", contentType)
 	req.Header.Add("Authorization", "Bearer "+apiKey)
-	req.Header.Add("User-Agent", "Seanime/"+constants.Version)
+	req.Header.Add("User-Agent", "Aniverse/"+constants.Version)
 
 	resp, err := t.client.Do(req)
 	if err != nil {

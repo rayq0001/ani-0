@@ -1,12 +1,12 @@
 package handlers
 
 import (
-	"seanime/internal/api/anilist"
-	"seanime/internal/database/db_bridge"
-	"seanime/internal/debrid/debrid"
-	"seanime/internal/library/anime"
-	"seanime/internal/torrents/torrent"
-	"seanime/internal/util/result"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/database/db_bridge"
+	"aniverse/internal/debrid/debrid"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/torrents/torrent"
+	"aniverse/internal/util/result"
 	"strings"
 
 	"github.com/labstack/echo/v4"

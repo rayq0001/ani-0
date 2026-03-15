@@ -1,9 +1,9 @@
 package torrentstream
 
 import (
-	"seanime/internal/api/anilist"
-	hibiketorrent "seanime/internal/extension/hibike/torrent"
-	"seanime/internal/hook_resolver"
+	"aniverse/internal/api/anilist"
+	hibiketorrent "aniverse/internal/extension/hibike/torrent"
+	"aniverse/internal/hook_resolver"
 )
 
 // TorrentStreamAutoSelectTorrentsFetchedEvent is triggered when the torrents are fetched for auto select.

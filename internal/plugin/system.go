@@ -14,9 +14,9 @@ import (
 	"path/filepath"
 	"regexp"
 	"runtime"
-	"seanime/internal/extension"
-	util "seanime/internal/util"
-	gojautil "seanime/internal/util/goja"
+	"aniverse/internal/extension"
+	util "aniverse/internal/util"
+	gojautil "aniverse/internal/util/goja"
 	"strings"
 	"sync"
 

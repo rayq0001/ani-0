@@ -3,8 +3,8 @@ package local
 import (
 	"database/sql/driver"
 	"errors"
-	"seanime/internal/api/metadata"
-	"seanime/internal/manga"
+	"aniverse/internal/api/metadata"
+	"aniverse/internal/manga"
 	"time"
 
 	"github.com/goccy/go-json"

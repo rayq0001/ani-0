@@ -3,11 +3,11 @@ package debrid_client
 import (
 	"fmt"
 	"path/filepath"
-	"seanime/internal/api/anilist"
-	"seanime/internal/debrid/debrid"
-	hibiketorrent "seanime/internal/extension/hibike/torrent"
-	"seanime/internal/util"
-	"seanime/internal/util/comparison"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/debrid/debrid"
+	hibiketorrent "aniverse/internal/extension/hibike/torrent"
+	"aniverse/internal/util"
+	"aniverse/internal/util/comparison"
 	"slices"
 	"sync"
 

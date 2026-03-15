@@ -11,11 +11,11 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
-	"seanime/internal/constants"
-	"seanime/internal/events"
-	"seanime/internal/extension"
-	"seanime/internal/util"
-	"seanime/internal/util/filecache"
+	"aniverse/internal/constants"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
+	"aniverse/internal/util"
+	"aniverse/internal/util/filecache"
 	"strings"
 	"sync"
 	"time"
@@ -682,7 +682,7 @@ func (r *Repository) loadExternalExtension(filePath string) {
 			if !c.Check(v) && v.Prerelease() == "" {
 				r.invalidExtensions.Set(invalidExtensionID, &extension.InvalidExtension{
 					ID:        invalidExtensionID,
-					Reason:    fmt.Sprintf("Incompatible with this version of Seanime (%s): %s", constants.Version, ext.SemverConstraint),
+					Reason:    fmt.Sprintf("Incompatible with this version of Aniverse (%s): %s", constants.Version, ext.SemverConstraint),
 					Path:      filePath,
 					Code:      extension.InvalidExtensionSemverConstraintError,
 					Extension: *ext,

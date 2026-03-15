@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/url"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"strings"
 	"sync/atomic"
 	"time"

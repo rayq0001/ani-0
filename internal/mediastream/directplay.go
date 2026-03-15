@@ -7,8 +7,8 @@ import (
 	"net/url"
 	"os"
 	"path/filepath"
-	"seanime/internal/events"
-	"seanime/internal/util"
+	"aniverse/internal/events"
+	"aniverse/internal/util"
 
 	"github.com/labstack/echo/v4"
 )

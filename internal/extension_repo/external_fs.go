@@ -3,7 +3,7 @@ package extension_repo
 import (
 	"github.com/goccy/go-json"
 	"os"
-	"seanime/internal/extension"
+	"aniverse/internal/extension"
 )
 
 func extractExtensionFromFile(filepath string) (ext *extension.Extension, err error) {

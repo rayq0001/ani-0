@@ -4,9 +4,9 @@ import (
 	"errors"
 	"io"
 	"net/http"
-	"seanime/internal/constants"
-	"seanime/internal/hook"
-	"seanime/internal/util/result"
+	"aniverse/internal/constants"
+	"aniverse/internal/hook"
+	"aniverse/internal/util/result"
 	"strconv"
 
 	"github.com/goccy/go-json"
@@ -94,7 +94,7 @@ func FetchAnimapMedia(from string, id int) (*Anime, error) {
 		return nil, err
 	}
 
-	request.Header.Set("X-Seanime-Version", "Seanime/"+constants.Version)
+	request.Header.Set("X-Aniverse-Version", "Aniverse/"+constants.Version)
 
 	// Send an HTTP GET request
 	response, err := http.DefaultClient.Do(request)

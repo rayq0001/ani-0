@@ -5,8 +5,8 @@ import (
 	"github.com/davecgh/go-spew/spew"
 	"github.com/hekmon/transmissionrpc/v3"
 	"github.com/stretchr/testify/assert"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
 	"testing"
 	"time"
 )

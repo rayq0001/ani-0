@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Anyverse** ecosystem has been successfully implemented for Seanime, transforming it into a hyper-immersive AI-powered manga reading platform with cultural localization, smart summaries, offline management, and monetization features.
+The **Anyverse** ecosystem has been successfully implemented for Aniverse, transforming it into a hyper-immersive AI-powered manga reading platform with cultural localization, smart summaries, offline management, and monetization features.
 
 ---
 
@@ -27,7 +27,7 @@ The **Anyverse** ecosystem has been successfully implemented for Seanime, transf
 | `processors/offline_manager.go` | Download queue management |
 | `handlers/anyverse.go` | API endpoints for all Anyverse features |
 
-### Frontend (TypeScript/React) - `/seanime-web/src/`
+### Frontend (TypeScript/React) - `/aniverse-web/src/`
 
 | File | Purpose |
 |------|---------|

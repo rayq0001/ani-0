@@ -1,6 +1,6 @@
 package torrentstream
 
-import "seanime/internal/events"
+import "aniverse/internal/events"
 
 const (
 	eventLoading               = "loading"

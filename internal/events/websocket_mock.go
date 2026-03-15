@@ -1,7 +1,7 @@
 package events
 
 import (
-	"seanime/internal/util/result"
+	"aniverse/internal/util/result"
 
 	"github.com/rs/zerolog"
 )

@@ -9,9 +9,9 @@ import (
 	"mime/multipart"
 	"net/http"
 	"net/url"
-	"seanime/internal/constants"
-	"seanime/internal/debrid/debrid"
-	"seanime/internal/util"
+	"aniverse/internal/constants"
+	"aniverse/internal/debrid/debrid"
+	"aniverse/internal/util"
 	"slices"
 	"strconv"
 	"strings"
@@ -202,7 +202,7 @@ func (a *AllDebrid) doQueryCtx(ctx context.Context, method, endpoint string, bod
 	}
 	req.Header.Add("Content-Type", contentType)
 	req.Header.Add("Authorization", "Bearer "+apiKey)
-	req.Header.Add("User-Agent", "Seanime/"+constants.Version)
+	req.Header.Add("User-Agent", "Aniverse/"+constants.Version)
 
 	resp, err := a.client.Do(req)
 	if err != nil {
@@ -611,7 +611,7 @@ func (a *AllDebrid) DeleteTorrent(id string) error {
 	u, _ := url.Parse(a.baseUrl + "/magnet/delete")
 	q := u.Query()
 	apiKey, _ := a.apiKey.Get()
-	q.Set("agent", "Seanime")
+	q.Set("agent", "Aniverse")
 	q.Set("apikey", apiKey)
 	q.Set("id", id)
 	u.RawQuery = q.Encode()

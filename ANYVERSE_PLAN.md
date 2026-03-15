@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-Transform Seanime into a hyper-immersive "Anyverse" ecosystem using AI-powered "engines" instead of static pages. The system will feature dynamic content rendering, character consciousness, emotional soundtracks, and a premium monetization layer.
+Transform Aniverse into a hyper-immersive "Anyverse" ecosystem using AI-powered "engines" instead of static pages. The system will feature dynamic content rendering, character consciousness, emotional soundtracks, and a premium monetization layer.
 
 ---
 
@@ -13,8 +13,8 @@ Transform Seanime into a hyper-immersive "Anyverse" ecosystem using AI-powered "
 Create a new design token system with holographic, glass-morphism aesthetics.
 
 **Files to create:**
-- `seanime-web/src/lib/theme/anyverse-tokens.ts` - Design tokens
-- `seanime-web/src/components/ui/anyverse/` - New UI components
+- `aniverse-web/src/lib/theme/anyverse-tokens.ts` - Design tokens
+- `aniverse-web/src/components/ui/anyverse/` - New UI components
 
 **Components:**
 - GlassCard - Frosted glass panels
@@ -215,7 +215,7 @@ type TTSOptions struct {
 Create a 3D manga reading experience:
 
 ```
-seanime-web/src/app/(main)/_features/canvas/
+aniverse-web/src/app/(main)/_features/canvas/
 ├── ManhwaCanvas.tsx       # Main WebGL component
 ├── Scene3D.ts            # 3D scene setup
 ├── ParallaxLayer.ts      # Depth-based parallax
@@ -228,13 +228,13 @@ seanime-web/src/app/(main)/_features/canvas/
 ### 4.2 Components Structure
 
 ```typescript
-// seanime-web/src/components/anyverse/
+// aniverse-web/src/components/anyverse/
 export * from "./GlassCard"
 export * from "./HolographicButton"
 export * from "./NeonBadge"
 export * from "./LiquidBackground"
 
-// seanime-web/src/app/(main)/_features/engines/
+// aniverse-web/src/app/(main)/_features/engines/
 export * from "./director-engine"    // AI Director
 export * from "./ost-engine"          // Emotional OST
 export * from "./character-engine"    // Character Consciousness
@@ -409,16 +409,16 @@ type AnyCoinPackage struct {
 9. `internal/handlers/anyverse.go`
 
 ### New Files to Create (Frontend)
-1. `seanime-web/src/lib/theme/anyverse-tokens.ts`
-2. `seanime-web/src/components/anyverse/`
-3. `seanime-web/src/app/(main)/_features/engines/`
-4. `seanime-web/src/app/(main)/_features/canvas/`
-5. `seanime-web/src/app/(main)/_features/wallet/`
+1. `aniverse-web/src/lib/theme/anyverse-tokens.ts`
+2. `aniverse-web/src/components/anyverse/`
+3. `aniverse-web/src/app/(main)/_features/engines/`
+4. `aniverse-web/src/app/(main)/_features/canvas/`
+5. `aniverse-web/src/app/(main)/_features/wallet/`
 
 ### Files to Modify
 1. `internal/ai/service.go` - Add new clients
 2. `internal/handlers/routes.go` - Add new routes
-3. `seanime-web/src/api/hooks/ai.hooks.ts` - Add new hooks
+3. `aniverse-web/src/api/hooks/ai.hooks.ts` - Add new hooks
 
 ---
 
@@ -431,5 +431,5 @@ type AnyCoinPackage struct {
 ---
 
 *Generated for Anyverse Ecosystem Implementation*
-*Target: Transform Seanime into immersive AI-powered manga ecosystem*
+*Target: Transform Aniverse into immersive AI-powered manga ecosystem*
 

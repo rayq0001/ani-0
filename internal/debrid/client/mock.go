@@ -1,15 +1,15 @@
 package debrid_client
 
 import (
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata_provider"
-	"seanime/internal/continuity"
-	"seanime/internal/database/db"
-	"seanime/internal/events"
-	"seanime/internal/extension"
-	"seanime/internal/library/playbackmanager"
-	"seanime/internal/platforms/anilist_platform"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata_provider"
+	"aniverse/internal/continuity"
+	"aniverse/internal/database/db"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
+	"aniverse/internal/library/playbackmanager"
+	"aniverse/internal/platforms/anilist_platform"
+	"aniverse/internal/util"
 	"testing"
 )
 

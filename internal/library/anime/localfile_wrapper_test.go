@@ -3,7 +3,7 @@ package anime_test
 import (
 	"cmp"
 	"github.com/stretchr/testify/assert"
-	"seanime/internal/library/anime"
+	"aniverse/internal/library/anime"
 	"slices"
 	"testing"
 )

@@ -23,7 +23,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"seanime/internal/util/limiter"
+	"aniverse/internal/util/limiter"
 	"strconv"
 	"strings"
 	"sync"

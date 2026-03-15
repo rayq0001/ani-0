@@ -1,7 +1,7 @@
 package extension_repo
 
 import (
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"strings"
 	"testing"
 )

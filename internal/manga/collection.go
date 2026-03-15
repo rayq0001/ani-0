@@ -3,10 +3,10 @@ package manga
 import (
 	"cmp"
 	"fmt"
-	"seanime/internal/api/anilist"
-	"seanime/internal/hook"
-	"seanime/internal/platforms/platform"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/hook"
+	"aniverse/internal/platforms/platform"
+	"aniverse/internal/util"
 	"slices"
 
 	"github.com/samber/lo"

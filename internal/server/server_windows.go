@@ -9,11 +9,11 @@ import (
 	"github.com/cli/browser"
 	"github.com/gonutz/w32/v2"
 	"github.com/rs/zerolog/log"
-	"seanime/internal/constants"
-	"seanime/internal/core"
-	"seanime/internal/handlers"
-	"seanime/internal/icon"
-	"seanime/internal/updater"
+	"aniverse/internal/constants"
+	"aniverse/internal/core"
+	"aniverse/internal/handlers"
+	"aniverse/internal/icon"
+	"aniverse/internal/updater"
 )
 
 func StartServer(webFS embed.FS, embeddedLogo []byte) {
@@ -28,7 +28,7 @@ func StartServer(webFS embed.FS, embeddedLogo []byte) {
 
 func addQuitItem() {
 	systray.AddSeparator()
-	mQuit := systray.AddMenuItem("Quit Seanime", "Quit the whole app")
+	mQuit := systray.AddMenuItem("Quit Aniverse", "Quit the whole app")
 	mQuit.Enable()
 	go func() {
 		<-mQuit.ClickedCh
@@ -38,15 +38,15 @@ func addQuitItem() {
 	}()
 }
 
-func onReady(webFS *embed.FS, app *core.App, flags core.SeanimeFlags, selfupdater *updater.SelfUpdater) func() {
+func onReady(webFS *embed.FS, app *core.App, flags core.AniverseFlags, selfupdater *updater.SelfUpdater) func() {
 	return func() {
 		systray.SetTemplateIcon(icon.Data, icon.Data)
-		systray.SetTitle(fmt.Sprintf("Seanime v%s", constants.Version))
-		systray.SetTooltip(fmt.Sprintf("Seanime v%s", constants.Version))
+		systray.SetTitle(fmt.Sprintf("Aniverse v%s", constants.Version))
+		systray.SetTooltip(fmt.Sprintf("Aniverse v%s", constants.Version))
 		log.Trace().Msg("systray: App is ready")
 
 		// Menu items
-		systray.AddMenuItem("Seanime v"+constants.Version, "Seanime version")
+		systray.AddMenuItem("Aniverse v"+constants.Version, "Aniverse version")
 		mWeb := systray.AddMenuItem(app.Config.GetServerURI("127.0.0.1"), "Open web interface")
 		mOpenLibrary := systray.AddMenuItem("Open Anime Library", "Open anime library")
 		mOpenDataDir := systray.AddMenuItem("Open Data Directory", "Open data directory")

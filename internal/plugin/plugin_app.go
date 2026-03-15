@@ -1,9 +1,9 @@
 package plugin
 
 import (
-	"seanime/internal/constants"
-	"seanime/internal/events"
-	"seanime/internal/extension"
+	"aniverse/internal/constants"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
 
 	"github.com/dop251/goja"
 	"github.com/rs/zerolog"

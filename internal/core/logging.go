@@ -47,7 +47,7 @@ func TrimLogEntries(dir string, logger *zerolog.Logger) {
 	var scanLogFiles []os.FileInfo
 
 	for _, file := range files {
-		if strings.HasPrefix(file.Name(), "seanime-") {
+		if strings.HasPrefix(file.Name(), "aniverse-") {
 			serverLogFiles = append(serverLogFiles, file)
 		} else if strings.Contains(file.Name(), "-scan") {
 			scanLogFiles = append(scanLogFiles, file)

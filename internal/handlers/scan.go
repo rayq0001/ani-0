@@ -2,9 +2,9 @@ package handlers
 
 import (
 	"errors"
-	"seanime/internal/database/db_bridge"
-	"seanime/internal/library/scanner"
-	"seanime/internal/library/summary"
+	"aniverse/internal/database/db_bridge"
+	"aniverse/internal/library/scanner"
+	"aniverse/internal/library/summary"
 
 	"github.com/labstack/echo/v4"
 )

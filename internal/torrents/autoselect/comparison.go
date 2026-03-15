@@ -2,9 +2,9 @@ package autoselect
 
 import (
 	"cmp"
-	hibiketorrent "seanime/internal/extension/hibike/torrent"
-	"seanime/internal/library/anime"
-	"seanime/internal/util"
+	hibiketorrent "aniverse/internal/extension/hibike/torrent"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/util"
 	"slices"
 	"strings"
 

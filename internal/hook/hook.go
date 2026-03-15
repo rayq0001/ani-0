@@ -1,7 +1,7 @@
 package hook
 
 import (
-	"seanime/internal/hook_resolver"
+	"aniverse/internal/hook_resolver"
 	"sort"
 	"sync"
 

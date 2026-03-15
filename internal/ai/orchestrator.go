@@ -3,7 +3,7 @@ package ai
 import (
 	"context"
 	"fmt"
-	"seanime/internal/ai/gemini"
+	"aniverse/internal/ai/gemini"
 	"sync"
 
 	"github.com/rs/zerolog"

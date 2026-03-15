@@ -1,7 +1,7 @@
 package autodownloader
 
 import (
-	"seanime/internal/library/anime"
+	"aniverse/internal/library/anime"
 	"strings"
 
 	"github.com/samber/lo"

@@ -2,7 +2,7 @@ package plugin_ui
 
 import (
 	"fmt"
-	"seanime/internal/util/result"
+	"aniverse/internal/util/result"
 
 	"github.com/dop251/goja"
 	"github.com/goccy/go-json"

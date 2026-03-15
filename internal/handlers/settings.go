@@ -5,9 +5,9 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
-	"seanime/internal/database/models"
-	"seanime/internal/torrents/torrent"
-	"seanime/internal/util"
+	"aniverse/internal/database/models"
+	"aniverse/internal/torrents/torrent"
+	"aniverse/internal/util"
 	"time"
 
 	"github.com/labstack/echo/v4"

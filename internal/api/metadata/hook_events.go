@@ -1,6 +1,6 @@
 package metadata
 
-import "seanime/internal/hook_resolver"
+import "aniverse/internal/hook_resolver"
 
 // AnimeMetadataRequestedEvent is triggered when anime metadata is requested and right before the metadata is processed.
 // This event is followed by [AnimeMetadataEvent] which is triggered when the metadata is available.

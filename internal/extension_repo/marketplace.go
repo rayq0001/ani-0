@@ -3,9 +3,9 @@ package extension_repo
 import (
 	"fmt"
 	"io"
-	"seanime/internal/constants"
-	"seanime/internal/extension"
-	"seanime/internal/util"
+	"aniverse/internal/constants"
+	"aniverse/internal/extension"
+	"aniverse/internal/util"
 
 	"github.com/goccy/go-json"
 	"github.com/samber/lo"

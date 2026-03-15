@@ -1,7 +1,7 @@
 package updater
 
 import (
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"testing"
 
 	"github.com/stretchr/testify/require"

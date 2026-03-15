@@ -3,8 +3,8 @@ package handlers
 import (
 	"net/http"
 	"path/filepath"
-	"seanime/internal/core"
-	util "seanime/internal/util/proxies"
+	"aniverse/internal/core"
+	util "aniverse/internal/util/proxies"
 	"strings"
 	"time"
 
@@ -24,7 +24,7 @@ func InitRoutes(app *core.App, e *echo.Echo) {
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowOrigins: []string{"*"},
 		AllowHeaders: []string{"Origin", "Content-Type", "Accept", "Cookie", "Authorization",
-			"X-Seanime-Token", "X-Seanime-Nakama-Token", "X-Seanime-Nakama-Username", "X-Seanime-Nakama-Server-Version", "X-Seanime-Nakama-Peer-Id"},
+			"X-Aniverse-Token", "X-Aniverse-Nakama-Token", "X-Aniverse-Nakama-Username", "X-Aniverse-Nakama-Server-Version", "X-Aniverse-Nakama-Peer-Id"},
 		AllowCredentials: true,
 	}))
 
@@ -72,7 +72,7 @@ func InitRoutes(app *core.App, e *echo.Echo) {
 	e.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
 			// Check if the client has a UUID cookie
-			cookie, err := c.Cookie("Seanime-Client-Id")
+			cookie, err := c.Cookie("Aniverse-Client-Id")
 
 			if err != nil || cookie.Value == "" {
 				// Generate a new UUID for the client
@@ -80,7 +80,7 @@ func InitRoutes(app *core.App, e *echo.Echo) {
 
 				// Create a cookie with the UUID
 				newCookie := new(http.Cookie)
-				newCookie.Name = "Seanime-Client-Id"
+				newCookie.Name = "Aniverse-Client-Id"
 				newCookie.Value = u
 				newCookie.HttpOnly = false // Make the cookie accessible via JS
 				newCookie.Expires = time.Now().Add(24 * time.Hour)
@@ -93,10 +93,10 @@ func InitRoutes(app *core.App, e *echo.Echo) {
 				c.SetCookie(newCookie)
 
 				// Store the UUID in the context for use in the request
-				c.Set("Seanime-Client-Id", u)
+				c.Set("Aniverse-Client-Id", u)
 			} else {
 				// Store the existing UUID in the context for use in the request
-				c.Set("Seanime-Client-Id", cookie.Value)
+				c.Set("Aniverse-Client-Id", cookie.Value)
 			}
 
 			return next(c)
@@ -601,6 +601,8 @@ func InitRoutes(app *core.App, e *echo.Echo) {
 	// Anyverse Features
 	//
 	v1Anyverse := v1.Group("/anyverse")
+	// Lore Keeper
+	v1Anyverse.POST("/lore-keeper", h.HandleLoreKeeperQuery)
 	// Smart Summary
 	v1Anyverse.POST("/summary", h.HandleGenerateSmartSummary)
 	// Offline Downloads
@@ -635,6 +637,16 @@ func InitRoutes(app *core.App, e *echo.Echo) {
 	v1Anyverse.GET("/timeline/:id", h.HandleGetTimeline)
 	v1Anyverse.POST("/visual-search", h.HandleVisualSearch)
 	v1Anyverse.POST("/emotional-search", h.HandleEmotionalSearch)
+	// V2 Anime Features
+	v1Anyverse.POST("/anime/smart-episode", h.HandleSmartEpisodeAnalyzer)
+	v1Anyverse.POST("/anime/interactive-lore", h.HandleInteractiveLoreSubtitles)
+	v1Anyverse.POST("/anime/manga-mapper", h.HandleAnimeToMangaMapper)
+	v1Anyverse.POST("/anime/watch-party", h.HandleAIWatchPartyCompanion)
+	// V2 Novel/Vibe Features
+	v1Anyverse.POST("/vibe/scene-visualizer", h.HandleAISceneVisualization)
+	v1Anyverse.POST("/vibe/ambient-audio", h.HandleAmbientAIAudio)
+	v1Anyverse.POST("/vibe/theory-predictor", h.HandleAIFanTheoryPredictor)
+	v1Anyverse.POST("/vibe/semantic-search", h.HandleSemanticVibeSearch)
 
 	//
 	// Comics Features
@@ -643,6 +655,26 @@ func InitRoutes(app *core.App, e *echo.Echo) {
 	v1Comics.POST("/collection", h.HandleGetComicsCollection)
 	v1Comics.GET("/stats", h.HandleGetComicsStats)
 	v1Comics.GET("/:type", h.HandleGetComicsByType)
+
+	// SPA Fallback - Serve index.html for all unmatched non-API routes
+	e.GET("/*", func(c echo.Context) error {
+		path := c.Request().URL.Path
+		// Skip API and other special routes
+		if strings.HasPrefix(path, "/api") ||
+			strings.HasPrefix(path, "/events") ||
+			strings.HasPrefix(path, "/assets") ||
+			strings.HasPrefix(path, "/manga-downloads") ||
+			strings.HasPrefix(path, "/offline-assets") ||
+			strings.HasPrefix(path, "/static") ||
+			strings.HasPrefix(path, "/icons") ||
+			strings.HasPrefix(path, "/fonts") ||
+			strings.HasPrefix(path, "/jassub") {
+			return echo.NewHTTPError(http.StatusNotFound, "Not Found")
+		}
+
+		// Serve index.html for SPA routes
+		return c.File("web/index.html")
+	})
 
 }
 

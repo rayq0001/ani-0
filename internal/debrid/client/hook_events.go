@@ -1,9 +1,9 @@
 package debrid_client
 
 import (
-	"seanime/internal/api/anilist"
-	hibiketorrent "seanime/internal/extension/hibike/torrent"
-	"seanime/internal/hook_resolver"
+	"aniverse/internal/api/anilist"
+	hibiketorrent "aniverse/internal/extension/hibike/torrent"
+	"aniverse/internal/hook_resolver"
 )
 
 // DebridAutoSelectTorrentsFetchedEvent is triggered when the torrents are fetched for auto select.
@@ -34,7 +34,7 @@ type DebridSendStreamToMediaPlayerEvent struct {
 	PlaybackType string             `json:"playbackType"`
 }
 
-// DebridLocalDownloadRequestedEvent is triggered when Seanime is about to download a debrid torrent locally.
+// DebridLocalDownloadRequestedEvent is triggered when Aniverse is about to download a debrid torrent locally.
 // Prevent default to skip the default download and override the download.
 type DebridLocalDownloadRequestedEvent struct {
 	hook_resolver.Event

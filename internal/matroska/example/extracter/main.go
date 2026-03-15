@@ -24,7 +24,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"seanime/internal/matroska"
+	"aniverse/internal/matroska"
 )
 
 // formatSRTEntry formats a subtitle packet into SRT (SubRip Text) format.

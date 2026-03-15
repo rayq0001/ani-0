@@ -1,7 +1,7 @@
 package extension
 
 import (
-	"seanime/internal/util/result"
+	"aniverse/internal/util/result"
 	"sync"
 	"sync/atomic"
 )

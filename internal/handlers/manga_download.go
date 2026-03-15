@@ -1,9 +1,9 @@
 package handlers
 
 import (
-	"seanime/internal/events"
-	"seanime/internal/manga"
-	chapter_downloader "seanime/internal/manga/downloader"
+	"aniverse/internal/events"
+	"aniverse/internal/manga"
+	chapter_downloader "aniverse/internal/manga/downloader"
 	"time"
 
 	"github.com/labstack/echo/v4"

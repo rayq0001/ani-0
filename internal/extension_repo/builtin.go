@@ -1,11 +1,11 @@
 package extension_repo
 
 import (
-	"seanime/internal/events"
-	"seanime/internal/extension"
-	hibikemanga "seanime/internal/extension/hibike/manga"
-	hibikeonlinestream "seanime/internal/extension/hibike/onlinestream"
-	hibiketorrent "seanime/internal/extension/hibike/torrent"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
+	hibikemanga "aniverse/internal/extension/hibike/manga"
+	hibikeonlinestream "aniverse/internal/extension/hibike/onlinestream"
+	hibiketorrent "aniverse/internal/extension/hibike/torrent"
 )
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

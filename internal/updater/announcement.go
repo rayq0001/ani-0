@@ -4,9 +4,9 @@ import (
 	"io"
 	"net/http"
 	"runtime"
-	"seanime/internal/constants"
-	"seanime/internal/database/models"
-	"seanime/internal/events"
+	"aniverse/internal/constants"
+	"aniverse/internal/database/models"
+	"aniverse/internal/events"
 	"slices"
 
 	"github.com/Masterminds/semver/v3"

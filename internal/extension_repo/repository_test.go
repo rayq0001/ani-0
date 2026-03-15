@@ -1,9 +1,9 @@
 package extension_repo_test
 
 import (
-	"seanime/internal/events"
-	"seanime/internal/extension_repo"
-	"seanime/internal/util"
+	"aniverse/internal/events"
+	"aniverse/internal/extension_repo"
+	"aniverse/internal/util"
 	"testing"
 )
 

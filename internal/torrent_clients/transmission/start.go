@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	"runtime"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"time"
 )
 

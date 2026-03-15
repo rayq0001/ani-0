@@ -7,8 +7,8 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"seanime/internal/database/db"
-	"seanime/internal/database/models"
+	"aniverse/internal/database/db"
+	"aniverse/internal/database/models"
 	"strings"
 	"time"
 )

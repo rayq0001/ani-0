@@ -1,7 +1,7 @@
 package discordrpc_client
 
 import (
-	"seanime/internal/constants"
+	"aniverse/internal/constants"
 	"testing"
 	"time"
 )
@@ -20,7 +20,7 @@ func TestClient(t *testing.T) {
 			LargeImage: "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx101557-bEJu54cmVYxx.jpg",
 			LargeText:  "Boku no Kokoro no Yabai Yatsu",
 			SmallImage: "logo",
-			SmallText:  "Seanime",
+			SmallText:  "Aniverse",
 		},
 		Timestamps: &Timestamps{
 			Start: &Epoch{

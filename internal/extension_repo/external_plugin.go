@@ -5,9 +5,9 @@ import (
 	"path/filepath"
 	"slices"
 
-	"seanime/internal/extension"
-	"seanime/internal/util"
-	"seanime/internal/util/filecache"
+	"aniverse/internal/extension"
+	"aniverse/internal/util"
+	"aniverse/internal/util/filecache"
 
 	"github.com/samber/lo"
 )

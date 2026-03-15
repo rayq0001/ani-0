@@ -2,8 +2,8 @@ package anilist
 
 import (
 	"context"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
 	"testing"
 
 	"github.com/davecgh/go-spew/spew"

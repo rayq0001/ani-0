@@ -3,11 +3,11 @@ package discordrpc_presence
 import (
 	"context"
 	"fmt"
-	"seanime/internal/constants"
-	"seanime/internal/database/models"
-	discordrpc_client "seanime/internal/discordrpc/client"
-	"seanime/internal/hook"
-	"seanime/internal/util"
+	"aniverse/internal/constants"
+	"aniverse/internal/database/models"
+	discordrpc_client "aniverse/internal/discordrpc/client"
+	"aniverse/internal/hook"
+	"aniverse/internal/util"
 	"sync"
 	"time"
 

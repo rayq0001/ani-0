@@ -9,7 +9,7 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"seanime/internal/util/result"
+	"aniverse/internal/util/result"
 	"strings"
 	"sync"
 	"time"

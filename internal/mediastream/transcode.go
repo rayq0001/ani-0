@@ -2,8 +2,8 @@ package mediastream
 
 import (
 	"errors"
-	"seanime/internal/events"
-	"seanime/internal/mediastream/transcoder"
+	"aniverse/internal/events"
+	"aniverse/internal/mediastream/transcoder"
 	"strconv"
 	"strings"
 

@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"seanime/internal/database/db_bridge"
+	"aniverse/internal/database/db_bridge"
 
 	"github.com/labstack/echo/v4"
 )

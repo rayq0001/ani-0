@@ -1,7 +1,7 @@
 package extension
 
 import (
-	hibikeonlinestream "seanime/internal/extension/hibike/onlinestream"
+	hibikeonlinestream "aniverse/internal/extension/hibike/onlinestream"
 )
 
 type OnlinestreamProviderExtension interface {

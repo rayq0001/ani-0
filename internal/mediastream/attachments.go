@@ -4,8 +4,8 @@ import (
 	"errors"
 	"net/url"
 	"path/filepath"
-	"seanime/internal/events"
-	"seanime/internal/mediastream/videofile"
+	"aniverse/internal/events"
+	"aniverse/internal/mediastream/videofile"
 
 	"github.com/labstack/echo/v4"
 )

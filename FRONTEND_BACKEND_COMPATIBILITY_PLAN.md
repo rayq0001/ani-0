@@ -1,9 +1,9 @@
-# خطة توافق الفرونت اند والباك اند - Seanime
+# خطة توافق الفرونت اند والباك اند - Aniverse
 
 ## المشاكل المكتشفة
 
 ### 1. مشكلة ComicsEntry - TypeScript Errors (خطيرة)
-**الملف:** `seanime-web/src/app/(main)/comics/page.tsx`
+**الملف:** `aniverse-web/src/app/(main)/comics/page.tsx`
 **الأسطر:** 385, 390, 394, 401, 407, 413
 
 **المشكلة:** 
@@ -25,7 +25,7 @@ export interface ComicsEntry {
 - أو تعديل `comics/page.tsx` لاستخدام الخصائص المباشرة
 
 ### 2. مشكلة AI Settings Form (متوسطة)
-**الملف:** `seanime-web/src/app/(main)/settings/_containers/ai-settings.tsx`
+**الملف:** `aniverse-web/src/app/(main)/settings/_containers/ai-settings.tsx`
 
 **المشكلة:**
 النموذج يستخدم `document.getElementById` وجمع البيانات يدوياً، وهذا قد يسبب مشاكل في إرسال البيانات.
@@ -118,9 +118,9 @@ export interface ComicsEntry {
 ## الملفات التي تحتاج تعديل
 
 ### أولوية عالية:
-1. `seanime-web/src/api/hooks/comics.hooks.ts` - إضافة media property
-2. `seanime-web/src/app/(main)/comics/page.tsx` - إصلاح TypeScript errors
-3. `seanime-web/src/app/(main)/settings/_containers/ai-settings.tsx` - إصلاح النموذج
+1. `aniverse-web/src/api/hooks/comics.hooks.ts` - إضافة media property
+2. `aniverse-web/src/app/(main)/comics/page.tsx` - إصلاح TypeScript errors
+3. `aniverse-web/src/app/(main)/settings/_containers/ai-settings.tsx` - إصلاح النموذج
 
 ### أولوية متوسطة:
 4. `internal/handlers/comics.go` - التأكد من إرجاع media property

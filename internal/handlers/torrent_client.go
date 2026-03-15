@@ -4,11 +4,11 @@ import (
 	"errors"
 	"os"
 	"path/filepath"
-	"seanime/internal/api/anilist"
-	"seanime/internal/database/db_bridge"
-	hibiketorrent "seanime/internal/extension/hibike/torrent"
-	"seanime/internal/torrent_clients/torrent_client"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/database/db_bridge"
+	hibiketorrent "aniverse/internal/extension/hibike/torrent"
+	"aniverse/internal/torrent_clients/torrent_client"
+	"aniverse/internal/util"
 
 	"github.com/labstack/echo/v4"
 )

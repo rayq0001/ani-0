@@ -2,10 +2,10 @@ package troubleshooter
 
 import (
 	"fmt"
-	"seanime/internal/database/models"
-	"seanime/internal/mediaplayers/mediaplayer"
-	"seanime/internal/onlinestream"
-	"seanime/internal/torrentstream"
+	"aniverse/internal/database/models"
+	"aniverse/internal/mediaplayers/mediaplayer"
+	"aniverse/internal/onlinestream"
+	"aniverse/internal/torrentstream"
 
 	"github.com/rs/zerolog"
 )

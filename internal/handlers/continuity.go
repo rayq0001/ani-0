@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"seanime/internal/continuity"
+	"aniverse/internal/continuity"
 	"strconv"
 
 	"github.com/labstack/echo/v4"

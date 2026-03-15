@@ -2,12 +2,12 @@ package core
 
 import (
 	"context"
-	"seanime/internal/api/anilist"
-	"seanime/internal/database/models"
-	"seanime/internal/events"
-	"seanime/internal/platforms/platform"
-	"seanime/internal/platforms/simulated_platform"
-	"seanime/internal/user"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/database/models"
+	"aniverse/internal/events"
+	"aniverse/internal/platforms/platform"
+	"aniverse/internal/platforms/simulated_platform"
+	"aniverse/internal/user"
 	"time"
 )
 

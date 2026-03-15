@@ -4,7 +4,7 @@ import (
 	"errors"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
-	"seanime/internal/database/models"
+	"aniverse/internal/database/models"
 )
 
 func (db *Database) GetMalInfo() (*models.Mal, error) {

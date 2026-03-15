@@ -2,7 +2,7 @@
 
 ## 🎉 Project Complete!
 
-The Anyverse AI-powered manga ecosystem has been successfully implemented for Seanime. This document provides a complete overview of all components, features, and how to use them.
+The Anyverse AI-powered manga ecosystem has been successfully implemented for Aniverse. This document provides a complete overview of all components, features, and how to use them.
 
 ---
 
@@ -32,20 +32,20 @@ The Anyverse AI-powered manga ecosystem has been successfully implemented for Se
 
 | File | Purpose |
 |------|---------|
-| `seanime-web/src/lib/theme/anyverse-tokens.ts` | Design system tokens |
-| `seanime-web/src/components/anyverse/GlassCard.tsx` | Glass-morphism card component |
-| `seanime-web/src/components/anyverse/HolographicButton.tsx` | Holographic button |
-| `seanime-web/src/components/anyverse/NeonBadge.tsx` | Neon badge component |
-| `seanime-web/src/components/anyverse/LiquidBackground.tsx` | Animated background |
-| `seanime-web/src/components/anyverse/index.ts` | Component exports |
-| `seanime-web/src/app/(main)/_features/engines/director-engine.tsx` | AI Director UI |
-| `seanime-web/src/app/(main)/_features/engines/ost-engine.tsx` | Dynamic OST UI |
-| `seanime-web/src/app/(main)/_features/engines/index.ts` | Engine exports |
-| `seanime-web/src/app/(main)/_features/wallet/SubscriptionCard.tsx` | Subscription UI |
-| `seanime-web/src/app/(main)/_features/marketplace/Marketplace.tsx` | Digital assets store |
-| `seanime-web/src/app/(main)/_atoms/anyverse.atoms.ts` | State management |
-| `seanime-web/src/api/hooks/ai.hooks.ts` | Updated API hooks |
-| `seanime-web/src/app/(main)/settings/_containers/ai-settings.tsx` | Updated settings UI |
+| `aniverse-web/src/lib/theme/anyverse-tokens.ts` | Design system tokens |
+| `aniverse-web/src/components/anyverse/GlassCard.tsx` | Glass-morphism card component |
+| `aniverse-web/src/components/anyverse/HolographicButton.tsx` | Holographic button |
+| `aniverse-web/src/components/anyverse/NeonBadge.tsx` | Neon badge component |
+| `aniverse-web/src/components/anyverse/LiquidBackground.tsx` | Animated background |
+| `aniverse-web/src/components/anyverse/index.ts` | Component exports |
+| `aniverse-web/src/app/(main)/_features/engines/director-engine.tsx` | AI Director UI |
+| `aniverse-web/src/app/(main)/_features/engines/ost-engine.tsx` | Dynamic OST UI |
+| `aniverse-web/src/app/(main)/_features/engines/index.ts` | Engine exports |
+| `aniverse-web/src/app/(main)/_features/wallet/SubscriptionCard.tsx` | Subscription UI |
+| `aniverse-web/src/app/(main)/_features/marketplace/Marketplace.tsx` | Digital assets store |
+| `aniverse-web/src/app/(main)/_atoms/anyverse.atoms.ts` | State management |
+| `aniverse-web/src/api/hooks/ai.hooks.ts` | Updated API hooks |
+| `aniverse-web/src/app/(main)/settings/_containers/ai-settings.tsx` | Updated settings UI |
 | `ANYVERSE_PLAN.md` | Implementation roadmap |
 | `ANYVERSE_TODO.md` | Task tracking |
 

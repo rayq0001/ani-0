@@ -3,9 +3,9 @@ package handlers
 import (
 	"errors"
 	"fmt"
-	"seanime/internal/api/anilist"
-	"seanime/internal/platforms/shared_platform"
-	"seanime/internal/util/result"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/platforms/shared_platform"
+	"aniverse/internal/util/result"
 	"strconv"
 	"time"
 

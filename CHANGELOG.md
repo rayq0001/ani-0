@@ -33,7 +33,7 @@ All notable changes to this project will be documented in this file.
 - ⚡️ Scanner: Added support for Anime Offline Database
   - Enhanced matching will now use the Anime Offline Database to improve accuracy
 - ⚡️ New Transcoding/Direct Play media player
-  - Video playback using transcoding/direct play will now use Seanime's custom player (VideoCore)
+  - Video playback using transcoding/direct play will now use Aniverse's custom player (VideoCore)
 - ⚡️ Updated LibASS Renderer (Jassub)
 - ⚡️ Theming: Added toggle for restoring blur effects
 - ⚡️ Improved filename parser
@@ -168,7 +168,7 @@ All notable changes to this project will be documented in this file.
 
 - ✨️ Nakama: Cloud Rooms (Public Beta)
   - Host watch parties without exposing your server to the internet.
-  - Communication between the host and peers is managed by Seanime's Rooms API
+  - Communication between the host and peers is managed by Aniverse's Rooms API
   - Note: This feature might be restricted or removed in the future.
 - 🦺 Online streaming: Fixed missing AniSkip data
 - 🦺 VideoCore: Fixed custom fonts not applying
@@ -331,14 +331,14 @@ All notable changes to this project will be documented in this file.
 
 ## v3.0.0
 
-- 📝 BREAKING: Seanime Desktop is now deprecated. Download the new desktop client https://seanime.app/download
-- 🎉 Seanime Denshi: New desktop client & built-in player
-  - Seanime Denshi (based on Electron) replaces Seanime Desktop (based on Tauri)
+- 📝 BREAKING: Aniverse Desktop is now deprecated. Download the new desktop client https://aniverse.app/download
+- 🎉 Aniverse Denshi: New desktop client & built-in player
+  - Aniverse Denshi (based on Electron) replaces Aniverse Desktop (based on Tauri)
   - New built-in player for local/torrent/debrid streaming
   - New player supports ASS/SSA subtitles, importing subtitle files, Anime4K Upscaling
   - PiP, Mini player, keybinds and more
 - 🎉 Custom Sources: New extension type for adding custom media
-  - Seanime now no longer limited to AniList!
+  - Aniverse now no longer limited to AniList!
   - Add custom sources to watch/read anything you want (even non-anime series)
   - Create and share your own custom sources
 - 🎉 Library Explorer: New way to manage your scanned library
@@ -351,7 +351,7 @@ All notable changes to this project will be documented in this file.
   - Playlists now support external player links
 - 🎉 New cache layer for zero downtime
   - All requests are now automatically cached to disk
-  - Seanime will keep working as usual when AniList is temporarily down
+  - Aniverse will keep working as usual when AniList is temporarily down
 - ⚡️ Library management improvements:
   - Unmatched files: Integrated search & preview for faster matching
 - ⚡️ Torrent/Debrid streaming improvements:
@@ -436,7 +436,7 @@ All notable changes to this project will be documented in this file.
 
 ## v2.9.4
 
-- ⚡️ Migrated to Seanime's own anime metadata API
+- ⚡️ Migrated to Aniverse's own anime metadata API
 - ⚡️ Release calendar: Watch status is now shown in popovers
 - 🦺 Fixed schedule missing some anime entries due to custom lists
 - 🦺 Watch history: Fixed resumed playback not working for local files
@@ -477,17 +477,17 @@ All notable changes to this project will be documented in this file.
 
 ## v2.9.0
 
-- 🎉 New feature: Nakama - Communication between Seanime instances
-  - You can now communicate with other Seanime instances over the internet
+- 🎉 New feature: Nakama - Communication between Aniverse instances
+  - You can now communicate with other Aniverse instances over the internet
 - 🎉 Nakama: Watch together (Alpha)
   - Watch (local media, torrent or debrid streams) together with friends with playback syncing
   - Peers will stream from the host with synchronized playback
 - 🎉 Nakama: Share your anime library (Alpha)
-  - Share your local anime library with other Seanime instances or consume your remote library
+  - Share your local anime library with other Aniverse instances or consume your remote library
 - ✨ Local account
-  - By default, Seanime no longer requires an AniList account and stores everything locally
+  - By default, Aniverse no longer requires an AniList account and stores everything locally
 - ✨ Server password
-  - Lock your exposed Seanime instance by adding a password in your config file
+  - Lock your exposed Aniverse instance by adding a password in your config file
 - ✨ Manga: Local source extension (Alpha)
   - New built-in extension for reading your local manga (CBZ, ZIP, Images)
 - ✨ New schedule calendar
@@ -589,7 +589,7 @@ All notable changes to this project will be documented in this file.
 
 ## v2.8.0
 
-- 🎉 Plugins: A powerful new way to extend and customize Seanime
+- 🎉 Plugins: A powerful new way to extend and customize Aniverse
     - Build your own features using a wide range of APIs — all in JavaScript.
 - ✨ Playback: Faster media tracking, better responsiveness
     - Faster autoplay, progress tracking, playlists
@@ -792,7 +792,7 @@ All notable changes to this project will be documented in this file.
 - 🦺 Desktop: Fixed sidebar menu item selection
 - 🏗️ Auto Downloader: Set minimum refresh interval to 15 minutes (BREAKING)
   - If your refresh interval less than 15 minutes, it will be force set to 20 minutes. Update the settings accordingly.
-- 🏗️ Moved 'watch continuity' setting to 'Seanime' tab
+- 🏗️ Moved 'watch continuity' setting to 'Aniverse' tab
 
 ## v2.5.2
 
@@ -871,7 +871,7 @@ All notable changes to this project will be documented in this file.
 
 - ⚡️ Desktop: Close to minimize to tray
   - The close button no longer exits the app, but minimizes it to the system tray
-  - Exit the app by right-clicking the tray icon and selecting 'Quit Seanime'
+  - Exit the app by right-clicking the tray icon and selecting 'Quit Aniverse'
 - ⚡️ Qbittorrent: Custom tag settings #140
 - 🦺 Fixed Linux server requiring libc
 - 🦺 Desktop: Fixed 'toggle visibility'
@@ -1040,7 +1040,7 @@ All notable changes to this project will be documented in this file.
   - Easily share extensions by hosting them on GitHub or any public URL
   - Extensions are sandboxed for security and have access only to essential APIs
 - 🎉 Windows System Tray App
-  - Seanime now runs as a system tray app on Windows, offering quick and easy access
+  - Aniverse now runs as a system tray app on Windows, offering quick and easy access
 - 🎉 External Media Player Link (Custom scheme)
   - Open media in external player apps like VLC, MX Player, Outplayer, and more, using custom URL schemes
   - Stream both downloaded media and torrents directly to your preferred player that supports custom schemes
@@ -1162,10 +1162,10 @@ All notable changes to this project will be documented in this file.
 ## v1.6.0
 
 - 🚀 The web interface is now bundled with the binary
-  - Seanime now ships without the `web` directory
+  - Aniverse now ships without the `web` directory
   - This should solve issues with auto updates on Windows
 - 🎉 Media streaming: Direct play support
-  - Seanime will now, automatically attempt to play media files directly without transcoding if the client supports the codecs
+  - Aniverse will now, automatically attempt to play media files directly without transcoding if the client supports the codecs
 - ✨ Metadata: View filler episodes #74
   - Fetch additional metadata to highlight filler episodes
 - ✨ Setting: Refresh library on startup
@@ -1203,7 +1203,7 @@ All notable changes to this project will be documented in this file.
 ## v1.5.3
 
 - ✨ Self update (Experimental)
-  - Update Seanime to the latest version directly from the web UI
+  - Update Aniverse to the latest version directly from the web UI
 - 🦺 Media streaming: Fixed issue with media player not using JASSUB #65
 - 🦺 Online streaming: Fixed progress syncing #66
 - 🦺 Fixed .tar.gz decompression error when downloading new releases on macOS
@@ -1286,8 +1286,8 @@ Thank you to everyone who has supported the project so far.
 - 🎉 Customize UI colors
   - You can now easily customize the background and accent colors of the UI
 - ✨ Docker image
-  - Seanime is now available as a Docker image. Check DOCKER.md for more information
-- ⚡️ Added '--truewd' flag to force to Seanime use the binary's directory as the working directory
+  - Aniverse is now available as a Docker image. Check DOCKER.md for more information
+- ⚡️ Added '--truewd' flag to force to Aniverse use the binary's directory as the working directory
   - This solves issues encountered on macOS
 - ⚡️ Environment variables are now read before initializing the config file
 	- This solves issues with setting up Docker containers
@@ -1349,7 +1349,7 @@ Thank you to everyone who has supported the project so far.
     - Anime & Manga activity + options to disable either one #30
     - Enable this in your settings under the ‘Features’ section
 - ✨ Command line flags
-    - Use `--datadir` to override the default data directory and use multiple Seanime instances
+    - Use `--datadir` to override the default data directory and use multiple Aniverse instances
 - ✨ Overhauled Manga Reader
     - Added ‘Double Page’ layout
     - Page layout customization
@@ -1421,7 +1421,7 @@ This release introduced a major bug, skip to v1.1.2+
 - ✨ Added trailers
 - ⚡️Improved torrent search for AnimeTosho
 - ⚡️Improved auto file section for torrent downloads
-    - Seanime can now select the right episode files in multi-season batches, and will only fail when it can’t tell seasons apart
+    - Aniverse can now select the right episode files in multi-season batches, and will only fail when it can’t tell seasons apart
     - Feature now available for Transmission v4
 - ⚡️ Custom background images are now visible on all pages
 - ⚡️ Added ability to un-match in unknown media resolver
@@ -1496,11 +1496,11 @@ This release introduced a major bug, skip to v1.1.2+
   - The configuration file is now named `config.toml`
   - This update will reset your config variables (not settings)
 - 🏗️ Handle runtime errors gracefully
-  - Seanime will now try to recover from runtime errors and display the stack trace
+  - Aniverse will now try to recover from runtime errors and display the stack trace
 - ⚡️ Support for different server host and port
   - Changing the server host and port will not break the web interface anymore
 - ✨ Added update notifications
-  - Seanime will now check for updates on startup and notify you if a new version is available (can be disabled in settings)
+  - Aniverse will now check for updates on startup and notify you if a new version is available (can be disabled in settings)
   - You can also download the update from the Web UI
 - ⚡️ Added ability to download ".torrent" files #11
 - ⚡️ Improved MPV support
@@ -1522,17 +1522,17 @@ This release introduced a major bug, skip to v1.1.2+
 ## 0.2.0
 
 - 🎉 New feature: Track progress on MyAnimeList
-  - You can now link your MyAnimeList account to Seanime and automatically update your progress
+  - You can now link your MyAnimeList account to Aniverse and automatically update your progress
 - 🎉 New feature: Sync anime lists between AniList and MyAnimeList (Experimental)
   - New interface to sync your anime lists when you link your MyAnimeList account
 - 🎉 New feature: Automatically download new episodes
   - Add rules (filters) that specify which episodes to download based on parameters such as release group, resolution, episode numbers
-  - Seanime will automatically parse the Nyaa RSS feed and download new episodes based on your rules
+  - Aniverse will automatically parse the Nyaa RSS feed and download new episodes based on your rules
 - ✨ Added scan summaries
   - You can now read detailed summaries of your latest scan results, allowing you to see how files were matched
 - ✨ Added ability to automatically update progress without confirmation when you finish an episode
 - ⚡️ Improved handling of AniList rate limits
-  - Seanime will now pause and resume requests when rate limits are reached without throwing errors. This fixes the largest issue pertaining to scanning.
+  - Aniverse will now pause and resume requests when rate limits are reached without throwing errors. This fixes the largest issue pertaining to scanning.
 - ⚡️ AniList media with incorrect mapping to AniDB will be accessible in a limited view (without metadata) instead of being hidden
 - ⚡️ Enhanced scanning mode is now stable and more accurate
 - 💄 UI improvements

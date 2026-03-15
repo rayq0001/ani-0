@@ -1,12 +1,12 @@
 package mediaplayer
 
 import (
-	"seanime/internal/events"
-	"seanime/internal/mediaplayers/mpchc"
-	"seanime/internal/mediaplayers/mpv"
-	"seanime/internal/mediaplayers/vlc"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
+	"aniverse/internal/events"
+	"aniverse/internal/mediaplayers/mpchc"
+	"aniverse/internal/mediaplayers/mpv"
+	"aniverse/internal/mediaplayers/vlc"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
 	"testing"
 )
 

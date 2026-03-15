@@ -1,7 +1,7 @@
 package goja_bindings
 
 import (
-	"seanime/internal/torrents/torrent"
+	"aniverse/internal/torrents/torrent"
 
 	"github.com/dop251/goja"
 )

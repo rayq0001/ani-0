@@ -1,9 +1,9 @@
 package playbackmanager
 
 import (
-	"seanime/internal/api/anilist"
-	"seanime/internal/hook_resolver"
-	"seanime/internal/library/anime"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/hook_resolver"
+	"aniverse/internal/library/anime"
 )
 
 // LocalFilePlaybackRequestedEvent is triggered when a local file is requested to be played.

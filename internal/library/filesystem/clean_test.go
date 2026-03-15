@@ -1,7 +1,7 @@
 package filesystem
 
 import (
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"testing"
 )
 

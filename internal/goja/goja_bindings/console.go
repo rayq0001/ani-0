@@ -3,8 +3,8 @@ package goja_bindings
 import (
 	"encoding/json"
 	"fmt"
-	"seanime/internal/events"
-	"seanime/internal/extension"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
 	"strings"
 
 	"github.com/dop251/goja"

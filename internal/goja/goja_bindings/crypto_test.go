@@ -1,7 +1,7 @@
 package goja_bindings
 
 import (
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"testing"
 	"time"
 
@@ -47,7 +47,7 @@ async function run() {
 
         console.log("\nTesting AES")
 
-        let message = "seanime"
+        let message = "aniverse"
         let key = CryptoJS.enc.Utf8.parse("secret key")
 
 
@@ -69,7 +69,7 @@ async function run() {
         console.log("Decrypted without IV:", decrypted.toString(CryptoJS.enc.Utf8))
 
         decrypted = CryptoJS.AES.decrypt(encrypted, key, { iv: iv })
-        console.log("Decrypted with IV:", decrypted.toString(CryptoJS.enc.Utf8)) // seanime
+        console.log("Decrypted with IV:", decrypted.toString(CryptoJS.enc.Utf8)) // aniverse
 
     }
     catch (e) {

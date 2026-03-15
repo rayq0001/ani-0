@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"seanime/internal/api/anilist"
-	hibiketorrent "seanime/internal/extension/hibike/torrent"
-	"seanime/internal/library/anime"
-	"seanime/internal/mkvparser"
-	"seanime/internal/nativeplayer"
-	httputil "seanime/internal/util/http"
-	"seanime/internal/util/result"
+	"aniverse/internal/api/anilist"
+	hibiketorrent "aniverse/internal/extension/hibike/torrent"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/mkvparser"
+	"aniverse/internal/nativeplayer"
+	httputil "aniverse/internal/util/http"
+	"aniverse/internal/util/result"
 	"sync"
 
 	"github.com/google/uuid"
@@ -189,7 +189,7 @@ func (s *Nakama) GetStreamHandler() http.Handler {
 			w.Header().Set("Content-Length", fmt.Sprintf("%d", fileSize))
 			w.Header().Set("Content-Type", s.LoadContentType())
 			w.Header().Set("Accept-Ranges", "bytes")
-			w.Header().Set("X-Seanime-Nakama-Token", s.nakamaHostPassword)
+			w.Header().Set("X-Aniverse-Nakama-Token", s.nakamaHostPassword)
 			w.WriteHeader(http.StatusOK)
 			return
 		}
@@ -250,7 +250,7 @@ func (s *Nakama) GetStreamHandler() http.Handler {
 			}
 		}
 
-		req.Header.Set("X-Seanime-Nakama-Token", s.nakamaHostPassword)
+		req.Header.Set("X-Aniverse-Nakama-Token", s.nakamaHostPassword)
 
 		resp, err := videoProxyClient.Do(req)
 		if err != nil {

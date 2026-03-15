@@ -3,13 +3,13 @@ package handlers
 import (
 	"errors"
 	"path/filepath"
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata"
-	"seanime/internal/database/models"
-	debrid_client "seanime/internal/debrid/client"
-	"seanime/internal/debrid/debrid"
-	"seanime/internal/events"
-	hibiketorrent "seanime/internal/extension/hibike/torrent"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata"
+	"aniverse/internal/database/models"
+	debrid_client "aniverse/internal/debrid/client"
+	"aniverse/internal/debrid/debrid"
+	"aniverse/internal/events"
+	hibiketorrent "aniverse/internal/extension/hibike/torrent"
 
 	"github.com/labstack/echo/v4"
 )

@@ -1,10 +1,10 @@
 package torrent
 
 import (
-	"seanime/internal/api/metadata_provider"
-	"seanime/internal/extension"
-	"seanime/internal/util"
-	"seanime/internal/util/result"
+	"aniverse/internal/api/metadata_provider"
+	"aniverse/internal/extension"
+	"aniverse/internal/util"
+	"aniverse/internal/util/result"
 	"slices"
 	"sync"
 

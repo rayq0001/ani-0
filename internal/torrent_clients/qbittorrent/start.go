@@ -3,7 +3,7 @@ package qbittorrent
 import (
 	"errors"
 	"runtime"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"time"
 )
 

@@ -1,8 +1,8 @@
 package codegen
 
 import (
-	"seanime/internal/api/anilist"
-	hibiketorrent "seanime/internal/extension/hibike/torrent"
+	"aniverse/internal/api/anilist"
+	hibiketorrent "aniverse/internal/extension/hibike/torrent"
 )
 
 //type Struct1 struct {

@@ -5,7 +5,7 @@ import (
 	"io"
 	"net/http"
 	url2 "net/url"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"strconv"
 	"strings"
 	"time"

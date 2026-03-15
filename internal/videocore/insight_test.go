@@ -1,7 +1,7 @@
 package videocore
 
 import (
-	"seanime/internal/mkvparser"
+	"aniverse/internal/mkvparser"
 	"testing"
 
 	"github.com/stretchr/testify/assert"

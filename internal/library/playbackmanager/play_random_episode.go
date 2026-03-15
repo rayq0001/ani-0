@@ -3,8 +3,8 @@ package playbackmanager
 import (
 	"context"
 	"fmt"
-	"seanime/internal/database/db_bridge"
-	"seanime/internal/library/anime"
+	"aniverse/internal/database/db_bridge"
+	"aniverse/internal/library/anime"
 
 	"github.com/samber/lo"
 )

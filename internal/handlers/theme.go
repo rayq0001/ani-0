@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"seanime/internal/database/models"
+	"aniverse/internal/database/models"
 
 	"github.com/labstack/echo/v4"
 )

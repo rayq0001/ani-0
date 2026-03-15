@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"errors"
-	"seanime/internal/core"
+	"aniverse/internal/core"
 	"slices"
 	"strings"
 

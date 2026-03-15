@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"seanime/internal/manga"
+	"aniverse/internal/manga"
 	"sort"
 
 	"github.com/labstack/echo/v4"

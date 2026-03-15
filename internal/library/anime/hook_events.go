@@ -1,9 +1,9 @@
 package anime
 
 import (
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata"
-	"seanime/internal/hook_resolver"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata"
+	"aniverse/internal/hook_resolver"
 )
 
 /////////////////////////////

@@ -1,7 +1,7 @@
 {
-  "name": "seanime-denshi",
+  "name": "aniverse-denshi",
   "version": "3.5.1",
-  "description": "Electron-based Desktop client for Seanime",
+  "description": "Electron-based Desktop client for Aniverse",
   "main": "src/main.js",
   "author": "5rahim <talkwithrahim@gmail.com>",
   "scripts": {
@@ -24,11 +24,11 @@
   },
   "build": {
     "electronDownload": {
-      "mirror": "https://seanime.app/assets/electron/",
+      "mirror": "https://aniverse.app/assets/electron/",
       "customDir": "v39.2.7"
     },
-    "appId": "app.seanime.denshi",
-    "productName": "Seanime Denshi",
+    "appId": "app.aniverse.denshi",
+    "productName": "Aniverse Denshi",
     "asar": true,
     "extraResources": [
       {
@@ -39,7 +39,7 @@
     "generateUpdatesFilesForAllChannels": true,
     "publish": {
       "provider": "generic",
-      "url": "https://github.com/5rahim/seanime/releases/latest/download",
+      "url": "https://github.com/5rahim/aniverse/releases/latest/download",
       "channel": "latest",
       "publishAutoUpdate": true,
       "useMultipleRangeRequest": false
@@ -60,7 +60,7 @@
       "gatekeeperAssess": false,
       "entitlements": "assets/entitlements.mac.plist",
       "entitlementsInherit": "assets/entitlements.mac.plist",
-      "artifactName": "seanime-denshi-${version}_MacOS_${arch}.${ext}",
+      "artifactName": "aniverse-denshi-${version}_MacOS_${arch}.${ext}",
       "identity": "-"
     },
     "win": {
@@ -72,7 +72,7 @@
           ]
         }
       ],
-      "artifactName": "seanime-denshi-${version}_Windows_${arch}.${ext}",
+      "artifactName": "aniverse-denshi-${version}_Windows_${arch}.${ext}",
       "verifyUpdateCodeSignature": false
     },
     "linux": {
@@ -85,7 +85,7 @@
         }
       ],
       "category": "Entertainment",
-      "artifactName": "seanime-denshi-${version}_Linux_${arch}.${ext}"
+      "artifactName": "aniverse-denshi-${version}_Linux_${arch}.${ext}"
     },
     "nsis": {
       "oneClick": false,
@@ -93,8 +93,8 @@
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
       "deleteAppDataOnUninstall": true,
-      "shortcutName": "Seanime Denshi",
-      "artifactName": "seanime-denshi-${version}_Windows_${arch}.${ext}",
+      "shortcutName": "Aniverse Denshi",
+      "artifactName": "aniverse-denshi-${version}_Windows_${arch}.${ext}",
       "perMachine": true
     },
     "directories": {

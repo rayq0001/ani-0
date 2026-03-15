@@ -5,7 +5,7 @@ package notifier
 import (
 	"fmt"
 	"github.com/gen2brain/beeep"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 )
 
 // Notify sends a notification to the user.
@@ -22,7 +22,7 @@ func (n *Notifier) Notify(id Notification, message string) {
 		}
 
 		err := beeep.Notify(
-			fmt.Sprintf("Seanime: %s", id),
+			fmt.Sprintf("Aniverse: %s", id),
 			message,
 			n.logoPath,
 		)

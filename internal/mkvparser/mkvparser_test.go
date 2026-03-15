@@ -5,7 +5,7 @@ import (
 	"errors"
 	"os"
 	"path/filepath"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"strings"
 	"testing"
 	"time"

@@ -3,7 +3,7 @@ package image_downloader
 import (
 	"fmt"
 	"github.com/stretchr/testify/require"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"testing"
 	"time"
 )

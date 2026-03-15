@@ -1,7 +1,7 @@
 package plugin
 
 import (
-	"seanime/internal/extension"
+	"aniverse/internal/extension"
 	"testing"
 
 	"github.com/samber/mo"

@@ -3,10 +3,10 @@ package onlinestream
 import (
 	"context"
 	"path/filepath"
-	"seanime/internal/api/anilist"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
-	"seanime/internal/util/filecache"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
+	"aniverse/internal/util/filecache"
 	"testing"
 )
 

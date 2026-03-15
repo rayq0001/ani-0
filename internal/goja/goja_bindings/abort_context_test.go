@@ -1,8 +1,8 @@
 package goja_bindings
 
 import (
-	"seanime/internal/util"
-	gojautil "seanime/internal/util/goja"
+	"aniverse/internal/util"
+	gojautil "aniverse/internal/util/goja"
 	"testing"
 	"time"
 

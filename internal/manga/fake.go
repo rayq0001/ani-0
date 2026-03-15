@@ -2,12 +2,12 @@ package manga
 
 import (
 	"path/filepath"
-	"seanime/internal/database/db"
-	"seanime/internal/events"
-	"seanime/internal/extension"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
-	"seanime/internal/util/filecache"
+	"aniverse/internal/database/db"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
+	"aniverse/internal/util/filecache"
 	"testing"
 )
 

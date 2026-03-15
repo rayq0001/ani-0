@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"io"
 	"path/filepath"
-	"seanime/internal/database/db_bridge"
-	"seanime/internal/library/anime"
-	"seanime/internal/report"
+	"aniverse/internal/database/db_bridge"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/report"
 	"time"
 
 	"github.com/labstack/echo/v4"

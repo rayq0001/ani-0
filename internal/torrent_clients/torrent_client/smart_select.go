@@ -3,11 +3,11 @@ package torrent_client
 import (
 	"errors"
 	"fmt"
-	"seanime/internal/api/anilist"
-	hibiketorrent "seanime/internal/extension/hibike/torrent"
-	"seanime/internal/platforms/platform"
-	torrent_analyzer "seanime/internal/torrents/analyzer"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	hibiketorrent "aniverse/internal/extension/hibike/torrent"
+	"aniverse/internal/platforms/platform"
+	torrent_analyzer "aniverse/internal/torrents/analyzer"
+	"aniverse/internal/util"
 	"time"
 )
 

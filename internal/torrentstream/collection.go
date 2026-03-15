@@ -2,12 +2,12 @@ package torrentstream
 
 import (
 	"fmt"
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata"
-	"seanime/internal/api/metadata_provider"
-	"seanime/internal/hook"
-	"seanime/internal/library/anime"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata"
+	"aniverse/internal/api/metadata_provider"
+	"aniverse/internal/hook"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/util"
 	"strconv"
 	"sync"
 

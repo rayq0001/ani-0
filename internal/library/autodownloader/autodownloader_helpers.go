@@ -2,8 +2,8 @@ package autodownloader
 
 import (
 	"regexp"
-	"seanime/internal/library/anime"
-	"seanime/internal/util"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/util"
 	"strings"
 
 	"github.com/samber/lo"

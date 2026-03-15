@@ -1,7 +1,7 @@
 package db
 
 import (
-	"seanime/internal/database/models"
+	"aniverse/internal/database/models"
 
 	"gorm.io/gorm/clause"
 )

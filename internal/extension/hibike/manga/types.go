@@ -40,7 +40,7 @@ type (
 		Image string `json:"image,omitempty"`
 		// Indicates how well the chapter title matches the search query.
 		// It is a number from 0 to 1.
-		// Leave it empty if the comparison should be done by Seanime.
+		// Leave it empty if the comparison should be done by Aniverse.
 		SearchRating float64 `json:"searchRating,omitempty"`
 	}
 

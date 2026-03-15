@@ -3,11 +3,11 @@ package onlinestream
 import (
 	"errors"
 	"fmt"
-	"seanime/internal/api/anilist"
-	"seanime/internal/extension"
-	hibikeonlinestream "seanime/internal/extension/hibike/onlinestream"
-	onlinestream_providers "seanime/internal/onlinestream/providers"
-	"seanime/internal/util/comparison"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/extension"
+	hibikeonlinestream "aniverse/internal/extension/hibike/onlinestream"
+	onlinestream_providers "aniverse/internal/onlinestream/providers"
+	"aniverse/internal/util/comparison"
 	"strings"
 )
 

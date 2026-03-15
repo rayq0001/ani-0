@@ -3,11 +3,11 @@ package playbackmanager
 import (
 	"errors"
 	"fmt"
-	"seanime/internal/api/anilist"
-	"seanime/internal/database/db_bridge"
-	"seanime/internal/hook"
-	"seanime/internal/library/anime"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/database/db_bridge"
+	"aniverse/internal/hook"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/util"
 
 	"github.com/samber/mo"
 )

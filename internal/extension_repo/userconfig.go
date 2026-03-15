@@ -2,10 +2,10 @@ package extension_repo
 
 import (
 	"fmt"
-	"seanime/internal/extension"
-	"seanime/internal/plugin"
-	"seanime/internal/util"
-	"seanime/internal/util/filecache"
+	"aniverse/internal/extension"
+	"aniverse/internal/plugin"
+	"aniverse/internal/util"
+	"aniverse/internal/util/filecache"
 	"strings"
 )
 

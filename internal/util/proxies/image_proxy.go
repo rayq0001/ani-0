@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 
 	"github.com/imroc/req/v3"
 	"github.com/labstack/echo/v4"

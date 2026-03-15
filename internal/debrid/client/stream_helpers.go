@@ -6,9 +6,9 @@ import (
 	"io"
 	"net/http"
 	"path/filepath"
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata"
+	"aniverse/internal/util"
 	"strings"
 )
 

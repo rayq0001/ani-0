@@ -2,12 +2,12 @@ package extension_repo
 
 import (
 	"context"
-	"seanime/internal/events"
-	"seanime/internal/extension"
-	hibikemanga "seanime/internal/extension/hibike/manga"
-	"seanime/internal/goja/goja_runtime"
-	"seanime/internal/util"
-	"seanime/internal/util/comparison"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
+	hibikemanga "aniverse/internal/extension/hibike/manga"
+	"aniverse/internal/goja/goja_runtime"
+	"aniverse/internal/util"
+	"aniverse/internal/util/comparison"
 
 	"github.com/rs/zerolog"
 )

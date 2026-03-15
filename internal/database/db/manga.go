@@ -2,8 +2,8 @@ package db
 
 import (
 	"fmt"
-	"seanime/internal/database/models"
-	"seanime/internal/util/result"
+	"aniverse/internal/database/models"
+	"aniverse/internal/util/result"
 )
 
 var mangaMappingCache = result.NewMap[string, *models.MangaMapping]()

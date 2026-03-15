@@ -3,7 +3,7 @@ package videofile
 import (
 	"os"
 	"path/filepath"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"testing"
 )
 

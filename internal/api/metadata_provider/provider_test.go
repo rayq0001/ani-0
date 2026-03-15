@@ -1,7 +1,7 @@
 package metadata_provider
 
 import (
-	"seanime/internal/api/metadata"
+	"aniverse/internal/api/metadata"
 	"strconv"
 	"testing"
 

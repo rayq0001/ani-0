@@ -2,8 +2,8 @@ package events
 
 import (
 	"os"
-	"seanime/internal/util"
-	"seanime/internal/util/result"
+	"aniverse/internal/util"
+	"aniverse/internal/util/result"
 	"sync"
 	"time"
 

@@ -2,9 +2,9 @@ package anime
 
 import (
 	"fmt"
-	"seanime/internal/api/anilist"
-	"seanime/internal/customsource"
-	"seanime/internal/hook"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/customsource"
+	"aniverse/internal/hook"
 	"time"
 
 	"github.com/samber/lo"

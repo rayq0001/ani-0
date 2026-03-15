@@ -2,8 +2,8 @@ package handlers
 
 import (
 	"errors"
-	"seanime/internal/api/anilist"
-	"seanime/internal/onlinestream"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/onlinestream"
 
 	"github.com/labstack/echo/v4"
 )

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"testing"
 
 	"github.com/stretchr/testify/assert"

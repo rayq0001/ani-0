@@ -6,7 +6,7 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"sort"
 	"strings"
 )

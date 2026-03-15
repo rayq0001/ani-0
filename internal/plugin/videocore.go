@@ -2,11 +2,11 @@ package plugin
 
 import (
 	"errors"
-	"seanime/internal/extension"
-	"seanime/internal/mkvparser"
-	gojautil "seanime/internal/util/goja"
-	"seanime/internal/util/result"
-	"seanime/internal/videocore"
+	"aniverse/internal/extension"
+	"aniverse/internal/mkvparser"
+	gojautil "aniverse/internal/util/goja"
+	"aniverse/internal/util/result"
+	"aniverse/internal/videocore"
 	"sync"
 	"sync/atomic"
 

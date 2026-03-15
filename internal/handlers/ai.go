@@ -3,7 +3,7 @@ package handlers
 import (
 	"encoding/base64"
 	"fmt"
-	"seanime/internal/ai"
+	"aniverse/internal/ai"
 	"strings"
 
 	"github.com/labstack/echo/v4"

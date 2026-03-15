@@ -6,22 +6,22 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata_provider"
-	"seanime/internal/database/db"
-	"seanime/internal/database/models"
-	"seanime/internal/directstream"
-	"seanime/internal/events"
-	hibiketorrent "seanime/internal/extension/hibike/torrent"
-	"seanime/internal/library/anime"
-	"seanime/internal/library/playbackmanager"
-	"seanime/internal/mediaplayers/mediaplayer"
-	"seanime/internal/nativeplayer"
-	"seanime/internal/platforms/platform"
-	"seanime/internal/torrents/autoselect"
-	"seanime/internal/torrents/torrent"
-	"seanime/internal/util"
-	"seanime/internal/util/result"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata_provider"
+	"aniverse/internal/database/db"
+	"aniverse/internal/database/models"
+	"aniverse/internal/directstream"
+	"aniverse/internal/events"
+	hibiketorrent "aniverse/internal/extension/hibike/torrent"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/library/playbackmanager"
+	"aniverse/internal/mediaplayers/mediaplayer"
+	"aniverse/internal/nativeplayer"
+	"aniverse/internal/platforms/platform"
+	"aniverse/internal/torrents/autoselect"
+	"aniverse/internal/torrents/torrent"
+	"aniverse/internal/util"
+	"aniverse/internal/util/result"
 	"sync/atomic"
 
 	itorrent "github.com/anacrolix/torrent"
@@ -249,6 +249,6 @@ func (r *Repository) GetDownloadDir() string {
 
 func (r *Repository) getDefaultDownloadPath() string {
 	tempDir := os.TempDir()
-	downloadDirPath := filepath.Join(tempDir, "seanime", "torrentstream")
+	downloadDirPath := filepath.Join(tempDir, "aniverse", "torrentstream")
 	return downloadDirPath
 }

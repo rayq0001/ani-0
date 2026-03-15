@@ -3,8 +3,8 @@ package continuity
 import (
 	"github.com/rs/zerolog"
 	"github.com/samber/mo"
-	"seanime/internal/database/db"
-	"seanime/internal/util/filecache"
+	"aniverse/internal/database/db"
+	"aniverse/internal/util/filecache"
 	"sync"
 	"time"
 )

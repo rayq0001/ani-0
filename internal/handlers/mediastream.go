@@ -3,8 +3,8 @@ package handlers
 import (
 	"errors"
 	"fmt"
-	"seanime/internal/database/models"
-	"seanime/internal/mediastream"
+	"aniverse/internal/database/models"
+	"aniverse/internal/mediastream"
 
 	"github.com/labstack/echo/v4"
 )

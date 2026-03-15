@@ -3,10 +3,10 @@ package plugin
 import (
 	"encoding/json"
 	"errors"
-	"seanime/internal/database/models"
-	"seanime/internal/extension"
-	gojautil "seanime/internal/util/goja"
-	"seanime/internal/util/result"
+	"aniverse/internal/database/models"
+	"aniverse/internal/extension"
+	gojautil "aniverse/internal/util/goja"
+	"aniverse/internal/util/result"
 	"strings"
 
 	"github.com/dop251/goja"

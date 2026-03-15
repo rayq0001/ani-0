@@ -3,7 +3,7 @@ package simulated_platform
 import (
 	"context"
 	"errors"
-	"seanime/internal/api/anilist"
+	"aniverse/internal/api/anilist"
 	"time"
 )
 

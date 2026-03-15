@@ -1,10 +1,10 @@
 package metadata_provider
 
 import (
-	"seanime/internal/database/db"
-	"seanime/internal/extension"
-	"seanime/internal/util"
-	"seanime/internal/util/filecache"
+	"aniverse/internal/database/db"
+	"aniverse/internal/extension"
+	"aniverse/internal/util"
+	"aniverse/internal/util/filecache"
 	"testing"
 
 	"github.com/stretchr/testify/require"

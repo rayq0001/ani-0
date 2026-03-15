@@ -2,7 +2,7 @@ package manga_providers
 
 import (
 	"github.com/stretchr/testify/assert"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"testing"
 )
 

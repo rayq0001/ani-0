@@ -9,9 +9,9 @@ import (
 	"image/png"
 	"io"
 	"path/filepath"
-	"seanime/internal/matroska"
-	"seanime/internal/pgs"
-	"seanime/internal/util"
+	"aniverse/internal/matroska"
+	"aniverse/internal/pgs"
+	"aniverse/internal/util"
 	"strings"
 	"sync"
 

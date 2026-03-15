@@ -3,11 +3,11 @@ package anime
 import (
 	"errors"
 	"fmt"
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata"
-	"seanime/internal/api/metadata_provider"
-	"seanime/internal/hook"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata"
+	"aniverse/internal/api/metadata_provider"
+	"aniverse/internal/hook"
+	"aniverse/internal/util"
 	"strconv"
 
 	"github.com/samber/lo"

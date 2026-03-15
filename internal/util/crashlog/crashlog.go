@@ -9,7 +9,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"sync"
 	"time"
 )

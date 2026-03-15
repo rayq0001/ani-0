@@ -105,7 +105,7 @@ func (u *Updater) GetReleaseName(version string) string {
 		ext = "zip"
 	}
 
-	return fmt.Sprintf("seanime-%s_%s_%s.%s", version, oos, arch, ext)
+	return fmt.Sprintf("aniverse-%s_%s_%s.%s", version, oos, arch, ext)
 }
 
 func (u *Updater) fetchLatestRelease() (*Release, error) {

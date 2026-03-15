@@ -1,8 +1,8 @@
 package torrent_client
 
 import (
-	"seanime/internal/torrent_clients/qbittorrent/model"
-	"seanime/internal/util"
+	"aniverse/internal/torrent_clients/qbittorrent/model"
+	"aniverse/internal/util"
 
 	"github.com/hekmon/transmissionrpc/v3"
 )

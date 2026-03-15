@@ -1,7 +1,7 @@
 package anilist
 
 import (
-	"seanime/internal/util/comparison"
+	"aniverse/internal/util/comparison"
 
 	"github.com/samber/lo"
 )

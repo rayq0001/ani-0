@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"seanime/internal/util"
-	"seanime/internal/util/crashlog"
+	"aniverse/internal/util"
+	"aniverse/internal/util/crashlog"
 
 	"github.com/rs/zerolog"
 )

@@ -1,9 +1,9 @@
 package plugin_ui
 
 import (
-	"seanime/internal/events"
-	"seanime/internal/extension"
-	"seanime/internal/util/result"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
+	"aniverse/internal/util/result"
 	"strings"
 	"sync"
 	"sync/atomic"

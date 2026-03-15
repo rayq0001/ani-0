@@ -1,7 +1,7 @@
 package cron
 
 import (
-	"seanime/internal/events"
+	"aniverse/internal/events"
 )
 
 func RefreshAnilistDataJob(c *JobCtx) {

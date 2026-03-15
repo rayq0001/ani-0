@@ -2,14 +2,14 @@ package autodownloader
 
 import (
 	"context"
-	"seanime/internal/api/anilist"
-	"seanime/internal/database/db_bridge"
-	"seanime/internal/database/models"
-	hibiketorrent "seanime/internal/extension/hibike/torrent"
-	"seanime/internal/library/anime"
-	"seanime/internal/test_utils"
-	"seanime/internal/torrent_clients/torrent_client"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/database/db_bridge"
+	"aniverse/internal/database/models"
+	hibiketorrent "aniverse/internal/extension/hibike/torrent"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/torrent_clients/torrent_client"
+	"aniverse/internal/util"
 	"testing"
 	"time"
 

@@ -2,8 +2,8 @@ package updater
 
 import (
 	"net/http"
-	"seanime/internal/events"
-	"seanime/internal/util"
+	"aniverse/internal/events"
+	"aniverse/internal/util"
 	"strings"
 	"time"
 

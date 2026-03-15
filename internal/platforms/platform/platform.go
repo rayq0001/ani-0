@@ -2,7 +2,7 @@ package platform
 
 import (
 	"context"
-	"seanime/internal/api/anilist"
+	"aniverse/internal/api/anilist"
 )
 
 type Platform interface {

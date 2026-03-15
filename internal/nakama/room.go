@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"seanime/internal/constants"
+	"aniverse/internal/constants"
 	"time"
 )
 
-// Room represents a Seanime Rooms relay room
+// Room represents a Aniverse Rooms relay room
 type Room struct {
 	ID          string    `json:"roomId"`
 	HostWsUrl   string    `json:"hostWsUrl"`
@@ -33,7 +33,7 @@ type CreateRoomResponse struct {
 	ExpiresAt   time.Time `json:"expiresAt"`
 }
 
-// createRoom creates a new room on Seanime Rooms
+// createRoom creates a new room on Aniverse Rooms
 func (m *Manager) createRoom(password string) (*Room, error) {
 	reqBody := CreateRoomRequest{
 		Password: password,
@@ -46,7 +46,7 @@ func (m *Manager) createRoom(password string) (*Room, error) {
 	}
 
 	resp, err := http.Post(
-		constants.SeanimeRoomsApiUrl,
+		constants.AniverseRoomsApiUrl,
 		"application/json",
 		bytes.NewBuffer(jsonData),
 	)

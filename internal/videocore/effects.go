@@ -2,10 +2,10 @@ package videocore
 
 import (
 	"context"
-	"seanime/internal/continuity"
-	"seanime/internal/discordrpc/presence"
-	"seanime/internal/events"
-	"seanime/internal/mkvparser"
+	"aniverse/internal/continuity"
+	"aniverse/internal/discordrpc/presence"
+	"aniverse/internal/events"
+	"aniverse/internal/mkvparser"
 )
 
 func (vc *VideoCore) setupEffects() {

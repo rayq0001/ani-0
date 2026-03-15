@@ -3,12 +3,12 @@ package handlers
 import (
 	"errors"
 	"os"
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata"
-	"seanime/internal/database/models"
-	"seanime/internal/events"
-	hibiketorrent "seanime/internal/extension/hibike/torrent"
-	"seanime/internal/torrentstream"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata"
+	"aniverse/internal/database/models"
+	"aniverse/internal/events"
+	hibiketorrent "aniverse/internal/extension/hibike/torrent"
+	"aniverse/internal/torrentstream"
 
 	"github.com/labstack/echo/v4"
 )

@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"net/http"
-	"seanime/internal/events"
+	"aniverse/internal/events"
 
 	"github.com/goccy/go-json"
 	"github.com/gorilla/websocket"

@@ -2,7 +2,7 @@ package db
 
 import (
 	"gorm.io/gorm/clause"
-	"seanime/internal/database/models"
+	"aniverse/internal/database/models"
 )
 
 func (db *Database) GetSilencedMediaEntries() ([]*models.SilencedMediaEntry, error) {

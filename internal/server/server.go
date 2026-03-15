@@ -6,23 +6,23 @@ import (
 	golog "log"
 	"os"
 	"path/filepath"
-	"seanime/internal/core"
-	"seanime/internal/cron"
-	"seanime/internal/handlers"
-	"seanime/internal/updater"
-	"seanime/internal/util"
-	"seanime/internal/util/crashlog"
+	"aniverse/internal/core"
+	"aniverse/internal/cron"
+	"aniverse/internal/handlers"
+	"aniverse/internal/updater"
+	"aniverse/internal/util"
+	"aniverse/internal/util/crashlog"
 	"time"
 
 	"github.com/rs/zerolog/log"
 )
 
-func startApp(embeddedLogo []byte) (*core.App, core.SeanimeFlags, *updater.SelfUpdater) {
+func startApp(embeddedLogo []byte) (*core.App, core.AniverseFlags, *updater.SelfUpdater) {
 	// Print the header
 	core.PrintHeader()
 
 	// Get the flags
-	flags := core.GetSeanimeFlags()
+	flags := core.GetAniverseFlags()
 
 	selfupdater := updater.NewSelfUpdater()
 
@@ -33,7 +33,7 @@ func startApp(embeddedLogo []byte) (*core.App, core.SeanimeFlags, *updater.SelfU
 	}, selfupdater)
 
 	// Create log file
-	logFilePath := filepath.Join(app.Config.Logs.Dir, fmt.Sprintf("seanime-%s.log", time.Now().Format("2006-01-02_15-04-05")))
+	logFilePath := filepath.Join(app.Config.Logs.Dir, fmt.Sprintf("aniverse-%s.log", time.Now().Format("2006-01-02_15-04-05")))
 	// Open the log file
 	logFile, _ := os.OpenFile(
 		logFilePath,
@@ -63,7 +63,7 @@ func startApp(embeddedLogo []byte) (*core.App, core.SeanimeFlags, *updater.SelfU
 	return app, flags, selfupdater
 }
 
-func startAppLoop(webFS *embed.FS, app *core.App, flags core.SeanimeFlags, selfupdater *updater.SelfUpdater) {
+func startAppLoop(webFS *embed.FS, app *core.App, flags core.AniverseFlags, selfupdater *updater.SelfUpdater) {
 	updateMode := flags.Update
 
 appLoop:

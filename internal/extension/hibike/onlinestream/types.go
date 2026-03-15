@@ -13,7 +13,7 @@ type (
 	}
 
 	SearchOptions struct {
-		// The media object provided by Seanime.
+		// The media object provided by Aniverse.
 		Media Media `json:"media"`
 		// The search query.
 		Query string `json:"query"`

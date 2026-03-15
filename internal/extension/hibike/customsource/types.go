@@ -2,8 +2,8 @@ package hibikecustomsource
 
 import (
 	"context"
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata"
 )
 
 // Custom sources allow users to add custom media, often things not available on AniList, to the app.

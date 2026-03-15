@@ -1,9 +1,9 @@
 package db_bridge
 
 import (
-	"seanime/internal/database/db"
-	"seanime/internal/database/models"
-	"seanime/internal/library/anime"
+	"aniverse/internal/database/db"
+	"aniverse/internal/database/models"
+	"aniverse/internal/library/anime"
 
 	"github.com/goccy/go-json"
 )

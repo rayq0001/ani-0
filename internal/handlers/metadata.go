@@ -2,8 +2,8 @@ package handlers
 
 import (
 	"errors"
-	"seanime/internal/database/models"
-	"seanime/internal/library/anime"
+	"aniverse/internal/database/models"
+	"aniverse/internal/library/anime"
 	"strconv"
 
 	"github.com/labstack/echo/v4"

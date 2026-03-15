@@ -1,7 +1,7 @@
 package cron
 
 import (
-	"seanime/internal/core"
+	"aniverse/internal/core"
 	"time"
 )
 

@@ -14,7 +14,7 @@ func (h *Handler) OptionalAuthMiddleware(next echo.HandlerFunc) echo.HandlerFunc
 		}
 
 		path := c.Request().URL.Path
-		passwordHash := c.Request().Header.Get("X-Seanime-Token")
+		passwordHash := c.Request().Header.Get("X-Aniverse-Token")
 
 		// Allow the following paths to be accessed by anyone
 		if path == "/api/v1/auth/login" || // for auth
@@ -60,12 +60,12 @@ func (h *Handler) OptionalAuthMiddleware(next echo.HandlerFunc) echo.HandlerFunc
 		// Handle Nakama client connections
 		if h.App.Settings.GetNakama().Enabled && h.App.Settings.GetNakama().IsHost {
 			// Verify the Nakama host password in the client request
-			nakamaPasswordHeader := c.Request().Header.Get("X-Seanime-Nakama-Token")
+			nakamaPasswordHeader := c.Request().Header.Get("X-Aniverse-Nakama-Token")
 
 			// Allow WebSocket connections for peer-to-host communication
 			if path == "/api/v1/nakama/ws" {
 				if nakamaPasswordHeader == h.App.Settings.GetNakama().HostPassword {
-					c.Response().Header().Set("X-Seanime-Nakama-Is-Client", "true")
+					c.Response().Header().Set("X-Aniverse-Nakama-Is-Client", "true")
 					return next(c)
 				}
 			}
@@ -73,7 +73,7 @@ func (h *Handler) OptionalAuthMiddleware(next echo.HandlerFunc) echo.HandlerFunc
 			// Only allow the following paths to be accessed by Nakama clients
 			if strings.HasPrefix(path, "/api/v1/nakama/host/") {
 				if nakamaPasswordHeader == h.App.Settings.GetNakama().HostPassword {
-					c.Response().Header().Set("X-Seanime-Nakama-Is-Client", "true")
+					c.Response().Header().Set("X-Aniverse-Nakama-Is-Client", "true")
 					return next(c)
 				}
 			}

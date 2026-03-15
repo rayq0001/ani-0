@@ -1,7 +1,7 @@
-# دليل تكامل الذكاء الاصطناعي في Seanime
+# دليل تكامل الذكاء الاصطناعي في Aniverse
 
 ## نظرة عامة
-يستخدم Seanime ذكاء Gemini من Google للعديد من الميزات الذكية. إليك كيفية عمله:
+يستخدم Aniverse ذكاء Gemini من Google للعديد من الميزات الذكية. إليك كيفية عمله:
 
 ---
 
@@ -57,7 +57,7 @@ type Service struct {
 
 ### الملفات الرئيسية:
 
-#### `seanime-web/src/api/hooks/ai.hooks.ts` - هوك الذكاء الاصطناعي
+#### `aniverse-web/src/api/hooks/ai.hooks.ts` - هوك الذكاء الاصطناعي
 
 ```typescript
 // الحصول على إعدادات AI
@@ -85,7 +85,7 @@ const loreMutation = useGenerateLoreTree()
 const upscaleMutation = useUpscaleImage()
 ```
 
-#### `seanime-web/src/components/ai/AIFloatingAssistant.tsx` - الزر العائم
+#### `aniverse-web/src/components/ai/AIFloatingAssistant.tsx` - الزر العائم
 
 ```typescript
 // زر AI العائم في الزاوية السفلية اليمنى
@@ -100,7 +100,7 @@ const upscaleMutation = useUpscaleImage()
 </div>
 ```
 
-#### `seanime-web/src/app/(main)/_features/ai-features/` - ميزات AI
+#### `aniverse-web/src/app/(main)/_features/ai-features/` - ميزات AI
 
 - `concierge.tsx` - المساعد الذكي
 - `ocr.tsx` - التعرف على النص
@@ -205,15 +205,15 @@ curl -X POST http://localhost:43211/api/v1/ai/search \
 
 ```bash
 # بناء الفرونت اند
-cd seanime-web && npm run build
+cd aniverse-web && npm run build
 
 # نسخ الملفات إلى web/
 rm -rf web/static web/index.html
-cp -r seanime-web/out/* web/
+cp -r aniverse-web/out/* web/
 
 # إعادة تشغيل السيرفر
-pkill -f "./seanime"
-./seanime &
+pkill -f "./aniverse"
+./aniverse &
 
 # اختبار API
 curl -s http://localhost:43211/api/v1/ai/settings | jq

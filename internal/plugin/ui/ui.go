@@ -3,12 +3,12 @@ package plugin_ui
 import (
 	"errors"
 	"fmt"
-	"seanime/internal/database/db"
-	"seanime/internal/events"
-	"seanime/internal/extension"
-	"seanime/internal/plugin"
-	"seanime/internal/util"
-	gojautil "seanime/internal/util/goja"
+	"aniverse/internal/database/db"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
+	"aniverse/internal/plugin"
+	"aniverse/internal/util"
+	gojautil "aniverse/internal/util/goja"
 	"sync"
 
 	"github.com/dop251/goja"

@@ -1,10 +1,10 @@
 package plugin
 
 import (
-	discordrpc_presence "seanime/internal/discordrpc/presence"
-	"seanime/internal/extension"
-	"seanime/internal/goja/goja_bindings"
-	gojautil "seanime/internal/util/goja"
+	discordrpc_presence "aniverse/internal/discordrpc/presence"
+	"aniverse/internal/extension"
+	"aniverse/internal/goja/goja_bindings"
+	gojautil "aniverse/internal/util/goja"
 
 	"github.com/dop251/goja"
 	"github.com/rs/zerolog"

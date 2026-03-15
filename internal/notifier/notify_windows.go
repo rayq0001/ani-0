@@ -4,7 +4,7 @@ package notifier
 
 import (
 	"github.com/go-toast/toast"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 )
 
 // Notify sends a notification to the user.
@@ -21,7 +21,7 @@ func (n *Notifier) Notify(id Notification, message string) {
 		}
 
 		notification := toast.Notification{
-			AppID:   "Seanime",
+			AppID:   "Aniverse",
 			Title:   string(id),
 			Message: message,
 			Icon:    n.logoPath,

@@ -1,17 +1,17 @@
 package torrentstream
 
 import (
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata_provider"
-	"seanime/internal/database/db"
-	"seanime/internal/events"
-	"seanime/internal/extension"
-	"seanime/internal/library/anime"
-	"seanime/internal/library/playbackmanager"
-	"seanime/internal/platforms/anilist_platform"
-	"seanime/internal/test_utils"
-	"seanime/internal/torrents/torrent"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata_provider"
+	"aniverse/internal/database/db"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/library/playbackmanager"
+	"aniverse/internal/platforms/anilist_platform"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/torrents/torrent"
+	"aniverse/internal/util"
 	"testing"
 
 	"github.com/davecgh/go-spew/spew"

@@ -3,9 +3,9 @@ package handlers
 import (
 	"context"
 	"errors"
-	"seanime/internal/database/models"
-	"seanime/internal/platforms/anilist_platform"
-	"seanime/internal/util"
+	"aniverse/internal/database/models"
+	"aniverse/internal/platforms/anilist_platform"
+	"aniverse/internal/util"
 	"time"
 
 	"github.com/goccy/go-json"

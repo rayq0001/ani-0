@@ -4,8 +4,8 @@ package plugin
 
 import (
 	"encoding/json"
-	gojautil "seanime/internal/util/goja"
-	"seanime/internal/util/result"
+	gojautil "aniverse/internal/util/goja"
+	"aniverse/internal/util/result"
 	"sync"
 
 	"github.com/dop251/goja"

@@ -3,9 +3,9 @@ package playbackmanager
 import (
 	"context"
 	"fmt"
-	"seanime/internal/api/anilist"
-	"seanime/internal/events"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/events"
+	"aniverse/internal/util"
 	"time"
 
 	"github.com/samber/mo"

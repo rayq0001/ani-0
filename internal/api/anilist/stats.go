@@ -2,7 +2,7 @@ package anilist
 
 import (
 	"context"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 )
 
 type (

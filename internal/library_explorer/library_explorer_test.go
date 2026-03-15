@@ -2,12 +2,12 @@ package library_explorer
 
 import (
 	"fmt"
-	"seanime/internal/api/anilist"
-	"seanime/internal/database/db"
-	"seanime/internal/extension"
-	"seanime/internal/platforms/anilist_platform"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/database/db"
+	"aniverse/internal/extension"
+	"aniverse/internal/platforms/anilist_platform"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
 	"testing"
 )
 

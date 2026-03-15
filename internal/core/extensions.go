@@ -1,9 +1,9 @@
 package core
 
 import (
-	"seanime/internal/extension"
-	"seanime/internal/extension_repo"
-	manga_providers "seanime/internal/manga/providers"
+	"aniverse/internal/extension"
+	"aniverse/internal/extension_repo"
+	manga_providers "aniverse/internal/manga/providers"
 
 	"github.com/rs/zerolog"
 )

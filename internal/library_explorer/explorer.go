@@ -2,10 +2,10 @@ package library_explorer
 
 import (
 	"fmt"
-	"seanime/internal/api/anilist"
-	"seanime/internal/database/db"
-	"seanime/internal/platforms/platform"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/database/db"
+	"aniverse/internal/platforms/platform"
+	"aniverse/internal/util"
 	"sync"
 
 	"github.com/rs/zerolog"

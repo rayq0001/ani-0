@@ -2,12 +2,12 @@ package anime
 
 import (
 	"fmt"
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata"
-	"seanime/internal/api/metadata_provider"
-	"seanime/internal/hook"
-	"seanime/internal/util"
-	"seanime/internal/util/limiter"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata"
+	"aniverse/internal/api/metadata_provider"
+	"aniverse/internal/hook"
+	"aniverse/internal/util"
+	"aniverse/internal/util/limiter"
 	"sort"
 	"sync"
 	"time"

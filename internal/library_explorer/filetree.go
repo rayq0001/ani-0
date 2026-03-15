@@ -2,10 +2,10 @@ package library_explorer
 
 import (
 	"path/filepath"
-	"seanime/internal/database/db_bridge"
-	"seanime/internal/library/anime"
-	"seanime/internal/library/filesystem"
-	"seanime/internal/util"
+	"aniverse/internal/database/db_bridge"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/library/filesystem"
+	"aniverse/internal/util"
 	"sort"
 	"strings"
 	"sync"

@@ -4,7 +4,7 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"strings"
 
 	"github.com/labstack/echo/v4"

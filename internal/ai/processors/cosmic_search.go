@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"math"
-	"seanime/internal/ai/gemini"
+	"aniverse/internal/ai/gemini"
 	"sort"
 )
 

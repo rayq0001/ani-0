@@ -1,10 +1,10 @@
 package nakama
 
 import (
-	"seanime/internal/library/playbackmanager"
-	"seanime/internal/util"
-	"seanime/internal/util/result"
-	"seanime/internal/videocore"
+	"aniverse/internal/library/playbackmanager"
+	"aniverse/internal/util"
+	"aniverse/internal/util/result"
+	"aniverse/internal/videocore"
 	"strings"
 	"sync"
 

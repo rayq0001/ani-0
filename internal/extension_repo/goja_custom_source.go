@@ -3,13 +3,13 @@ package extension_repo
 import (
 	"context"
 	"fmt"
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata"
-	"seanime/internal/events"
-	"seanime/internal/extension"
-	hibikecustomsource "seanime/internal/extension/hibike/customsource"
-	"seanime/internal/goja/goja_runtime"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
+	hibikecustomsource "aniverse/internal/extension/hibike/customsource"
+	"aniverse/internal/goja/goja_runtime"
+	"aniverse/internal/util"
 
 	"github.com/rs/zerolog"
 )

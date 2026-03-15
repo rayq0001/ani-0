@@ -4,12 +4,12 @@ import (
 	"cmp"
 	"context"
 	"errors"
-	"seanime/internal/continuity"
-	discordrpc_presence "seanime/internal/discordrpc/presence"
-	"seanime/internal/events"
-	"seanime/internal/library/anime"
-	"seanime/internal/mediaplayers/mediaplayer"
-	"seanime/internal/util"
+	"aniverse/internal/continuity"
+	discordrpc_presence "aniverse/internal/discordrpc/presence"
+	"aniverse/internal/events"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/mediaplayers/mediaplayer"
+	"aniverse/internal/util"
 
 	"github.com/samber/mo"
 )

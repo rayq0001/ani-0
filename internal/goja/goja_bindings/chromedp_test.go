@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/http/httptest"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"testing"
 	"time"
 

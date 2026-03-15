@@ -1,7 +1,7 @@
 package debrid_client
 
 import (
-	"seanime/internal/test_utils"
+	"aniverse/internal/test_utils"
 	"testing"
 )
 

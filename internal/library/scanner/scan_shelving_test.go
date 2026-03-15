@@ -3,15 +3,15 @@ package scanner
 import (
 	"os"
 	"path/filepath"
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata_provider"
-	"seanime/internal/database/db"
-	"seanime/internal/events"
-	"seanime/internal/extension"
-	"seanime/internal/library/anime"
-	"seanime/internal/platforms/anilist_platform"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata_provider"
+	"aniverse/internal/database/db"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/platforms/anilist_platform"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -28,7 +28,7 @@ func TestScanner_Shelving(t *testing.T) {
 	}
 
 	// a temporary directory for the library
-	tempDir, err := os.MkdirTemp("", "seanime_test_library")
+	tempDir, err := os.MkdirTemp("", "aniverse_test_library")
 	if err != nil {
 		t.Fatal(err)
 	}

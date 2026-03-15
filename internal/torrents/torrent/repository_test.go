@@ -1,9 +1,9 @@
 package torrent
 
 import (
-	"seanime/internal/api/metadata_provider"
-	"seanime/internal/extension"
-	"seanime/internal/util"
+	"aniverse/internal/api/metadata_provider"
+	"aniverse/internal/extension"
+	"aniverse/internal/util"
 	"testing"
 )
 

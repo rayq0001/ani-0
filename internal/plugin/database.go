@@ -2,13 +2,13 @@ package plugin
 
 import (
 	"errors"
-	"seanime/internal/database/db"
-	"seanime/internal/database/db_bridge"
-	"seanime/internal/database/models"
-	"seanime/internal/events"
-	"seanime/internal/extension"
-	"seanime/internal/library/anime"
-	util "seanime/internal/util"
+	"aniverse/internal/database/db"
+	"aniverse/internal/database/db_bridge"
+	"aniverse/internal/database/models"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
+	"aniverse/internal/library/anime"
+	util "aniverse/internal/util"
 	"time"
 
 	"github.com/dop251/goja"

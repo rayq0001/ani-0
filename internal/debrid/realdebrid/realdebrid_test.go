@@ -2,9 +2,9 @@ package realdebrid
 
 import (
 	"fmt"
-	"seanime/internal/debrid/debrid"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
+	"aniverse/internal/debrid/debrid"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
 	"strings"
 	"testing"
 

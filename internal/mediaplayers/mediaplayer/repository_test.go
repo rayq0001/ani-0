@@ -2,7 +2,7 @@ package mediaplayer
 
 import (
 	"github.com/stretchr/testify/assert"
-	"seanime/internal/test_utils"
+	"aniverse/internal/test_utils"
 	"testing"
 	"time"
 )

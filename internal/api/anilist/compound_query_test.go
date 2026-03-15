@@ -5,8 +5,8 @@ import (
 	"github.com/davecgh/go-spew/spew"
 	"github.com/goccy/go-json"
 	"github.com/stretchr/testify/require"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
 	"testing"
 )
 

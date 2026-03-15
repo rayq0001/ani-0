@@ -2,10 +2,10 @@ package anime
 
 import (
 	"context"
-	"seanime/internal/api/anilist"
-	"seanime/internal/util/comparison"
-	"seanime/internal/util/limiter"
-	"seanime/internal/util/result"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/util/comparison"
+	"aniverse/internal/util/limiter"
+	"aniverse/internal/util/result"
 
 	"github.com/samber/lo"
 )

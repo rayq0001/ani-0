@@ -2,14 +2,14 @@ package local
 
 import (
 	"context"
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata"
-	"seanime/internal/api/metadata_provider"
-	"seanime/internal/events"
-	"seanime/internal/library/anime"
-	"seanime/internal/manga"
-	"seanime/internal/util"
-	"seanime/internal/util/result"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata"
+	"aniverse/internal/api/metadata_provider"
+	"aniverse/internal/events"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/manga"
+	"aniverse/internal/util"
+	"aniverse/internal/util/result"
 	"sync"
 
 	"github.com/samber/lo"

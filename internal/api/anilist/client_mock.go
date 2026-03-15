@@ -4,8 +4,8 @@ import (
 	"context"
 	"log"
 	"os"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
 
 	"github.com/goccy/go-json"
 	"github.com/gqlgo/gqlgenc/clientv2"

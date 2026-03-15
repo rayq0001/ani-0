@@ -5,7 +5,7 @@ import (
 	"encoding/base64"
 	"fmt"
 
-	"seanime/internal/ai/providers"
+	"aniverse/internal/ai/providers"
 
 	"github.com/rs/zerolog"
 )

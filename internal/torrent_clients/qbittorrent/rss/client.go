@@ -5,8 +5,8 @@ import (
 	"github.com/rs/zerolog"
 	"net/http"
 	"net/url"
-	qbittorrent_model "seanime/internal/torrent_clients/qbittorrent/model"
-	qbittorrent_util "seanime/internal/torrent_clients/qbittorrent/util"
+	qbittorrent_model "aniverse/internal/torrent_clients/qbittorrent/model"
+	qbittorrent_util "aniverse/internal/torrent_clients/qbittorrent/util"
 )
 
 type Client struct {

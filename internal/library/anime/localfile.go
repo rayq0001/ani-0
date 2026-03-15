@@ -1,7 +1,7 @@
 package anime
 
 import (
-	"seanime/internal/library/filesystem"
+	"aniverse/internal/library/filesystem"
 
 	"github.com/5rahim/habari"
 )

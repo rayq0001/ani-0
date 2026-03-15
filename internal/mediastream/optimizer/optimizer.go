@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"github.com/rs/zerolog"
 	"github.com/samber/mo"
-	"seanime/internal/events"
-	"seanime/internal/mediastream/videofile"
-	"seanime/internal/util"
+	"aniverse/internal/events"
+	"aniverse/internal/mediastream/videofile"
+	"aniverse/internal/util"
 )
 
 const (

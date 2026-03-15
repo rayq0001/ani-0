@@ -3,12 +3,12 @@ package nakama
 import (
 	"context"
 	"errors"
-	debrid_client "seanime/internal/debrid/client"
-	"seanime/internal/events"
-	"seanime/internal/library/playbackmanager"
-	"seanime/internal/mediaplayers/mediaplayer"
-	"seanime/internal/util"
-	"seanime/internal/videocore"
+	debrid_client "aniverse/internal/debrid/client"
+	"aniverse/internal/events"
+	"aniverse/internal/library/playbackmanager"
+	"aniverse/internal/mediaplayers/mediaplayer"
+	"aniverse/internal/util"
+	"aniverse/internal/videocore"
 	"strings"
 	"time"
 

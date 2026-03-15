@@ -1,13 +1,13 @@
 package plugin
 
 import (
-	"seanime/internal/events"
-	"seanime/internal/extension"
-	"seanime/internal/goja/goja_bindings"
-	"seanime/internal/library/anime"
-	"seanime/internal/onlinestream"
-	"seanime/internal/torrent_clients/torrent_client"
-	gojautil "seanime/internal/util/goja"
+	"aniverse/internal/events"
+	"aniverse/internal/extension"
+	"aniverse/internal/goja/goja_bindings"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/onlinestream"
+	"aniverse/internal/torrent_clients/torrent_client"
+	gojautil "aniverse/internal/util/goja"
 	"strconv"
 
 	"github.com/dop251/goja"

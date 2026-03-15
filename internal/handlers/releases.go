@@ -4,8 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"net/http"
-	"seanime/internal/updater"
-	"seanime/internal/util/result"
+	"aniverse/internal/updater"
+	"aniverse/internal/util/result"
 	"strings"
 	"time"
 
@@ -82,7 +82,7 @@ func (h *Handler) HandleGetChangelog(c echo.Context) error {
 		return h.RespondWithData(c, cached)
 	}
 
-	changelogBody, err := http.Get("https://raw.githubusercontent.com/5rahim/seanime/main/CHANGELOG.md")
+	changelogBody, err := http.Get("https://raw.githubusercontent.com/5rahim/aniverse/main/CHANGELOG.md")
 	if err != nil {
 		return h.RespondWithData(c, []*changelogItem{})
 	}

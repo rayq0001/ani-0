@@ -2,13 +2,13 @@ package handlers
 
 import (
 	"errors"
-	"seanime/internal/api/anilist"
-	"seanime/internal/customsource"
-	"seanime/internal/database/db_bridge"
-	"seanime/internal/library/anime"
-	"seanime/internal/torrentstream"
-	"seanime/internal/util"
-	"seanime/internal/util/result"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/customsource"
+	"aniverse/internal/database/db_bridge"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/torrentstream"
+	"aniverse/internal/util"
+	"aniverse/internal/util/result"
 	"time"
 
 	"github.com/labstack/echo/v4"

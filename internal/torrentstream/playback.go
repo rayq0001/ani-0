@@ -2,8 +2,8 @@ package torrentstream
 
 import (
 	"context"
-	"seanime/internal/mediaplayers/mediaplayer"
-	"seanime/internal/videocore"
+	"aniverse/internal/mediaplayers/mediaplayer"
+	"aniverse/internal/videocore"
 )
 
 type (

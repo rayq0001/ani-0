@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"errors"
-	"seanime/internal/customsource"
+	"aniverse/internal/customsource"
 
 	"github.com/labstack/echo/v4"
 )

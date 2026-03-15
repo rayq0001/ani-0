@@ -1,7 +1,7 @@
 package db
 
 import (
-	"seanime/internal/database/models"
+	"aniverse/internal/database/models"
 )
 
 func (db *Database) GetDebridTorrentItems() ([]*models.DebridTorrentItem, error) {

@@ -46,7 +46,7 @@ package extension_repo_test
 //	// Load all extensions
 //	// This should load all the extensions in the directory
 //	repo.ReloadBuiltInExtension(extension.Extension{
-//		ID:          "seanime-builtin-mangapill",
+//		ID:          "aniverse-builtin-mangapill",
 //		Type:        "manga-provider",
 //		Name:        "Mangapill",
 //		Version:     "0.0.0",
@@ -57,7 +57,7 @@ package extension_repo_test
 //		Payload:     "",
 //	}, manga_providers.NewMangapill(logger))
 //
-//	ext, found := repo.GetMangaProviderExtensionByID("seanime-builtin-mangapill")
+//	ext, found := repo.GetMangaProviderExtensionByID("aniverse-builtin-mangapill")
 //	require.True(t, found)
 //
 //	t.Logf("\nExtension:\n\tID: %s \n\tName: %s", ext.GetID(), ext.GetName())

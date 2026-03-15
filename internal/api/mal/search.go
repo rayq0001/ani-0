@@ -10,8 +10,8 @@ import (
 	"net/http"
 	"net/url"
 	"regexp"
-	"seanime/internal/util/comparison"
-	"seanime/internal/util/result"
+	"aniverse/internal/util/comparison"
+	"aniverse/internal/util/result"
 	"sort"
 	"strings"
 )

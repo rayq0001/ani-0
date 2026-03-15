@@ -1,8 +1,8 @@
 package continuity
 
 import (
-	"seanime/internal/hook_resolver"
-	"seanime/internal/library/anime"
+	"aniverse/internal/hook_resolver"
+	"aniverse/internal/library/anime"
 )
 
 // WatchHistoryItemRequestedEvent is triggered when a watch history item is requested.

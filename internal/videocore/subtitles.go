@@ -3,8 +3,8 @@ package videocore
 import (
 	"errors"
 	"fmt"
-	"seanime/internal/mkvparser"
-	"seanime/internal/util"
+	"aniverse/internal/mkvparser"
+	"aniverse/internal/util"
 	"strings"
 	"time"
 

@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"mime"
 	"path/filepath"
-	"seanime/internal/util/filecache"
+	"aniverse/internal/util/filecache"
 	"strconv"
 	"strings"
 	"time"

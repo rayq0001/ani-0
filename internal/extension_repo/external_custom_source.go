@@ -3,9 +3,9 @@ package extension_repo
 import (
 	"fmt"
 	"math/rand"
-	"seanime/internal/extension"
-	"seanime/internal/util"
-	"seanime/internal/util/filecache"
+	"aniverse/internal/extension"
+	"aniverse/internal/util"
+	"aniverse/internal/util/filecache"
 )
 
 const (

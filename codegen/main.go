@@ -3,7 +3,7 @@ package main
 
 import (
 	"flag"
-	codegen "seanime/codegen/internal"
+	codegen "aniverse/codegen/internal"
 )
 
 func main() {
@@ -37,8 +37,8 @@ func main() {
 	}
 
 	if !skipTypes {
-		goStructStrs := codegen.GenerateTypescriptEndpointsFile("./generated/handlers.json", "./generated/public_structs.json", "../seanime-web/src/api/generated", "../internal/events")
-		codegen.GenerateTypescriptFile("./generated/handlers.json", "./generated/public_structs.json", "../seanime-web/src/api/generated", goStructStrs)
+		goStructStrs := codegen.GenerateTypescriptEndpointsFile("./generated/handlers.json", "./generated/public_structs.json", "../aniverse-web/src/api/generated", "../internal/events")
+		codegen.GenerateTypescriptFile("./generated/handlers.json", "./generated/public_structs.json", "../aniverse-web/src/api/generated", goStructStrs)
 	}
 
 	// if !skipHandlerHookEvents {
@@ -46,7 +46,7 @@ func main() {
 	// }
 
 	if !skipPluginEvents {
-		codegen.GeneratePluginEventFile("../internal/plugin/ui/events.go", "../seanime-web/src/app/(main)/_features/plugin/generated")
+		codegen.GeneratePluginEventFile("../internal/plugin/ui/events.go", "../aniverse-web/src/app/(main)/_features/plugin/generated")
 	}
 
 	if !skipHookEvents {

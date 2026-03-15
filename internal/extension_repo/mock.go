@@ -1,9 +1,9 @@
 package extension_repo
 
 import (
-	"seanime/internal/events"
-	"seanime/internal/util"
-	"seanime/internal/util/filecache"
+	"aniverse/internal/events"
+	"aniverse/internal/util"
+	"aniverse/internal/util/filecache"
 	"testing"
 )
 

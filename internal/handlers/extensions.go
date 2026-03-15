@@ -3,10 +3,10 @@ package handlers
 import (
 	"fmt"
 	"net/url"
-	"seanime/internal/core"
-	"seanime/internal/extension"
-	"seanime/internal/extension_playground"
-	"seanime/internal/util"
+	"aniverse/internal/core"
+	"aniverse/internal/extension"
+	"aniverse/internal/extension_playground"
+	"aniverse/internal/util"
 	"strings"
 	"sync/atomic"
 

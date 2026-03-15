@@ -228,7 +228,7 @@ type DiscordSettings struct {
 	EnableRichPresence                      bool `gorm:"column:enable_rich_presence" json:"enableRichPresence"`
 	EnableAnimeRichPresence                 bool `gorm:"column:enable_anime_rich_presence" json:"enableAnimeRichPresence"`
 	EnableMangaRichPresence                 bool `gorm:"column:enable_manga_rich_presence" json:"enableMangaRichPresence"`
-	RichPresenceHideaniverseRepositoryButton bool `gorm:"column:rich_presence_hide_seanime_repository_button" json:"richPresenceHideaniverseRepositoryButton"`
+	RichPresenceHideaniverseRepositoryButton bool `gorm:"column:rich_presence_hide_aniverse_repository_button" json:"richPresenceHideaniverseRepositoryButton"`
 	RichPresenceShowAniListMediaButton      bool `gorm:"column:rich_presence_show_anilist_media_button" json:"richPresenceShowAniListMediaButton"`
 	RichPresenceShowAniListProfileButton    bool `gorm:"column:rich_presence_show_anilist_profile_button" json:"richPresenceShowAniListProfileButton"`
 	RichPresenceUseMediaTitleStatus         bool `gorm:"column:rich_presence_use_media_title_status;default:true" json:"richPresenceUseMediaTitleStatus"`

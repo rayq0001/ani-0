@@ -1,7 +1,7 @@
 package comparison
 
 import (
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"testing"
 )
 

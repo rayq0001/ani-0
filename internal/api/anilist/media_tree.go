@@ -2,9 +2,9 @@ package anilist
 
 import (
 	"context"
-	"seanime/internal/util"
-	"seanime/internal/util/limiter"
-	"seanime/internal/util/result"
+	"aniverse/internal/util"
+	"aniverse/internal/util/limiter"
+	"aniverse/internal/util/result"
 	"sync"
 
 	"github.com/samber/lo"

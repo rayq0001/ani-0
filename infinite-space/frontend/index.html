@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفضاء اللامحدود</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+    <div id="canvas-container"></div>
+
+    <div id="ui-container">
+        <div class="icon-container">
+            <svg viewBox="0 0 24 24" width="50" height="50" fill="#a255ff">
+                <path d="M12 2L2 12l10 10 10-10L12 2zm0 14c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+            </svg>
+        </div>
+
+        <h1 class="main-title">الفضاء اللامحدود</h1>
+        <p class="subtitle">اكتشف عوالم جديدة في مجرة ثلاثية الأبعاد</p>
+
+        <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="searchInput" placeholder="ابحث عن كوكب (مثلاً: هجوم العمالقة)...">
+            <button class="explore-btn" onclick="startExplore()">استكشف ➔</button>
+        </div>
+
+        <div class="tags-container">
+            <button class="tag-btn">جوجو</button>
+            <button class="tag-btn">ديمون سلاير</button>
+            <button class="tag-btn active">هجوم العمالقة</button>
+            <button class="tag-btn">ناروتو</button>
+            <button class="tag-btn">ون بيس</button>
+        </div>
+    </div>
+
+    <div id="travel-message" class="hidden">
+        <h2>جاري السفر عبر المجرة...</h2>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

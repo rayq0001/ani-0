@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	httputil "seanime/internal/util/http"
+	httputil "aniverse/internal/util/http"
 	"time"
 
 	"github.com/neilotoole/streamcache"

@@ -2,7 +2,7 @@ package main
 
 import (
 	"embed"
-	"seanime/internal/server"
+	"aniverse/internal/server"
 )
 
 // Embed the web directory

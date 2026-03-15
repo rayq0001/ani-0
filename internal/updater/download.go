@@ -10,7 +10,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 )
 
 var (
@@ -77,12 +77,12 @@ func (u *Updater) DownloadLatestReleaseN(assetUrl, dest, folderName string) (str
 }
 
 func (u *Updater) decompressZip(archivePath string, folderName string) (dest string, err error) {
-	topFolderName := "seanime-" + u.LatestRelease.Version
+	topFolderName := "aniverse-" + u.LatestRelease.Version
 	if folderName != "" {
 		topFolderName = folderName
 	}
-	// "/seanime-repo/seanime-v1.0.0.zip" -> "/seanime-repo/seanime-1.0.0/"
-	dest = filepath.Join(filepath.Dir(archivePath), topFolderName) // "/seanime-repo/seanime-v1.0.0"
+	// "/aniverse-repo/aniverse-v1.0.0.zip" -> "/aniverse-repo/aniverse-1.0.0/"
+	dest = filepath.Join(filepath.Dir(archivePath), topFolderName) // "/aniverse-repo/aniverse-v1.0.0"
 
 	// Check if the destination folder already exists
 	if _, err := os.Stat(dest); err == nil {
@@ -148,7 +148,7 @@ func (u *Updater) decompressZip(archivePath string, folderName string) (dest str
 }
 
 func (u *Updater) decompressTarGz(archivePath string, folderName string) (dest string, err error) {
-	topFolderName := "seanime-" + u.LatestRelease.Version
+	topFolderName := "aniverse-" + u.LatestRelease.Version
 	if folderName != "" {
 		topFolderName = folderName
 	}
@@ -226,7 +226,7 @@ func (u *Updater) decompressTarGz(archivePath string, folderName string) (dest s
 }
 
 // decompressAsset will uncompress the release assets and delete the compressed folder
-//   - "/seanime-repo/seanime-v1.0.0.zip" -> "/seanime-repo/seanime-1.0.0/"
+//   - "/aniverse-repo/aniverse-v1.0.0.zip" -> "/aniverse-repo/aniverse-1.0.0/"
 func (u *Updater) decompressAsset(archivePath string, folderName string) (dest string, err error) {
 
 	defer util.HandlePanicInModuleWithError("updater/download/decompressAsset", &err)
@@ -247,7 +247,7 @@ func (u *Updater) decompressAsset(archivePath string, folderName string) (dest s
 }
 
 // downloadAsset will download the release assets to a folder
-//   - "seanime-v1.zip" -> "/seanime-repo/seanime-v1.zip"
+//   - "aniverse-v1.zip" -> "/aniverse-repo/aniverse-v1.zip"
 func (u *Updater) downloadAsset(assetUrl, dest string) (fp string, err error) {
 
 	defer util.HandlePanicInModuleWithError("updater/download/downloadAsset", &err)

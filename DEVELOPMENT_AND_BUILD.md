@@ -1,6 +1,6 @@
-# Seanime Development and Build Guide
+# Aniverse Development and Build Guide
 
-- [Seanime Denshi Guide](https://github.com/5rahim/seanime/blob/main/seanime-denshi/README.md)
+- [Aniverse Denshi Guide](https://github.com/5rahim/aniverse/blob/main/aniverse-denshi/README.md)
 
 ## Tech stack
 
@@ -17,7 +17,7 @@
 	* Data Fetching: [React Query](https://tanstack.com/query/latest)
 	* State Management: [Jotai](https://jotai.org/) for global state
 	* Built-in Player: Custom-made (VideoCore)
-* Seanime Denshi: Built with a custom [Electron](https://www.electronjs.org/)/Chromium to support more codecs
+* Aniverse Denshi: Built with a custom [Electron](https://www.electronjs.org/)/Chromium to support more codecs
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@
    npm run build
    ```
 
-2. After the build completes, a new `out` directory will be created inside `seanime-web`.
+2. After the build completes, a new `out` directory will be created inside `aniverse-web`.
 
 3. Move the contents of the `out` directory to a new `web` directory at the root of the project.
 
@@ -44,17 +44,17 @@ Choose the appropriate command based on your target platform:
 1. **Windows (System Tray)**:
    ```bash
    set CGO_ENABLED=1
-   go build -o seanime.exe -trimpath -ldflags="-s -w -H=windowsgui -extldflags '-static'"
+   go build -o aniverse.exe -trimpath -ldflags="-s -w -H=windowsgui -extldflags '-static'"
    ```
 
 2. **Windows (No System Tray)** - Used by the desktop app:
    ```bash
-   go build -o seanime.exe -trimpath -ldflags="-s -w" -tags=nosystray
+   go build -o aniverse.exe -trimpath -ldflags="-s -w" -tags=nosystray
    ```
 
 3. **Linux/macOS**:
    ```bash
-   go build -o seanime -trimpath -ldflags="-s -w"
+   go build -o aniverse -trimpath -ldflags="-s -w"
    ```
 
 **Important**: The web interface must be built first before building the server.
@@ -96,7 +96,7 @@ For development, you should be familiar with both Go and React.
 
 1. **Navigate to the web directory**:
    ```bash
-   cd seanime-web
+   cd aniverse-web
    ```
 
 2. **Install dependencies**:
@@ -131,9 +131,9 @@ The backend follows a well-defined structure:
 3. **Automated Type Generation**:
    - The comments above route handlers serve as documentation for automatic type generation
    - Types for the frontend are generated in:
-     - `seanime-web/api/generated/types.ts`
-     - `seanime-web/api/generated/endpoint.types.ts`
-     - `seanime-web/api/generated/hooks_template.ts`
+     - `aniverse-web/api/generated/types.ts`
+     - `aniverse-web/api/generated/endpoint.types.ts`
+     - `aniverse-web/api/generated/hooks_template.ts`
 
 #### Updating API Types
 

@@ -1,6 +1,6 @@
 package manga_providers
 
-import util "seanime/internal/util/proxies"
+import util "aniverse/internal/util/proxies"
 
 func GetImageByProxy(url string, headers map[string]string) ([]byte, error) {
 	ip := &util.ImageProxy{}

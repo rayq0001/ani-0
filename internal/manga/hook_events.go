@@ -1,8 +1,8 @@
 package manga
 
 import (
-	"seanime/internal/api/anilist"
-	"seanime/internal/hook_resolver"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/hook_resolver"
 )
 
 // MangaEntryRequestedEvent is triggered when a manga entry is requested.

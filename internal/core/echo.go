@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 	"path/filepath"
-	"seanime/internal/constants"
+	"aniverse/internal/constants"
 	"strings"
 	"time"
 
@@ -92,6 +92,37 @@ func NewEchoApp(app *App, webFS *embed.FS) *echo.Echo {
 				return false
 			},
 		}))
+
+		// SPA fallback - serve index.html for all unmatched routes
+		e.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
+			return func(c echo.Context) error {
+				err := next(c)
+				if err != nil {
+					// If the error is a 404 and it's not an API route, serve index.html
+					if he, ok := err.(*echo.HTTPError); ok && he.Code == http.StatusNotFound {
+						path := c.Request().URL.Path
+						if !strings.HasPrefix(path, "/api") &&
+							!strings.HasPrefix(path, "/events") &&
+							!strings.HasPrefix(path, "/assets") &&
+							!strings.HasPrefix(path, "/manga-downloads") &&
+							!strings.HasPrefix(path, "/offline-assets") &&
+							!strings.HasPrefix(path, "/static") {
+							// Serve index.html for SPA routes
+							indexFile, err := distFS.Open("index.html")
+							if err != nil {
+								return err
+							}
+							defer indexFile.Close()
+
+							c.Response().Header().Set("Content-Type", "text/html; charset=utf-8")
+							return c.Stream(http.StatusOK, "text/html; charset=utf-8", indexFile)
+						}
+					}
+					return err
+				}
+				return nil
+			}
+		})
 	}
 
 	app.Logger.Info().Msgf("app: Serving embedded web interface")
@@ -152,5 +183,5 @@ func RunEchoServer(app *App, e *echo.Echo) {
 	}()
 
 	time.Sleep(100 * time.Millisecond)
-	app.Logger.Info().Msg("app: Seanime started at " + app.Config.GetServerURI())
+	app.Logger.Info().Msg("app: Aniverse started at " + app.Config.GetServerURI())
 }

@@ -1,9 +1,9 @@
 package updater
 
 import (
-	"seanime/internal/constants"
-	"seanime/internal/events"
-	"seanime/internal/util"
+	"aniverse/internal/constants"
+	"aniverse/internal/events"
+	"aniverse/internal/util"
 	"strings"
 	"testing"
 
@@ -21,8 +21,8 @@ func TestUpdater_getReleaseName(t *testing.T) {
 
 func TestUpdater_FetchLatestRelease(t *testing.T) {
 
-	fallbackGithubUrl = "https://seanimedud.app/api/releases" // simulate dead endpoint
-	//githubUrl = "https://api.github.com/repos/5rahim/seanime-desktop/releases/latest"
+	fallbackGithubUrl = "https://aniversedud.app/api/releases" // simulate dead endpoint
+	//githubUrl = "https://api.github.com/repos/5rahim/aniverse-desktop/releases/latest"
 
 	updater := New(constants.Version, util.NewLogger(), events.NewMockWSEventManager(util.NewLogger()))
 	release, err := updater.fetchLatestRelease()

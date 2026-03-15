@@ -3,7 +3,7 @@ package db
 import (
 	"errors"
 	"gorm.io/gorm"
-	"seanime/internal/database/models"
+	"aniverse/internal/database/models"
 )
 
 func (db *Database) GetChapterDownloadQueue() ([]*models.ChapterDownloadQueueItem, error) {

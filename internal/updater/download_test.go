@@ -3,7 +3,7 @@ package updater
 import (
 	"github.com/samber/lo"
 	"os"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"strings"
 	"testing"
 )

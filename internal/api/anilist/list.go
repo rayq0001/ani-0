@@ -2,7 +2,7 @@ package anilist
 
 import (
 	"fmt"
-	"seanime/internal/hook"
+	"aniverse/internal/hook"
 
 	"github.com/goccy/go-json"
 	"github.com/rs/zerolog"

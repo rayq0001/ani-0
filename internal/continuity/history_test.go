@@ -3,10 +3,10 @@ package continuity
 import (
 	"github.com/stretchr/testify/require"
 	"path/filepath"
-	"seanime/internal/database/db"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
-	"seanime/internal/util/filecache"
+	"aniverse/internal/database/db"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
+	"aniverse/internal/util/filecache"
 	"testing"
 )
 

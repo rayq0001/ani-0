@@ -2,13 +2,13 @@ package extension_playground
 
 import (
 	"os"
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata_provider"
-	"seanime/internal/database/db"
-	"seanime/internal/extension"
-	"seanime/internal/platforms/anilist_platform"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata_provider"
+	"aniverse/internal/database/db"
+	"aniverse/internal/extension"
+	"aniverse/internal/platforms/anilist_platform"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
 	"testing"
 
 	"github.com/stretchr/testify/require"

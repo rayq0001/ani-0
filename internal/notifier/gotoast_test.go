@@ -5,7 +5,7 @@ package notifier
 import (
 	"github.com/go-toast/toast"
 	"path/filepath"
-	"seanime/internal/test_utils"
+	"aniverse/internal/test_utils"
 	"testing"
 )
 
@@ -14,8 +14,8 @@ func TestGoToast(t *testing.T) {
 	test_utils.InitTestProvider(t)
 
 	notification := toast.Notification{
-		AppID:   "Seanime",
-		Title:   "Seanime",
+		AppID:   "Aniverse",
+		Title:   "Aniverse",
 		Icon:    filepath.Join(test_utils.ConfigData.Path.DataDir, "logo.png"),
 		Message: "Auto Downloader has downloaded 1 episode",
 	}

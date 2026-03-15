@@ -2,9 +2,9 @@ package qbittorrent
 
 import (
 	"github.com/stretchr/testify/require"
-	"seanime/internal/test_utils"
-	"seanime/internal/torrent_clients/qbittorrent/model"
-	"seanime/internal/util"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/torrent_clients/qbittorrent/model"
+	"aniverse/internal/util"
 	"testing"
 )
 

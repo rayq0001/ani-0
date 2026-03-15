@@ -48,32 +48,32 @@ seanime-parser/.git
 ##
 ## Web App
 ##
-seanime-web/node_modules
-seanime-web/dist
-seanime-web/out
-seanime-web/out-desktop
-seanime-web/out-denshi
-seanime-web/web
-seanime-web/.tanstack
-seanime-web/.next
-seanime-web/.idea
-seanime-web/.pnp
-seanime-web/.pnp.js
-seanime-web/.yarn/install-state.gz
-seanime-web/coverage
-seanime-web/build
-seanime-web/.DS_Store
-seanime-web/*.pem
-seanime-web/npm-debug.log*
-seanime-web/yarn-debug.log*
-seanime-web/yarn-error.log*
-seanime-web/.env*.local
-seanime-web/*.tsbuildinfo
-seanime-web/snapshot
-seanime-web/logs
-seanime-web/analyze
-seanime-web/TODO-priv.md
-seanime-web/CHANGELOG-priv.md
+aniverse-web/node_modules
+aniverse-web/dist
+aniverse-web/out
+aniverse-web/out-desktop
+aniverse-web/out-denshi
+aniverse-web/web
+aniverse-web/.tanstack
+aniverse-web/.next
+aniverse-web/.idea
+aniverse-web/.pnp
+aniverse-web/.pnp.js
+aniverse-web/.yarn/install-state.gz
+aniverse-web/coverage
+aniverse-web/build
+aniverse-web/.DS_Store
+aniverse-web/*.pem
+aniverse-web/npm-debug.log*
+aniverse-web/yarn-debug.log*
+aniverse-web/yarn-error.log*
+aniverse-web/.env*.local
+aniverse-web/*.tsbuildinfo
+aniverse-web/snapshot
+aniverse-web/logs
+aniverse-web/analyze
+aniverse-web/TODO-priv.md
+aniverse-web/CHANGELOG-priv.md
 
 seanime-webapp/public/test*
 
@@ -85,5 +85,5 @@ internal/extension_repo/goja_plugin_test
 
 *.sh
 
-seanime-web-tr/
+aniverse-web-tr/
 codegen/nonext/

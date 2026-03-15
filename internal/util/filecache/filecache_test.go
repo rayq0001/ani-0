@@ -5,7 +5,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"path/filepath"
-	"seanime/internal/test_utils"
+	"aniverse/internal/test_utils"
 	"sync"
 	"testing"
 	"time"

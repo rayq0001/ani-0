@@ -1,6 +1,6 @@
 package playbackmanager
 
-import "seanime/internal/library/anime"
+import "aniverse/internal/library/anime"
 
 type (
 	StreamMagnetRequestOptions struct {

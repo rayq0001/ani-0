@@ -1,5 +1,526 @@
 [
   {
+    "name": "HandleGetAISettings",
+    "trimmedName": "GetAISettings",
+    "comments": [
+      "HandleGetAISettings",
+      "",
+      "\t@summary returns the AI service settings.",
+      "\t@route /api/v1/ai/settings [GET]",
+      "\t@returns ai.Settings",
+      ""
+    ],
+    "filepath": "internal/handlers/ai.go",
+    "filename": "ai.go",
+    "api": {
+      "summary": "returns the AI service settings.",
+      "descriptions": [],
+      "endpoint": "/api/v1/ai/settings",
+      "methods": [
+        "GET"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "ai.Settings",
+      "returnGoType": "ai.Settings",
+      "returnTypescriptType": "Settings"
+    }
+  },
+  {
+    "name": "HandleUpdateAISettings",
+    "trimmedName": "UpdateAISettings",
+    "comments": [
+      "HandleUpdateAISettings",
+      "",
+      "\t@summary updates the AI service settings.",
+      "\t@route /api/v1/ai/settings [POST]",
+      "\t@returns bool",
+      ""
+    ],
+    "filepath": "internal/handlers/ai.go",
+    "filename": "ai.go",
+    "api": {
+      "summary": "updates the AI service settings.",
+      "descriptions": [],
+      "endpoint": "/api/v1/ai/settings",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "GeminiAPIKey",
+          "jsonName": "geminiApiKey",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "OpenAIAPIKey",
+          "jsonName": "openaiApiKey",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "ReplicateAPIToken",
+          "jsonName": "replicateApiToken",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "ElevenLabsAPIKey",
+          "jsonName": "elevenlabsApiKey",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "PineconeAPIKey",
+          "jsonName": "pineconeApiKey",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "EnableOCR",
+          "jsonName": "enableOcr",
+          "goType": "bool",
+          "usedStructType": "",
+          "typescriptType": "boolean",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "EnableChat",
+          "jsonName": "enableChat",
+          "goType": "bool",
+          "usedStructType": "",
+          "typescriptType": "boolean",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "EnableRecap",
+          "jsonName": "enableRecap",
+          "goType": "bool",
+          "usedStructType": "",
+          "typescriptType": "boolean",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "EnableSearch",
+          "jsonName": "enableSearch",
+          "goType": "bool",
+          "usedStructType": "",
+          "typescriptType": "boolean",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "EnableUpscaling",
+          "jsonName": "enableUpscaling",
+          "goType": "bool",
+          "usedStructType": "",
+          "typescriptType": "boolean",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "EnableImageGeneration",
+          "jsonName": "enableImageGeneration",
+          "goType": "bool",
+          "usedStructType": "",
+          "typescriptType": "boolean",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "EnableVideoGeneration",
+          "jsonName": "enableVideoGeneration",
+          "goType": "bool",
+          "usedStructType": "",
+          "typescriptType": "boolean",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "EnableMusicGeneration",
+          "jsonName": "enableMusicGeneration",
+          "goType": "bool",
+          "usedStructType": "",
+          "typescriptType": "boolean",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "EnableTTS",
+          "jsonName": "enableTts",
+          "goType": "bool",
+          "usedStructType": "",
+          "typescriptType": "boolean",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "EnableEmotion",
+          "jsonName": "enableEmotion",
+          "goType": "bool",
+          "usedStructType": "",
+          "typescriptType": "boolean",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "EnableCulture",
+          "jsonName": "enableCulture",
+          "goType": "bool",
+          "usedStructType": "",
+          "typescriptType": "boolean",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "TargetLanguage",
+          "jsonName": "targetLanguage",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "DefaultTranslator",
+          "jsonName": "defaultTranslator",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "bool",
+      "returnGoType": "bool",
+      "returnTypescriptType": "boolean"
+    }
+  },
+  {
+    "name": "HandleOCRPage",
+    "trimmedName": "OCRPage",
+    "comments": [
+      "HandleOCRPage",
+      "",
+      "\t@summary performs OCR on a manga page image.",
+      "\t@desc The image should be sent as base64 in the request body.",
+      "\t@route /api/v1/ai/ocr [POST]",
+      "\t@returns ai.OCRResult",
+      ""
+    ],
+    "filepath": "internal/handlers/ai.go",
+    "filename": "ai.go",
+    "api": {
+      "summary": "performs OCR on a manga page image.",
+      "descriptions": [
+        "The image should be sent as base64 in the request body."
+      ],
+      "endpoint": "/api/v1/ai/ocr",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "ImageBase64",
+          "jsonName": "imageBase64",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "MimeType",
+          "jsonName": "mimeType",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "PageNumber",
+          "jsonName": "pageNumber",
+          "goType": "int",
+          "usedStructType": "",
+          "typescriptType": "number",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "ai.OCRResult",
+      "returnGoType": "ai.OCRResult",
+      "returnTypescriptType": "OCRResult"
+    }
+  },
+  {
+    "name": "HandleTranslateText",
+    "trimmedName": "TranslateText",
+    "comments": [
+      "HandleTranslateText",
+      "",
+      "\t@summary translates text using AI.",
+      "\t@route /api/v1/ai/translate [POST]",
+      "\t@returns map[string]string",
+      ""
+    ],
+    "filepath": "internal/handlers/ai.go",
+    "filename": "ai.go",
+    "api": {
+      "summary": "translates text using AI.",
+      "descriptions": [],
+      "endpoint": "/api/v1/ai/translate",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "Text",
+          "jsonName": "text",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "SourceLang",
+          "jsonName": "sourceLang",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "TargetLang",
+          "jsonName": "targetLang",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "map[string]string",
+      "returnGoType": "string",
+      "returnTypescriptType": "Record\u003cstring, string\u003e"
+    }
+  },
+  {
+    "name": "HandleAIChat",
+    "trimmedName": "AIChat",
+    "comments": [
+      "HandleAIChat",
+      "",
+      "\t@summary sends a message to the AI concierge.",
+      "\t@route /api/v1/ai/chat [POST]",
+      "\t@returns ai.ChatResponse",
+      ""
+    ],
+    "filepath": "internal/handlers/ai.go",
+    "filename": "ai.go",
+    "api": {
+      "summary": "sends a message to the AI concierge.",
+      "descriptions": [],
+      "endpoint": "/api/v1/ai/chat",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "ai.ChatResponse",
+      "returnGoType": "ai.ChatResponse",
+      "returnTypescriptType": "ChatResponse"
+    }
+  },
+  {
+    "name": "HandleGenerateRecap",
+    "trimmedName": "GenerateRecap",
+    "comments": [
+      "HandleGenerateRecap",
+      "",
+      "\t@summary generates a recap for a manga.",
+      "\t@route /api/v1/ai/recap [POST]",
+      "\t@returns ai.RecapResponse",
+      ""
+    ],
+    "filepath": "internal/handlers/ai.go",
+    "filename": "ai.go",
+    "api": {
+      "summary": "generates a recap for a manga.",
+      "descriptions": [],
+      "endpoint": "/api/v1/ai/recap",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "ai.RecapResponse",
+      "returnGoType": "ai.RecapResponse",
+      "returnTypescriptType": "RecapResponse"
+    }
+  },
+  {
+    "name": "HandleAIVibeSearch",
+    "trimmedName": "AIVibeSearch",
+    "comments": [
+      "HandleAIVibeSearch",
+      "",
+      "\t@summary searches for manga by vibe description.",
+      "\t@route /api/v1/ai/search [POST]",
+      "\t@returns ai.SearchResponse",
+      ""
+    ],
+    "filepath": "internal/handlers/ai.go",
+    "filename": "ai.go",
+    "api": {
+      "summary": "searches for manga by vibe description.",
+      "descriptions": [],
+      "endpoint": "/api/v1/ai/search",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "ai.SearchResponse",
+      "returnGoType": "ai.SearchResponse",
+      "returnTypescriptType": "SearchResponse"
+    }
+  },
+  {
+    "name": "HandleGenerateLoreTree",
+    "trimmedName": "GenerateLoreTree",
+    "comments": [
+      "HandleGenerateLoreTree",
+      "",
+      "\t@summary generates a lore tree for a manga.",
+      "\t@route /api/v1/ai/lore [POST]",
+      "\t@returns ai.LoreTree",
+      ""
+    ],
+    "filepath": "internal/handlers/ai.go",
+    "filename": "ai.go",
+    "api": {
+      "summary": "generates a lore tree for a manga.",
+      "descriptions": [],
+      "endpoint": "/api/v1/ai/lore",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "MediaId",
+          "jsonName": "mediaId",
+          "goType": "int",
+          "usedStructType": "",
+          "typescriptType": "number",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "Title",
+          "jsonName": "title",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "Chapters",
+          "jsonName": "chapters",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "ai.LoreTree",
+      "returnGoType": "ai.LoreTree",
+      "returnTypescriptType": "LoreTree"
+    }
+  },
+  {
+    "name": "HandleUpscaleImage",
+    "trimmedName": "UpscaleImage",
+    "comments": [
+      "HandleUpscaleImage",
+      "",
+      "\t@summary upscales a manga page image.",
+      "\t@route /api/v1/ai/upscale [POST]",
+      "\t@returns base64 encoded image",
+      ""
+    ],
+    "filepath": "internal/handlers/ai.go",
+    "filename": "ai.go",
+    "api": {
+      "summary": "upscales a manga page image.",
+      "descriptions": [],
+      "endpoint": "/api/v1/ai/upscale",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "ImageBase64",
+          "jsonName": "imageBase64",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "MimeType",
+          "jsonName": "mimeType",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "Scale",
+          "jsonName": "scale",
+          "goType": "int",
+          "usedStructType": "",
+          "typescriptType": "number",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "base64 encoded image",
+      "returnGoType": "base64 encoded image",
+      "returnTypescriptType": "base64 encoded image"
+    }
+  },
+  {
     "name": "HandleGetAnimeCollection",
     "trimmedName": "GetAnimeCollection",
     "comments": [
@@ -1309,6 +1830,945 @@
     }
   },
   {
+    "name": "HandleGenerateSmartSummary",
+    "trimmedName": "GenerateSmartSummary",
+    "comments": [
+      "HandleGenerateSmartSummary generates a \"Previously on...\" summary",
+      "",
+      "\t@summary generates a smart summary of previously read chapters",
+      "\t@route /api/v1/anyverse/summary [POST]",
+      "\t@returns processors.SmartSummary",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "generates a smart summary of previously read chapters",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/summary",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "MediaID",
+          "jsonName": "mediaId",
+          "goType": "int",
+          "usedStructType": "",
+          "typescriptType": "number",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "MangaTitle",
+          "jsonName": "mangaTitle",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "ChaptersRead",
+          "jsonName": "chaptersRead",
+          "goType": "[]int",
+          "usedStructType": "",
+          "typescriptType": "Array\u003cnumber\u003e",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "LastChapter",
+          "jsonName": "lastChapter",
+          "goType": "int",
+          "usedStructType": "",
+          "typescriptType": "number",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "LastReadAt",
+          "jsonName": "lastReadAt",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "Language",
+          "jsonName": "language",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "IncludeSpoilers",
+          "jsonName": "includeSpoilers",
+          "goType": "bool",
+          "usedStructType": "",
+          "typescriptType": "boolean",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "processors.SmartSummary",
+      "returnGoType": "processors.SmartSummary",
+      "returnTypescriptType": "SmartSummary"
+    }
+  },
+  {
+    "name": "HandleQueueDownload",
+    "trimmedName": "QueueDownload",
+    "comments": [
+      "HandleQueueDownload adds a chapter to the download queue",
+      "",
+      "\t@summary queues a chapter for offline download",
+      "\t@route /api/v1/anyverse/offline/queue [POST]",
+      "\t@returns processors.DownloadItem",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "queues a chapter for offline download",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/offline/queue",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "MediaID",
+          "jsonName": "mediaId",
+          "goType": "int",
+          "usedStructType": "",
+          "typescriptType": "number",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "MangaTitle",
+          "jsonName": "mangaTitle",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "Chapter",
+          "jsonName": "chapter",
+          "goType": "int",
+          "usedStructType": "",
+          "typescriptType": "number",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "PageCount",
+          "jsonName": "pageCount",
+          "goType": "int",
+          "usedStructType": "",
+          "typescriptType": "number",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "Priority",
+          "jsonName": "priority",
+          "goType": "int",
+          "usedStructType": "",
+          "typescriptType": "number",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "processors.DownloadItem",
+      "returnGoType": "processors.DownloadItem",
+      "returnTypescriptType": "DownloadItem"
+    }
+  },
+  {
+    "name": "HandleQueueNextChapters",
+    "trimmedName": "QueueNextChapters",
+    "comments": [
+      "HandleQueueNextChapters automatically queues upcoming chapters",
+      "",
+      "\t@summary queues next chapters for offline reading",
+      "\t@route /api/v1/anyverse/offline/queue-next [POST]",
+      "\t@returns []processors.DownloadItem",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "queues next chapters for offline reading",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/offline/queue-next",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "MediaID",
+          "jsonName": "mediaId",
+          "goType": "int",
+          "usedStructType": "",
+          "typescriptType": "number",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "MangaTitle",
+          "jsonName": "mangaTitle",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "CurrentChapter",
+          "jsonName": "currentChapter",
+          "goType": "int",
+          "usedStructType": "",
+          "typescriptType": "number",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "Count",
+          "jsonName": "count",
+          "goType": "int",
+          "usedStructType": "",
+          "typescriptType": "number",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "[]processors.DownloadItem",
+      "returnGoType": "processors.DownloadItem",
+      "returnTypescriptType": "Array\u003cDownloadItem\u003e"
+    }
+  },
+  {
+    "name": "HandleGetDownloadQueue",
+    "trimmedName": "GetDownloadQueue",
+    "comments": [
+      "HandleGetDownloadQueue returns the current download queue",
+      "",
+      "\t@summary gets the download queue",
+      "\t@route /api/v1/anyverse/offline/queue [GET]",
+      "\t@returns []processors.DownloadItem",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "gets the download queue",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/offline/queue",
+      "methods": [
+        "GET"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "[]processors.DownloadItem",
+      "returnGoType": "processors.DownloadItem",
+      "returnTypescriptType": "Array\u003cDownloadItem\u003e"
+    }
+  },
+  {
+    "name": "HandleGetActiveDownloads",
+    "trimmedName": "GetActiveDownloads",
+    "comments": [
+      "HandleGetActiveDownloads returns active downloads",
+      "",
+      "\t@summary gets active downloads",
+      "\t@route /api/v1/anyverse/offline/active [GET]",
+      "\t@returns []processors.DownloadItem",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "gets active downloads",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/offline/active",
+      "methods": [
+        "GET"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "[]processors.DownloadItem",
+      "returnGoType": "processors.DownloadItem",
+      "returnTypescriptType": "Array\u003cDownloadItem\u003e"
+    }
+  },
+  {
+    "name": "HandleGetCompletedDownloads",
+    "trimmedName": "GetCompletedDownloads",
+    "comments": [
+      "HandleGetCompletedDownloads returns completed downloads",
+      "",
+      "\t@summary gets completed downloads",
+      "\t@route /api/v1/anyverse/offline/completed [GET]",
+      "\t@returns []processors.DownloadItem",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "gets completed downloads",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/offline/completed",
+      "methods": [
+        "GET"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "[]processors.DownloadItem",
+      "returnGoType": "processors.DownloadItem",
+      "returnTypescriptType": "Array\u003cDownloadItem\u003e"
+    }
+  },
+  {
+    "name": "HandlePauseDownload",
+    "trimmedName": "PauseDownload",
+    "comments": [
+      "HandlePauseDownload pauses an active download",
+      "",
+      "\t@summary pauses a download",
+      "\t@route /api/v1/anyverse/offline/pause [POST]",
+      "\t@returns bool",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "pauses a download",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/offline/pause",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "DownloadID",
+          "jsonName": "downloadId",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "bool",
+      "returnGoType": "bool",
+      "returnTypescriptType": "boolean"
+    }
+  },
+  {
+    "name": "HandleResumeDownload",
+    "trimmedName": "ResumeDownload",
+    "comments": [
+      "HandleResumeDownload resumes a paused download",
+      "",
+      "\t@summary resumes a download",
+      "\t@route /api/v1/anyverse/offline/resume [POST]",
+      "\t@returns bool",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "resumes a download",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/offline/resume",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "DownloadID",
+          "jsonName": "downloadId",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "bool",
+      "returnGoType": "bool",
+      "returnTypescriptType": "boolean"
+    }
+  },
+  {
+    "name": "HandleCancelDownload",
+    "trimmedName": "CancelDownload",
+    "comments": [
+      "HandleCancelDownload cancels a download",
+      "",
+      "\t@summary cancels a download",
+      "\t@route /api/v1/anyverse/offline/cancel [POST]",
+      "\t@returns bool",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "cancels a download",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/offline/cancel",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "DownloadID",
+          "jsonName": "downloadId",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "bool",
+      "returnGoType": "bool",
+      "returnTypescriptType": "boolean"
+    }
+  },
+  {
+    "name": "HandleClearCompletedDownloads",
+    "trimmedName": "ClearCompletedDownloads",
+    "comments": [
+      "HandleClearCompletedDownloads clears completed downloads",
+      "",
+      "\t@summary clears completed download history",
+      "\t@route /api/v1/anyverse/offline/clear-completed [POST]",
+      "\t@returns bool",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "clears completed download history",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/offline/clear-completed",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "bool",
+      "returnGoType": "bool",
+      "returnTypescriptType": "boolean"
+    }
+  },
+  {
+    "name": "HandleGetDownloadStats",
+    "trimmedName": "GetDownloadStats",
+    "comments": [
+      "HandleGetDownloadStats returns download statistics",
+      "",
+      "\t@summary gets download statistics",
+      "\t@route /api/v1/anyverse/offline/stats [GET]",
+      "\t@returns map[string]interface{}",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "gets download statistics",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/offline/stats",
+      "methods": [
+        "GET"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "map[string]interface{}",
+      "returnGoType": "interface{}",
+      "returnTypescriptType": "Record\u003cstring, interface{}\u003e"
+    }
+  },
+  {
+    "name": "HandleCulturalLocalization",
+    "trimmedName": "CulturalLocalization",
+    "comments": [
+      "HandleCulturalLocalization localizes text to specific Arabic dialects",
+      "",
+      "\t@summary localizes text to Arabic dialect",
+      "\t@route /api/v1/anyverse/culture/localize [POST]",
+      "\t@returns processors.LocalizationResult",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "localizes text to Arabic dialect",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/culture/localize",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "Text",
+          "jsonName": "text",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "TargetDialect",
+          "jsonName": "targetDialect",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "PreserveContext",
+          "jsonName": "preserveContext",
+          "goType": "bool",
+          "usedStructType": "",
+          "typescriptType": "boolean",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "processors.LocalizationResult",
+      "returnGoType": "processors.LocalizationResult",
+      "returnTypescriptType": "LocalizationResult"
+    }
+  },
+  {
+    "name": "HandleVoiceCustomization",
+    "trimmedName": "VoiceCustomization",
+    "comments": [
+      "HandleVoiceCustomization generates customized voice audio",
+      "",
+      "\t@summary generates customized voice",
+      "\t@route /api/v1/anyverse/culture/voice [POST]",
+      "\t@returns map[string]interface{}",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "generates customized voice",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/culture/voice",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "Text",
+          "jsonName": "text",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "VoiceType",
+          "jsonName": "voiceType",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "Emotion",
+          "jsonName": "emotion",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "Speed",
+          "jsonName": "speed",
+          "goType": "float64",
+          "usedStructType": "",
+          "typescriptType": "number",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "map[string]interface{}",
+      "returnGoType": "interface{}",
+      "returnTypescriptType": "Record\u003cstring, interface{}\u003e"
+    }
+  },
+  {
+    "name": "HandleAIDirector",
+    "trimmedName": "AIDirector",
+    "comments": [
+      "HandleAIDirector generates alternative perspectives of manga panels",
+      "",
+      "\t@summary generates AI-directed perspective",
+      "\t@route /api/v1/anyverse/director/generate [POST]",
+      "\t@returns map[string]interface{}",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "generates AI-directed perspective",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/director/generate",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "ImageBase64",
+          "jsonName": "imageBase64",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "CurrentPerspective",
+          "jsonName": "currentPerspective",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "TargetPerspective",
+          "jsonName": "targetPerspective",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "CharacterName",
+          "jsonName": "characterName",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "SceneDescription",
+          "jsonName": "sceneDescription",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "map[string]interface{}",
+      "returnGoType": "interface{}",
+      "returnTypescriptType": "Record\u003cstring, interface{}\u003e"
+    }
+  },
+  {
+    "name": "HandleGenerateOST",
+    "trimmedName": "GenerateOST",
+    "comments": [
+      "HandleGenerateOST generates dynamic soundtrack",
+      "",
+      "\t@summary generates emotional OST",
+      "\t@route /api/v1/anyverse/ost/generate [POST]",
+      "\t@returns map[string]interface{}",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "generates emotional OST",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/ost/generate",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "Mood",
+          "jsonName": "mood",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "Keywords",
+          "jsonName": "keywords",
+          "goType": "[]string",
+          "usedStructType": "",
+          "typescriptType": "Array\u003cstring\u003e",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "Duration",
+          "jsonName": "duration",
+          "goType": "int",
+          "usedStructType": "",
+          "typescriptType": "number",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "Tempo",
+          "jsonName": "tempo",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "ScrollSpeed",
+          "jsonName": "scrollSpeed",
+          "goType": "float64",
+          "usedStructType": "",
+          "typescriptType": "number",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "map[string]interface{}",
+      "returnGoType": "interface{}",
+      "returnTypescriptType": "Record\u003cstring, interface{}\u003e"
+    }
+  },
+  {
+    "name": "HandleGetSubscription",
+    "trimmedName": "GetSubscription",
+    "comments": [
+      "HandleGetSubscription returns user's subscription info",
+      "",
+      "\t@summary gets subscription information",
+      "\t@route /api/v1/anyverse/subscription [GET]",
+      "\t@returns ai.Subscription",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "gets subscription information",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/subscription",
+      "methods": [
+        "GET"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "ai.Subscription",
+      "returnGoType": "ai.Subscription",
+      "returnTypescriptType": "Subscription"
+    }
+  },
+  {
+    "name": "HandleUpgradeSubscription",
+    "trimmedName": "UpgradeSubscription",
+    "comments": [
+      "HandleUpgradeSubscription upgrades user's subscription",
+      "",
+      "\t@summary upgrades subscription",
+      "\t@route /api/v1/anyverse/subscription/upgrade [POST]",
+      "\t@returns ai.Subscription",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "upgrades subscription",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/subscription/upgrade",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "Tier",
+          "jsonName": "tier",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "PaymentMethod",
+          "jsonName": "paymentMethod",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "ai.Subscription",
+      "returnGoType": "ai.Subscription",
+      "returnTypescriptType": "Subscription"
+    }
+  },
+  {
+    "name": "HandleGetWalletBalance",
+    "trimmedName": "GetWalletBalance",
+    "comments": [
+      "HandleGetWalletBalance returns AnyCoin balance",
+      "",
+      "\t@summary gets wallet balance",
+      "\t@route /api/v1/anyverse/wallet/balance [GET]",
+      "\t@returns map[string]interface{}",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "gets wallet balance",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/wallet/balance",
+      "methods": [
+        "GET"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "map[string]interface{}",
+      "returnGoType": "interface{}",
+      "returnTypescriptType": "Record\u003cstring, interface{}\u003e"
+    }
+  },
+  {
+    "name": "HandlePurchaseCoins",
+    "trimmedName": "PurchaseCoins",
+    "comments": [
+      "HandlePurchaseCoins purchases AnyCoins",
+      "",
+      "\t@summary purchases AnyCoins",
+      "\t@route /api/v1/anyverse/wallet/purchase [POST]",
+      "\t@returns map[string]interface{}",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "purchases AnyCoins",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/wallet/purchase",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [
+        {
+          "name": "PackageID",
+          "jsonName": "packageId",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        },
+        {
+          "name": "PaymentMethod",
+          "jsonName": "paymentMethod",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": []
+        }
+      ],
+      "returns": "map[string]interface{}",
+      "returnGoType": "interface{}",
+      "returnTypescriptType": "Record\u003cstring, interface{}\u003e"
+    }
+  },
+  {
+    "name": "HandleGetHealthStatus",
+    "trimmedName": "GetHealthStatus",
+    "comments": [
+      "HandleGetHealthStatus returns health status of AI services",
+      "",
+      "\t@summary gets AI services health status",
+      "\t@route /api/v1/anyverse/health [GET]",
+      "\t@returns ai.HealthStatus",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "gets AI services health status",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/health",
+      "methods": [
+        "GET"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "ai.HealthStatus",
+      "returnGoType": "ai.HealthStatus",
+      "returnTypescriptType": "HealthStatus"
+    }
+  },
+  {
+    "name": "HandleLoreKeeperQuery",
+    "trimmedName": "LoreKeeperQuery",
+    "comments": [
+      "HandleLoreKeeperQuery processes a query using the Anti-Spoiler Lore Keeper",
+      "",
+      "\t@summary answers a lore query strictly up to the current chapter",
+      "\t@route /api/v1/anyverse/lore-keeper [POST]",
+      "\t@returns processors.LoreResponse",
+      ""
+    ],
+    "filepath": "internal/handlers/anyverse.go",
+    "filename": "anyverse.go",
+    "api": {
+      "summary": "answers a lore query strictly up to the current chapter",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/lore-keeper",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "processors.LoreResponse",
+      "returnGoType": "processors.LoreResponse",
+      "returnTypescriptType": "LoreResponse"
+    }
+  },
+  {
     "name": "HandleLogin",
     "trimmedName": "Login",
     "comments": [
@@ -1942,6 +3402,208 @@
       "returns": "bool",
       "returnGoType": "bool",
       "returnTypescriptType": "boolean"
+    }
+  },
+  {
+    "name": "HandleGetComicsCollection",
+    "trimmedName": "GetComicsCollection",
+    "comments": [
+      "HandleGetComicsCollection",
+      "",
+      "\t@summary returns the user's comics collection organized by type.",
+      "\t@desc This endpoint returns all comics (manga, manhwa, manhua) organized by type with enhanced data.",
+      "\t@route /api/v1/comics/collection [POST]",
+      "\t@returns ComicsCollection",
+      ""
+    ],
+    "filepath": "internal/handlers/comics.go",
+    "filename": "comics.go",
+    "api": {
+      "summary": "returns the user's comics collection organized by type.",
+      "descriptions": [
+        "This endpoint returns all comics (manga, manhwa, manhua) organized by type with enhanced data."
+      ],
+      "endpoint": "/api/v1/comics/collection",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "ComicsCollection",
+      "returnGoType": "ComicsCollection",
+      "returnTypescriptType": "ComicsCollection"
+    }
+  },
+  {
+    "name": "buildComicsList",
+    "trimmedName": "buildComicsList",
+    "comments": [
+      "buildComicsList builds a comics list for a specific type",
+      ""
+    ],
+    "filepath": "internal/handlers/comics.go",
+    "filename": "comics.go",
+    "api": {
+      "summary": "",
+      "descriptions": [],
+      "endpoint": "",
+      "methods": null,
+      "params": [],
+      "bodyFields": [],
+      "returns": "bool",
+      "returnGoType": "bool",
+      "returnTypescriptType": "boolean"
+    }
+  },
+  {
+    "name": "getCountryOfOriginSafe",
+    "trimmedName": "getCountryOfOriginSafe",
+    "comments": [
+      "Helper functions for safe access to BaseManga fields",
+      ""
+    ],
+    "filepath": "internal/handlers/comics.go",
+    "filename": "comics.go",
+    "api": {
+      "summary": "",
+      "descriptions": [],
+      "endpoint": "",
+      "methods": null,
+      "params": [],
+      "bodyFields": [],
+      "returns": "bool",
+      "returnGoType": "bool",
+      "returnTypescriptType": "boolean"
+    }
+  },
+  {
+    "name": "buildComicsStats",
+    "trimmedName": "buildComicsStats",
+    "comments": [
+      "buildComicsStats builds statistics for comics",
+      ""
+    ],
+    "filepath": "internal/handlers/comics.go",
+    "filename": "comics.go",
+    "api": {
+      "summary": "",
+      "descriptions": [],
+      "endpoint": "",
+      "methods": null,
+      "params": [],
+      "bodyFields": [],
+      "returns": "bool",
+      "returnGoType": "bool",
+      "returnTypescriptType": "boolean"
+    }
+  },
+  {
+    "name": "getComicsTypeName",
+    "trimmedName": "getComicsTypeName",
+    "comments": [
+      "getComicsTypeName returns the display name for a comics type",
+      ""
+    ],
+    "filepath": "internal/handlers/comics.go",
+    "filename": "comics.go",
+    "api": {
+      "summary": "",
+      "descriptions": [],
+      "endpoint": "",
+      "methods": null,
+      "params": [],
+      "bodyFields": [],
+      "returns": "bool",
+      "returnGoType": "bool",
+      "returnTypescriptType": "boolean"
+    }
+  },
+  {
+    "name": "contains",
+    "trimmedName": "contains",
+    "comments": [
+      "contains checks if a string slice contains a value",
+      ""
+    ],
+    "filepath": "internal/handlers/comics.go",
+    "filename": "comics.go",
+    "api": {
+      "summary": "",
+      "descriptions": [],
+      "endpoint": "",
+      "methods": null,
+      "params": [],
+      "bodyFields": [],
+      "returns": "bool",
+      "returnGoType": "bool",
+      "returnTypescriptType": "boolean"
+    }
+  },
+  {
+    "name": "HandleGetComicsStats",
+    "trimmedName": "GetComicsStats",
+    "comments": [
+      "HandleGetComicsStats",
+      "",
+      "\t@summary returns statistics for the user's comics collection.",
+      "\t@route /api/v1/comics/stats [GET]",
+      "\t@returns ComicsStats",
+      ""
+    ],
+    "filepath": "internal/handlers/comics.go",
+    "filename": "comics.go",
+    "api": {
+      "summary": "returns statistics for the user's comics collection.",
+      "descriptions": [],
+      "endpoint": "/api/v1/comics/stats",
+      "methods": [
+        "GET"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "ComicsStats",
+      "returnGoType": "ComicsStats",
+      "returnTypescriptType": "ComicsStats"
+    }
+  },
+  {
+    "name": "HandleGetComicsByType",
+    "trimmedName": "GetComicsByType",
+    "comments": [
+      "HandleGetComicsByType",
+      "",
+      "\t@summary returns comics of a specific type.",
+      "\t@route /api/v1/comics/{type} [GET]",
+      "\t@param type - string - true - \"Type of comics (manga, manhwa, manhua)\"",
+      "\t@returns ComicsList",
+      ""
+    ],
+    "filepath": "internal/handlers/comics.go",
+    "filename": "comics.go",
+    "api": {
+      "summary": "returns comics of a specific type.",
+      "descriptions": [],
+      "endpoint": "/api/v1/comics/{type}",
+      "methods": [
+        "GET"
+      ],
+      "params": [
+        {
+          "name": "type",
+          "jsonName": "type",
+          "goType": "string",
+          "usedStructType": "",
+          "typescriptType": "string",
+          "required": true,
+          "descriptions": [
+            "Type of comics (manga, manhwa, manhua)"
+          ]
+        }
+      ],
+      "bodyFields": [],
+      "returns": "ComicsList",
+      "returnGoType": "ComicsList",
+      "returnTypescriptType": "ComicsList"
     }
   },
   {
@@ -7653,8 +9315,8 @@
     "comments": [
       "HandleNakamaCreateAndJoinRoom",
       "",
-      "\t@summary creates a Seanime Room and connects to it as host.",
-      "\t@desc This creates a room on the Seanime Rooms relay server and connects as the host. Peers can then join using the returned URL.",
+      "\t@summary creates a Aniverse Room and connects to it as host.",
+      "\t@desc This creates a room on the Aniverse Rooms relay server and connects as the host. Peers can then join using the returned URL.",
       "\t@route /api/v1/nakama/room/create [POST]",
       "\t@returns bool",
       ""
@@ -7662,9 +9324,9 @@
     "filepath": "internal/handlers/nakama.go",
     "filename": "nakama.go",
     "api": {
-      "summary": "creates a Seanime Room and connects to it as host.",
+      "summary": "creates a Aniverse Room and connects to it as host.",
       "descriptions": [
-        "This creates a room on the Seanime Rooms relay server and connects as the host. Peers can then join using the returned URL."
+        "This creates a room on the Aniverse Rooms relay server and connects as the host. Peers can then join using the returned URL."
       ],
       "endpoint": "/api/v1/nakama/room/create",
       "methods": [
@@ -9681,6 +11343,210 @@
     }
   },
   {
+    "name": "HandleCosmicSearch",
+    "trimmedName": "CosmicSearch",
+    "comments": [
+      "HandleCosmicSearch performs a cosmic search across the story universe",
+      "",
+      "\t@summary performs cosmic search",
+      "\t@route /api/v1/anyverse/cosmic-search [POST]",
+      "\t@returns CosmicSearchResponse",
+      ""
+    ],
+    "filepath": "internal/handlers/space.go",
+    "filename": "space.go",
+    "api": {
+      "summary": "performs cosmic search",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/cosmic-search",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "CosmicSearchResponse",
+      "returnGoType": "CosmicSearchResponse",
+      "returnTypescriptType": "CosmicSearchResponse"
+    }
+  },
+  {
+    "name": "performMockCosmicSearch",
+    "trimmedName": "performMockCosmicSearch",
+    "comments": [
+      "performMockCosmicSearch performs a mock cosmic search",
+      ""
+    ],
+    "filepath": "internal/handlers/space.go",
+    "filename": "space.go",
+    "api": {
+      "summary": "",
+      "descriptions": [],
+      "endpoint": "",
+      "methods": null,
+      "params": [],
+      "bodyFields": [],
+      "returns": "bool",
+      "returnGoType": "bool",
+      "returnTypescriptType": "boolean"
+    }
+  },
+  {
+    "name": "HandleGetGalaxyClusters",
+    "trimmedName": "GetGalaxyClusters",
+    "comments": [
+      "HandleGetGalaxyClusters returns all galaxy clusters",
+      "",
+      "\t@summary gets galaxy clusters",
+      "\t@route /api/v1/anyverse/galaxy-clusters [GET]",
+      "\t@returns []GalaxyCluster",
+      ""
+    ],
+    "filepath": "internal/handlers/space.go",
+    "filename": "space.go",
+    "api": {
+      "summary": "gets galaxy clusters",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/galaxy-clusters",
+      "methods": [
+        "GET"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "[]GalaxyCluster",
+      "returnGoType": "GalaxyCluster",
+      "returnTypescriptType": "Array\u003cGalaxyCluster\u003e"
+    }
+  },
+  {
+    "name": "generateMockStars",
+    "trimmedName": "generateMockStars",
+    "comments": [
+      "generateMockStars generates mock stars for a cluster",
+      ""
+    ],
+    "filepath": "internal/handlers/space.go",
+    "filename": "space.go",
+    "api": {
+      "summary": "",
+      "descriptions": [],
+      "endpoint": "",
+      "methods": null,
+      "params": [],
+      "bodyFields": [],
+      "returns": "bool",
+      "returnGoType": "bool",
+      "returnTypescriptType": "boolean"
+    }
+  },
+  {
+    "name": "HandleGetSimilarGalaxies",
+    "trimmedName": "GetSimilarGalaxies",
+    "comments": [
+      "HandleGetSimilarGalaxies returns similar galaxies for a media",
+      "",
+      "\t@summary gets similar galaxies",
+      "\t@route /api/v1/anyverse/similar-galaxies/:id [GET]",
+      "\t@returns []StarNode",
+      ""
+    ],
+    "filepath": "internal/handlers/space.go",
+    "filename": "space.go",
+    "api": {
+      "summary": "gets similar galaxies",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/similar-galaxies/:id",
+      "methods": [
+        "GET"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "[]StarNode",
+      "returnGoType": "StarNode",
+      "returnTypescriptType": "Array\u003cStarNode\u003e"
+    }
+  },
+  {
+    "name": "HandleGetTimeline",
+    "trimmedName": "GetTimeline",
+    "comments": [
+      "HandleGetTimeline returns timeline for a media",
+      "",
+      "\t@summary gets timeline",
+      "\t@route /api/v1/anyverse/timeline/:id [GET]",
+      "\t@returns []TimelineEntry",
+      ""
+    ],
+    "filepath": "internal/handlers/space.go",
+    "filename": "space.go",
+    "api": {
+      "summary": "gets timeline",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/timeline/:id",
+      "methods": [
+        "GET"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "[]TimelineEntry",
+      "returnGoType": "TimelineEntry",
+      "returnTypescriptType": "Array\u003cTimelineEntry\u003e"
+    }
+  },
+  {
+    "name": "HandleVisualSearch",
+    "trimmedName": "VisualSearch",
+    "comments": [
+      "HandleVisualSearch performs visual search using an image",
+      "",
+      "\t@summary performs visual search",
+      "\t@route /api/v1/anyverse/visual-search [POST]",
+      "\t@returns VisualSearchResult",
+      ""
+    ],
+    "filepath": "internal/handlers/space.go",
+    "filename": "space.go",
+    "api": {
+      "summary": "performs visual search",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/visual-search",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "VisualSearchResult",
+      "returnGoType": "VisualSearchResult",
+      "returnTypescriptType": "VisualSearchResult"
+    }
+  },
+  {
+    "name": "HandleEmotionalSearch",
+    "trimmedName": "EmotionalSearch",
+    "comments": [
+      "HandleEmotionalSearch performs emotional signature search",
+      "",
+      "\t@summary performs emotional search",
+      "\t@route /api/v1/anyverse/emotional-search [POST]",
+      "\t@returns CosmicSearchResponse",
+      ""
+    ],
+    "filepath": "internal/handlers/space.go",
+    "filename": "space.go",
+    "api": {
+      "summary": "performs emotional search",
+      "descriptions": [],
+      "endpoint": "/api/v1/anyverse/emotional-search",
+      "methods": [
+        "POST"
+      ],
+      "params": [],
+      "bodyFields": [],
+      "returns": "CosmicSearchResponse",
+      "returnGoType": "CosmicSearchResponse",
+      "returnTypescriptType": "CosmicSearchResponse"
+    }
+  },
+  {
     "name": "NewStatus",
     "trimmedName": "NewStatus",
     "comments": [
@@ -9815,7 +11681,7 @@
       "HandleGetLatestLogContent",
       "",
       "\t@summary returns the content of the latest server log file.",
-      "\t@desc This returns the content of the most recent seanime- log file after flushing logs.",
+      "\t@desc This returns the content of the most recent aniverse- log file after flushing logs.",
       "\t@route /api/v1/logs/latest [GET]",
       "\t@returns string",
       ""
@@ -9825,7 +11691,7 @@
     "api": {
       "summary": "returns the content of the latest server log file.",
       "descriptions": [
-        "This returns the content of the most recent seanime- log file after flushing logs."
+        "This returns the content of the most recent aniverse- log file after flushing logs."
       ],
       "endpoint": "/api/v1/logs/latest",
       "methods": [

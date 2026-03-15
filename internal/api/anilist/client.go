@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"seanime/internal/constants"
-	"seanime/internal/events"
-	"seanime/internal/util"
+	"aniverse/internal/constants"
+	"aniverse/internal/events"
+	"aniverse/internal/util"
 	"strconv"
 	"time"
 

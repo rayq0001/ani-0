@@ -1,9 +1,9 @@
 package handlers
 
 import (
-	"seanime/internal/customsource"
-	"seanime/internal/database/db_bridge"
-	"seanime/internal/library/anime"
+	"aniverse/internal/customsource"
+	"aniverse/internal/database/db_bridge"
+	"aniverse/internal/library/anime"
 	"strconv"
 
 	"github.com/labstack/echo/v4"

@@ -1,7 +1,7 @@
 package plugin_ui
 
 import (
-	"seanime/internal/util/result"
+	"aniverse/internal/util/result"
 	"strings"
 	"sync"
 	"sync/atomic"

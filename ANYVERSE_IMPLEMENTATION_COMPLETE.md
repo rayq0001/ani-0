@@ -2,7 +2,7 @@
 
 ## 🎯 Mission Accomplished
 
-Successfully transformed Seanime into a hyper-immersive AI-powered manga ecosystem with **30+ files** implementing 8 core features.
+Successfully transformed Aniverse into a hyper-immersive AI-powered manga ecosystem with **30+ files** implementing 8 core features.
 
 ---
 
@@ -46,7 +46,7 @@ Successfully transformed Seanime into a hyper-immersive AI-powered manga ecosyst
 ## 🎨 Core Features Implemented
 
 ### 1. 🎭 AI Director Engine
-**Files:** `internal/ai/engines.go`, `seanime-web/src/app/(main)/_features/engines/director-engine.tsx`
+**Files:** `internal/ai/engines.go`, `aniverse-web/src/app/(main)/_features/engines/director-engine.tsx`
 
 - 3D perspective generation from manga panels
 - First-person, third-person, aerial viewpoints
@@ -61,7 +61,7 @@ a new image maintaining 100% character consistency."
 ```
 
 ### 2. 🎵 Emotional OST Engine
-**Files:** `internal/ai/engines.go`, `seanime-web/src/app/(main)/_features/engines/ost-engine.tsx`
+**Files:** `internal/ai/engines.go`, `aniverse-web/src/app/(main)/_features/engines/ost-engine.tsx`
 
 - Dynamic music generation based on reading mood
 - Sentiment analysis from text
@@ -76,7 +76,7 @@ cinematic track with fast tempo, heavy bass, and metallic sound effects."
 ```
 
 ### 3. 🗣️ Character Consciousness
-**Files:** `internal/ai/engines.go`, `seanime-web/src/components/anyverse/AnyverseHub.tsx`
+**Files:** `internal/ai/engines.go`, `aniverse-web/src/components/anyverse/AnyverseHub.tsx`
 
 - AI characters that dialogue with readers
 - Personality-aware responses
@@ -104,7 +104,7 @@ breaking character or spoiling future chapters."
 - Cultural context preservation
 
 ### 5. 📚 Smart Summary ("Previously on...")
-**Files:** `internal/ai/processors/smart_summary.go`, `seanime-web/src/components/anyverse/SummaryOverlay.tsx`
+**Files:** `internal/ai/processors/smart_summary.go`, `aniverse-web/src/components/anyverse/SummaryOverlay.tsx`
 
 - AI-generated chapter recaps
 - "Where did I leave off?" feature
@@ -112,7 +112,7 @@ breaking character or spoiling future chapters."
 - Spoiler control
 
 ### 6. 💾 Offline Manager
-**Files:** `internal/ai/processors/offline_manager.go`, `seanime-web/src/components/anyverse/OfflineBadge.tsx`
+**Files:** `internal/ai/processors/offline_manager.go`, `aniverse-web/src/components/anyverse/OfflineBadge.tsx`
 
 - Download queue management
 - Priority-based scheduling
@@ -120,7 +120,7 @@ breaking character or spoiling future chapters."
 - Auto-queue next chapters
 
 ### 7. 💎 Subscription & Monetization
-**Files:** `internal/ai/subscription.go`, `seanime-web/src/app/(main)/_features/wallet/SubscriptionCard.tsx`
+**Files:** `internal/ai/subscription.go`, `aniverse-web/src/app/(main)/_features/wallet/SubscriptionCard.tsx`
 
 | Tier | Price | Features |
 |------|-------|----------|
@@ -133,7 +133,7 @@ breaking character or spoiling future chapters."
 - Feature gating by tier
 
 ### 8. 🎨 Liquid UI Design System
-**Files:** `seanime-web/src/components/anyverse/`, `seanime-web/src/lib/theme/anyverse-tokens.ts`
+**Files:** `aniverse-web/src/components/anyverse/`, `aniverse-web/src/lib/theme/anyverse-tokens.ts`
 
 - Glass-morphism panels
 - Holographic effects
@@ -165,10 +165,10 @@ internal/ai/
     └── offline_manager.go       # Download queue management
 ```
 
-### Frontend (`/seanime-web/src/`)
+### Frontend (`/aniverse-web/src/`)
 
 ```
-seanime-web/src/
+aniverse-web/src/
 ├── lib/theme/
 │   └── anyverse-tokens.ts       # Design tokens
 ├── components/anyverse/
@@ -268,7 +268,7 @@ import { AnyverseHub } from '@/components/anyverse';
 go test ./internal/ai/...
 
 # Run frontend tests
-cd seanime-web && npm test
+cd aniverse-web && npm test
 ```
 
 ---

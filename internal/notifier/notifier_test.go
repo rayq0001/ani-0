@@ -2,9 +2,9 @@ package notifier
 
 import (
 	"fmt"
-	"seanime/internal/database/models"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
+	"aniverse/internal/database/models"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
 	"testing"
 	"time"
 )

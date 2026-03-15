@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"strings"
 
 	"github.com/labstack/echo/v4"

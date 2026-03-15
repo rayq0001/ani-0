@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 	"regexp"
-	"seanime/internal/extension"
-	"seanime/internal/util"
+	"aniverse/internal/extension"
+	"aniverse/internal/util"
 	"strings"
 )
 

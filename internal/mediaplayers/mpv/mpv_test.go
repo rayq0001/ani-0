@@ -1,8 +1,8 @@
 package mpv
 
 import (
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
 	"testing"
 	"time"
 

@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
-	"seanime/internal/util"
+	"aniverse/internal/util"
 	"sort"
 	"strings"
 	"time"
@@ -219,8 +219,8 @@ func (t *Troubleshooter) Analyze() (AnalysisResult, error) {
 	}
 
 	// Get the latest server log file
-	// name: seanime-<timestamp>.log
-	// e.g., seanime-2025-01-21-12-00-00.log
+	// name: aniverse-<timestamp>.log
+	// e.g., aniverse-2025-01-21-12-00-00.log
 	sort.Slice(files, func(i, j int) bool {
 		return files[i].Name() > files[j].Name()
 	})

@@ -3,10 +3,10 @@ package plugin
 import (
 	"context"
 	"errors"
-	"seanime/internal/extension"
-	"seanime/internal/goja/goja_bindings"
-	"seanime/internal/manga"
-	gojautil "seanime/internal/util/goja"
+	"aniverse/internal/extension"
+	"aniverse/internal/goja/goja_bindings"
+	"aniverse/internal/manga"
+	gojautil "aniverse/internal/util/goja"
 
 	"github.com/dop251/goja"
 	"github.com/rs/zerolog"

@@ -3,7 +3,7 @@ package scanner
 import (
 	"os"
 	"path/filepath"
-	"seanime/internal/events"
+	"aniverse/internal/events"
 	"strings"
 
 	"github.com/fsnotify/fsnotify"

@@ -3,9 +3,9 @@ package goja_bindings
 import (
 	"fmt"
 	"regexp"
-	"seanime/internal/library/scanner"
-	"seanime/internal/util"
-	"seanime/internal/util/comparison"
+	"aniverse/internal/library/scanner"
+	"aniverse/internal/util"
+	"aniverse/internal/util/comparison"
 	"strconv"
 	"strings"
 

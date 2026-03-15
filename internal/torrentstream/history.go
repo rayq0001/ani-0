@@ -1,10 +1,10 @@
 package torrentstream
 
 import (
-	"seanime/internal/database/db_bridge"
-	"seanime/internal/events"
-	hibiketorrent "seanime/internal/extension/hibike/torrent"
-	"seanime/internal/util"
+	"aniverse/internal/database/db_bridge"
+	"aniverse/internal/events"
+	hibiketorrent "aniverse/internal/extension/hibike/torrent"
+	"aniverse/internal/util"
 
 	"github.com/5rahim/habari"
 )

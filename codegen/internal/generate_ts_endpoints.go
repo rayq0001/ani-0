@@ -377,7 +377,7 @@ func generateHooksFile(f *os.File, groupedHandlers map[string][]*RouteHandler, f
 	}
 
 	//for filename, tmpls := range tmpGroupTmpls {
-	//	hooksF, err := os.Create(filepath.Join("../seanime-web/src/api/hooks", filename+".hooks.ts"))
+	//	hooksF, err := os.Create(filepath.Join("../aniverse-web/src/api/hooks", filename+".hooks.ts"))
 	//	if err != nil {
 	//		panic(err)
 	//	}

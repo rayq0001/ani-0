@@ -2,13 +2,13 @@ package anime_test
 
 import (
 	"context"
-	"seanime/internal/api/anilist"
-	"seanime/internal/api/metadata"
-	"seanime/internal/api/metadata_provider"
-	"seanime/internal/database/db"
-	"seanime/internal/library/anime"
-	"seanime/internal/test_utils"
-	"seanime/internal/util"
+	"aniverse/internal/api/anilist"
+	"aniverse/internal/api/metadata"
+	"aniverse/internal/api/metadata_provider"
+	"aniverse/internal/database/db"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/test_utils"
+	"aniverse/internal/util"
 	"testing"
 
 	"github.com/stretchr/testify/assert"

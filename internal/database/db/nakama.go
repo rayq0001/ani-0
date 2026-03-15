@@ -1,7 +1,7 @@
 package db
 
 import (
-	"seanime/internal/database/models"
+	"aniverse/internal/database/models"
 )
 
 func (db *Database) UpsertNakamaSettings(nakamaSettings *models.NakamaSettings) (*models.NakamaSettings, error) {

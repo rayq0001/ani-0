@@ -3,8 +3,8 @@ package scanner
 import (
 	"github.com/rs/zerolog"
 	lop "github.com/samber/lo/parallel"
-	"seanime/internal/library/anime"
-	"seanime/internal/library/filesystem"
+	"aniverse/internal/library/anime"
+	"aniverse/internal/library/filesystem"
 )
 
 // GetLocalFilesFromDir creates a new LocalFile for each video file
