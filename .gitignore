@@ -87,3 +87,6 @@ internal/extension_repo/goja_plugin_test
 
 aniverse-web-tr/
 codegen/nonext/
+
+tmp_puppeteer/
+devdata/
