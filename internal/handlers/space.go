@@ -13,19 +13,20 @@ import (
 
 // StarNode represents a work in the cosmic visualization
 type StarNode struct {
-	ID            string                 `json:"id"`
-	MediaID       int                    `json:"mediaId"`
-	Title         string                 `json:"title"`
-	Type          string                 `json:"type"`
-	Coordinates   Coordinates            `json:"coordinates"`
-	Color         string                 `json:"color"`
-	Size          float64                `json:"size"`
-	Connections   []string               `json:"connections"`
-	AIOpinion     string                 `json:"aiOpinion"`
-	PublicRating  float64                `json:"publicRating"`
-	Metadata      map[string]interface{} `json:"metadata"`
-	EmotionalTags []string               `json:"emotionalTags"`
-	DNA           StoryDNA               `json:"dna"`
+	ID              string                 `json:"id"`
+	MediaID         int                    `json:"mediaId"`
+	Title           string                 `json:"title"`
+	Type            string                 `json:"type"`
+	Coordinates     Coordinates            `json:"coordinates"`
+	Color           string                 `json:"color"`
+	Size            float64                `json:"size"`
+	Connections     []string               `json:"connections"`
+	AIOpinion       string                 `json:"aiOpinion"`
+	PublicRating    float64                `json:"publicRating"`
+	SimilarityScore float64                `json:"similarityScore"`
+	Metadata        map[string]interface{} `json:"metadata"`
+	EmotionalTags   []string               `json:"emotionalTags"`
+	DNA             StoryDNA               `json:"dna"`
 }
 
 // Coordinates represents 3D position
@@ -164,9 +165,12 @@ func (h *Handler) performMockCosmicSearch(req *CosmicSearchRequest) []StarNode {
 				Y: float64(i) * 5.2,
 				Z: float64(i) * 2.1,
 			},
-			Color:       generateColor(i),
-			Size:        1.0 + float64(i)*0.5,
-			Connections: []string{},
+			Color:           generateColor(i),
+			Size:            1.0 + float64(i)*0.5,
+			Connections:     []string{},
+			AIOpinion:       "An intriguing work with deep cosmic themes and masterful character progression. Highly recommended for fans of " + req.Query + ".",
+			PublicRating:    8.5 + float64(i)*0.1,
+			SimilarityScore: 0.85 + float64(i)*0.01,
 			Metadata: map[string]interface{}{
 				"similarity": 0.85 + float64(i)*0.01,
 				"year":       2020 + i,
@@ -254,9 +258,12 @@ func generateMockStars(count int, clusterType string) []StarNode {
 				Y: float64(i) * 3.0,
 				Z: float64(i) * 2.0,
 			},
-			Color:       generateColor(i),
-			Size:        1.0 + float64(i%3)*0.5,
-			Connections: []string{},
+			Color:           generateColor(i),
+			Size:            1.0 + float64(i%3)*0.5,
+			Connections:     []string{},
+			AIOpinion:       "A fascinating representative of the " + clusterType + " sub-genre. Masterfully explores thematic depth and character growth.",
+			PublicRating:    8.0 + float64(i%5)*0.2,
+			SimilarityScore: 0.8 + float64(i%10)*0.02,
 			Metadata: map[string]interface{}{
 				"cluster": clusterType,
 			},
@@ -413,9 +420,12 @@ func (h *Handler) HandleEmotionalSearch(c echo.Context) error {
 				Y: float64(i) * 4.0,
 				Z: float64(i) * 2.0,
 			},
-			Color:       generateColor(i),
-			Size:        1.5,
-			Connections: []string{},
+			Color:           generateColor(i),
+			Size:            1.5,
+			Connections:     []string{},
+			AIOpinion:       "This work perfectly matches your current emotional resonance. It captures the essence of " + extractEmotionTagsHeader(req.Emotions) + " in a profoundly moving way.",
+			PublicRating:    9.0,
+			SimilarityScore: 0.95,
 			Metadata: map[string]interface{}{
 				"emotionalMatch": 0.9,
 			},
@@ -458,4 +468,18 @@ func extractEmotionTags(emotions []EmotionState) []string {
 		tags = append(tags, e.Type)
 	}
 	return tags
+}
+
+func extractEmotionTagsHeader(emotions []EmotionState) string {
+	if len(emotions) == 0 {
+		return "equilibrium"
+	}
+	res := ""
+	for i, e := range emotions {
+		if i > 0 {
+			res += " and "
+		}
+		res += e.Type
+	}
+	return res
 }

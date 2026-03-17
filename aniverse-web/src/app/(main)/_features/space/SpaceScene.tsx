@@ -2,8 +2,8 @@
 
 import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
-import { Bloom, EffectComposer, Noise, ChromaticAberration } from '@react-three/postprocessing'
+import { PerspectiveCamera, OrbitControls } from '@react-three/drei'
+import { EffectComposer, Bloom, Noise, ChromaticAberration } from '@react-three/postprocessing'
 import * as THREE from 'three'
 import { NebulaSystem } from './NebulaSystem'
 import { HighResStarField } from './HighResStarField'
@@ -11,10 +11,13 @@ import { SpaceDust } from './SpaceDust'
 
 export const SpaceScene = () => {
     return (
-        <div className="absolute inset-0 w-full h-full pointer-events-none">
+        <div className="fixed inset-0 bg-[#050510]">
             <Canvas
+                shadows
+                camera={{ position: [0, 0, 100], fov: 60 }}
                 gl={{ antialias: true, stencil: false, depth: true }}
                 dpr={[1, 2]} // Support for retina/high-res displays
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
             >
                 <PerspectiveCamera makeDefault position={[0, 0, 100]} fov={60} far={2000} />
                 <color attach="background" args={['#050510']} />

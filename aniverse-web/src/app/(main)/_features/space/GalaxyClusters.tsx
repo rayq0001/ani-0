@@ -25,7 +25,7 @@ export const GalaxyClusters = () => {
 
       {/* Galaxy Grid */}
       <div className="flex-1 grid grid-cols-2 lg:grid-cols-3 gap-6 overflow-y-auto pb-20">
-        {clusters.map((galaxy, index) => (
+        {Array.isArray(clusters) && clusters.map((galaxy, index) => (
           <motion.div
             key={galaxy.id}
             initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ export const GalaxyClusters = () => {
                     size="sm"
                     style={{ backgroundColor: `${galaxy.color}30`, borderColor: galaxy.color }}
                   >
-                    {galaxy.stars.length || Math.floor(Math.random() * 50) + 20} works
+                    {(galaxy?.stars?.length || 0) || Math.floor(Math.random() * 50) + 20} works
                   </NeonBadge>
                 </div>
 

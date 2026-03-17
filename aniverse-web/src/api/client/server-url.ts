@@ -6,6 +6,16 @@ function devOrProd(dev: string, prod: string): string {
 }
 
 export function getServerBaseUrl(removeProtocol: boolean = false): string {
+    // Check for environment variable first (useful for Vercel/Production)
+    const envApiUrl = import.meta.env.SEA_PUBLIC_API_URL
+    if (envApiUrl) {
+        let ret = envApiUrl
+        if (removeProtocol) {
+            ret = ret.replace("http://", "").replace("https://", "")
+        }
+        return ret
+    }
+
     if (__isDesktop__) {
         let ret = devOrProd(`http://127.0.0.1:${__DEV_SERVER_PORT}`, "http://127.0.0.1:43211")
         if (removeProtocol) {

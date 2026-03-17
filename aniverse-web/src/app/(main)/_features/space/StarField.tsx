@@ -128,7 +128,8 @@ export const StarField = () => {
         }}
       >
         {/* Stars */}
-        {results.map((star, index) => {
+        {Array.isArray(results) && results.map((star, index) => {
+          if (!star?.coordinates) return null;
           const x = star.coordinates.x * 10 + mousePos.x * (index + 1);
           const y = star.coordinates.y * 10 + mousePos.y * (index + 1);
           const z = star.coordinates.z * 5;
@@ -217,9 +218,9 @@ export const StarField = () => {
 
         {/* Connection Lines */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20">
-          {results.map((star1, i) => 
+          {Array.isArray(results) && results.map((star1, i) => 
             results.slice(i + 1).map((star2, j) => {
-              if (star1.similarityScore > 0.8 && star2.similarityScore > 0.8) {
+              if (star1?.similarityScore > 0.8 && star2?.similarityScore > 0.8 && star1?.coordinates && star2?.coordinates) {
                 const x1 = 50 + star1.coordinates.x * 0.5;
                 const y1 = 50 + star1.coordinates.y * 0.5;
                 const x2 = 50 + star2.coordinates.x * 0.5;
@@ -286,8 +287,8 @@ export const StarField = () => {
                     {/* Floating Title & Metadata */}
                     <div className="absolute bottom-6 left-8 z-20">
                         <div className="flex items-center gap-3 mb-2">
-                            <NeonBadge color="purple" size="sm">{selectedStar.type.toUpperCase()}</NeonBadge>
-                            <span className="text-[10px] text-white/40 tracking-[.4em] uppercase font-light">Year {selectedStar.year}</span>
+                            <NeonBadge color="purple" size="sm">{(selectedStar?.type || 'UNKNOWN').toUpperCase()}</NeonBadge>
+                            <span className="text-[10px] text-white/40 tracking-[.4em] uppercase font-light">Year {selectedStar?.year || 'N/A'}</span>
                         </div>
                         <h3 className="text-3xl font-serif italic text-white tracking-widest leading-tight">{selectedStar.title}</h3>
                     </div>
@@ -347,34 +348,36 @@ export const StarField = () => {
                 )}
 
                 {/* DNA Sequence Vis - Luxury Progress Sliders */}
-                <div className="space-y-5">
-                  <h4 className="text-[10px] font-bold text-white/30 uppercase tracking-[.3em] flex items-center gap-3">
-                    <LuDna className="w-3.5 h-3.5" />
-                    Story DNA Sequence
-                  </h4>
-                  <div className="space-y-4">
-                    {Object.entries(selectedStar.dna)
-                      .filter(([key]) => key !== 'selectedGenes')
-                      .map(([key, value], idx) => (
-                        <div key={key} className="space-y-2">
-                          <div className="flex justify-between items-center text-[10px] uppercase tracking-widest text-white/40">
-                             <span>{translateDNAKey(key)}</span>
-                             <span className="text-purple-400/80">{(value as any) as number}%</span>
+                {selectedStar?.dna && (
+                  <div className="space-y-5">
+                    <h4 className="text-[10px] font-bold text-white/30 uppercase tracking-[.3em] flex items-center gap-3">
+                      <LuDna className="w-3.5 h-3.5" />
+                      Story DNA Sequence
+                    </h4>
+                    <div className="space-y-4">
+                      {Object.entries(selectedStar.dna)
+                        .filter(([key]) => key !== 'selectedGenes')
+                        .map(([key, value], idx) => (
+                          <div key={key} className="space-y-2">
+                            <div className="flex justify-between items-center text-[10px] uppercase tracking-widest text-white/40">
+                               <span>{translateDNAKey(key)}</span>
+                               <span className="text-purple-400/80">{(value as any) as number}%</span>
+                            </div>
+                            <div className="h-1 bg-white/5 rounded-full overflow-hidden relative">
+                               <motion.div 
+                                  className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full"
+                                  initial={{ width: 0 }}
+                                  animate={{ width: `${(value as any) as number}%` }}
+                                  transition={{ duration: 1.5, delay: 0.2 + (idx * 0.05), ease: "circOut" }}
+                               >
+                                  <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent)] animate-shimmer" style={{ backgroundSize: '200% 100%' }} />
+                               </motion.div>
+                            </div>
                           </div>
-                          <div className="h-1 bg-white/5 rounded-full overflow-hidden relative">
-                             <motion.div 
-                                className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full"
-                                initial={{ width: 0 }}
-                                animate={{ width: `${(value as any) as number}%` }}
-                                transition={{ duration: 1.5, delay: 0.2 + (idx * 0.05), ease: "circOut" }}
-                             >
-                                <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent)] animate-shimmer" style={{ backgroundSize: '200% 100%' }} />
-                             </motion.div>
-                          </div>
-                        </div>
-                      ))}
+                        ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Actions - Premium Buttons */}
                 <div className="pt-6 grid grid-cols-2 gap-4">

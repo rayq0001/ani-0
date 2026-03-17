@@ -1,0 +1,25 @@
+PAGE ERROR EXCEPTION: Cannot read properties of undefined (reading 'S') 
+ TypeError: Cannot read properties of undefined (reading 'S')
+    at Tt.exports (http://localhost:43210/static/js/async/vendors-node_modules_react-three_drei_core_OrbitControls_js-node_modules_react-three_drei_cor-65dd11.js:13916:16)
+    at createReconciler (http://localhost:43210/static/js/async/vendors-node_modules_react-three_drei_core_OrbitControls_js-node_modules_react-three_drei_cor-65dd11.js:15351:22)
+    at ./node_modules/@react-three/fiber/dist/events-5a94e5eb.esm.js (http://localhost:43210/static/js/async/vendors-node_modules_react-three_drei_core_OrbitControls_js-node_modules_react-three_drei_cor-65dd11.js:15650:35)
+    at __webpack_require__ (http://localhost:43210/static/js/index.js:13564:29)
+    at fn (http://localhost:43210/static/js/index.js:13762:10)
+    at ./node_modules/@react-three/fiber/dist/react-three-fiber.esm.js (http://localhost:43210/static/js/async/vendors-node_modules_react-three_drei_core_OrbitControls_js-node_modules_react-three_drei_cor-65dd11.js:16600:61)
+    at __webpack_require__ (http://localhost:43210/static/js/index.js:13564:29)
+    at fn (http://localhost:43210/static/js/index.js:13762:10)
+    at ./src/app/(main)/_features/space/SpaceScene.tsx (http://localhost:43210/static/js/async/src_routes__main_space_index_lazy_tsx.js:2529:56)
+    at __webpack_require__ (http://localhost:43210/static/js/index.js:13564:29)
+node:internal/process/promises:332
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+page.goto: Timeout 30000ms exceeded.
+Call log:
+[2m  - navigating to "http://localhost:43210/space", waiting until "load"[22m
+
+    at /Users/rayq0001/Downloads/seanime-main/tmp_puppeteer/playtest.cjs:18:16 {
+  name: 'TimeoutError'
+}
+
+Node.js v25.6.1

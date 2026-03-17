@@ -1,8 +1,8 @@
 "use client"
 
 import React from 'react'
-import { Galaxy3DModern } from './galaxy-3d-modern'
+import { UnlimitedSpace } from '../_features/space/UnlimitedSpace'
 
 export default function SpacePage() {
-    return <Galaxy3DModern />
+    return <UnlimitedSpace />
 }

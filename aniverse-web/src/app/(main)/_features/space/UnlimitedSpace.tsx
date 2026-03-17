@@ -12,6 +12,7 @@ import { StarField } from './StarField';
 import { SpaceScene } from './SpaceScene';
 import { GalaxyClusters } from './GalaxyClusters';
 import { TimelineNavigator } from './TimelineNavigator';
+import { SearchResultsGrid } from './SearchResultsGrid';
 import { 
     LuOrbit, 
     LuDna, 
@@ -54,7 +55,8 @@ export const UnlimitedSpace = () => {
                 maxResults: 20
             }, {
                 onSuccess: (data: any) => {
-                    setResults((data.results as any) as StarNode[]);
+                    const results = data?.data?.results || data?.results || [];
+                    setResults(Array.isArray(results) ? results : []);
                     setIsSearching(false);
                 },
                 onError: () => {
@@ -63,6 +65,11 @@ export const UnlimitedSpace = () => {
             });
         }
     }, [debouncedSearchQuery, dnaFilters, emotionalState, yearRange]);
+
+    // Force open on mount if we're on the space page
+    useEffect(() => {
+        if (!isOpen) setIsOpen(true);
+    }, []);
 
     // Body scroll lock & Escape listener
     useEffect(() => {
@@ -117,6 +124,24 @@ export const UnlimitedSpace = () => {
                             <span className="text-[10px] tracking-[0.5em] text-purple-400/60 uppercase mt-1">Cosmic Explorer V3</span>
                         </motion.div>
  
+                        {/* Clear Search / New Search Button (When results exist) */}
+                        <AnimatePresence>
+                            {(searchQuery || results.length > 0) && (
+                                <motion.button
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -20 }}
+                                    onClick={() => {
+                                        setSearchQuery('');
+                                        setResults([]);
+                                    }}
+                                    className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white/40 text-[10px] uppercase tracking-widest hover:text-white hover:bg-white/10 transition-all"
+                                >
+                                    New Search
+                                </motion.button>
+                            )}
+                        </AnimatePresence>
+
                         {/* Search Bar - Premium Refinement */}
                         <div className="relative group">
                             <motion.div 
@@ -241,6 +266,13 @@ export const UnlimitedSpace = () => {
                                     </div>
                                 </GlassCard>
                             </motion.div>
+                        )}
+                    </AnimatePresence>
+
+                    {/* Search Results Overlay (Premium Glass Grid) */}
+                    <AnimatePresence>
+                        {results.length > 0 && !isSearching && (
+                            <SearchResultsGrid key="search-results" />
                         )}
                     </AnimatePresence>
                 </div>

@@ -191,7 +191,7 @@ export default function Page() {
     }
 
     return (
-        <div className="min-h-screen relative overflow-hidden bg-[#0a0a0f]">
+        <div className="min-h-screen relative overflow-hidden bg-[#0a0a0f] selection:bg-purple-500/30">
             {/* Animated Background */}
             <div className="fixed inset-0 z-0">
                 {/* Gradient Orbs */}

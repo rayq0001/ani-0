@@ -50,14 +50,14 @@ export default defineConfig({
                 }
             },
         },
-        pluginBabel({
-            include: /\.(?:jsx|tsx)$/,
-            babelLoaderOptions(opts) {
-                opts.plugins ??= []
-                opts.plugins.push(["babel-plugin-react-compiler", { target: "18" }])
-            },
-        }),
-    ].filter(Boolean),
+        // pluginBabel({
+        //     include: /\.(?:jsx|tsx)$/,
+        //     babelLoaderOptions(opts) {
+        //         opts.plugins ??= []
+        //         opts.plugins.push(["babel-plugin-react-compiler", { target: "18" }])
+        //     },
+        // }),
+    ].filter(Boolean) as any,
     source: {
         entry: {
             index: "./src/main.tsx",
